@@ -1,0 +1,33 @@
+docs/superpowers/plans/2026-07-05-macos-portfolio.md
+  s_ceb96337f2f1bb::t_077d1ce1bf37d3 183-185,188,190-191,193,196-198,201,204,206-208,210,212-215,217-219,222,225-226,228-229,231-235,238
+  s_ceb96337f2f1bb::t_cfa9fdc320c862 1618
+  s_ceb96337f2f1bb::t_125983fa8c19b5 23-24,30-33
+  s_ceb96337f2f1bb::t_fc8698dbceb066 276
+  s_ceb96337f2f1bb::t_8c703f08ef2bf0 1714
+  s_ceb96337f2f1bb::t_90b5fec0de82ec 314,319-321,331,336,353,358,364,366-370,372,376
+  s_ceb96337f2f1bb::t_0524a3dabce952 1594,1596,1601
+  s_ceb96337f2f1bb::t_7874fbded7d503 1345,1347,1349-1350,1354,1362,1365-1374,1387
+docs/superpowers/specs/2026-07-05-macos-portfolio-design.md
+  s_ceb96337f2f1bb::t_cd92b8a4ce85f7 116-119
+  s_ceb96337f2f1bb::t_34e9fe98cdc8f7 17-19
+  s_ceb96337f2f1bb::t_9dfad4e15abe0d 61-65
+  s_ceb96337f2f1bb::t_947701e7849dcd 76-77
+  s_ceb96337f2f1bb::t_6f7b927402b0f3 241
+  s_ceb96337f2f1bb::t_e2a15729f656cd 190-198
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "b8a468eef7e4c71edda8a4a0ecf80a5032d7f8ed",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
