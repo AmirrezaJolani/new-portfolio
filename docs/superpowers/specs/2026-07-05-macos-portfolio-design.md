@@ -11,6 +11,11 @@ Portfolio content is presented as "apps": **About Me**, **Projects**, and **Cont
 window system is hand-rolled (no windowing dependency). Mobile devices get a simplified
 stacked/full-screen view of the same apps.
 
+The codebase uses a **feature-based architecture** (feature folders, not a flat `components/`
+folder), **shadcn/ui built on Base UI primitives** for the reusable UI layer, **next-intl**
+for internationalization (English + Persian with RTL), and a **workflows** layer that holds
+UI state machines separate from presentation.
+
 Games are **out of scope for this build** but the app registry is structured so a Games app
 can be added later with a single registry entry plus one component.
 
@@ -18,8 +23,12 @@ can be added later with a single registry entry plus one component.
 
 - A signature "wow" desktop experience: overlapping windows, focus/z-order, dock, menu bar.
 - Zero windowing dependencies — full control over the macOS feel, clean bundle.
-- Content is placeholder now but trivially swappable via a single content module.
-- Works on mobile via a simplified shell that reuses the same app components.
+- Feature-based architecture: each feature owns its components, hooks, and types.
+- Reusable primitives via shadcn/ui + Base UI, isolated in a top-level `ui/` folder.
+- Full i18n plumbing (next-intl), English + Persian, with correct RTL handling.
+- UI orchestration logic lives in a `workflows/` layer (state machines), not in components.
+- Content is placeholder now but trivially swappable (structured data + message catalogs).
+- Works on mobile via a simplified shell that reuses the same feature components.
 - Repo tooling (`.claude/`, `.agent/`) set up to assist development (not user-facing).
 
 ## Non-Goals
@@ -28,104 +37,176 @@ can be added later with a single registry entry plus one component.
 - Real bio/project/contact content (placeholders now; owner swaps in later).
 - Pixel-perfect Apple asset reproduction (use original gradients/icons, no copyrighted art).
 - A boot/login animation (not in this build).
+- Server-side persistence / database (contact form is a placeholder submit flow).
 
 ## Chosen Approach
 
-**Hand-rolled windowing (Option A).** A `WindowManager` React Context is the single source of
-truth for window state; a `Window` component renders macOS chrome and uses a Pointer
-Events drag/resize hook. Rejected alternatives: `react-rnd` (extra dependency, styling
-friction) and prebuilt "web OS" kits (someone else's design system, hard to customize).
+**Hand-rolled windowing (Option A).** A `WindowManager` React Context is the React wiring
+around a **pure window state machine** (in `workflows/`); a `Window` component renders macOS
+chrome and uses a Pointer Events drag/resize hook. Rejected alternatives: `react-rnd` (extra
+dependency, styling friction) and prebuilt "web OS" kits (someone else's design system, hard
+to customize).
+
+## Tech Stack
+
+- **Next.js 16** (App Router, React 19) — per `AGENTS.md`, read `node_modules/next/dist/docs/`
+  before writing framework-touching code.
+- **Tailwind CSS v4** — styling + design tokens.
+- **shadcn/ui on Base UI** — `npx shadcn@latest init --base base --rtl`. Base UI is the current
+  shadcn default primitive library; `--rtl` wires RTL-aware primitives for Persian. The `ui`
+  alias in `components.json` points at the top-level `ui/` folder; `hooks` alias points at the
+  top-level `hooks/` folder. Icons via `lucide`.
+- **next-intl** — i18n for the App Router; `[locale]` route segment; middleware for locale
+  routing; English (`en`) default + Persian (`fa`, RTL).
+- **Biome** — existing lint/format toolchain.
 
 ## Architecture & File Structure
 
+Feature-first. There is no flat `components/` folder; every feature owns its UI. Shared,
+cross-feature primitives live in `ui/`; shared logic/types/hooks live in dedicated top-level
+folders.
+
 ```
 app/
-  layout.tsx          # root (metadata, fonts) — server component
-  page.tsx            # renders <Desktop/> (client island)
-  globals.css         # Tailwind v4 + macOS design tokens
+  [locale]/
+    layout.tsx        # locale-aware root: sets <html lang dir>, NextIntlClientProvider, fonts
+    page.tsx          # renders <Desktop/> (client island)
+  globals.css         # Tailwind v4 + shadcn/Base UI tokens + macOS design tokens
+middleware.ts         # next-intl locale routing
 
-components/os/
-  Desktop.tsx         # top-level: wallpaper, menu bar, dock, window layer; mobile switch
-  MenuBar.tsx         # top bar: Apple logo, active app name, live clock
-  Dock.tsx            # bottom dock: app icons, open/minimized indicators, hover magnify
-  Window.tsx          # draggable/resizable/minimizable chrome (traffic lights)
-  WindowManager.tsx   # React Context: open windows, z-order, focus, minimize, close
-  useDrag.ts          # pointer-events hook (drag + resize; mouse + touch)
+features/
+  desktop/            # the OS shell feature
+    components/       # Desktop, MenuBar, Dock, Window, WindowLayer, MobileHome
+    hooks/            # useDrag (pointer events), useClock
+    types/            # feature-local types (re-exported from index)
+    index.ts          # public surface of the feature
+  about/
+    components/       # AboutApp
+    index.ts
+  projects/
+    components/       # ProjectsApp, ProjectCard
+    types/
+    index.ts
+  contact/
+    components/       # ContactApp, ContactForm
+    hooks/            # useContactForm (binds to the contact workflow)
+    types/
+    index.ts
 
-components/apps/
-  AboutApp.tsx        # bio / skills (Finder-style)
-  ProjectsApp.tsx     # project gallery
-  ContactApp.tsx      # Mail-style contact form + links
+ui/                   # shadcn/ui primitives on Base UI (button, dialog, input, tooltip, ...)
+
+context/              # React context providers (the "wiring" layer)
+  WindowManagerContext.tsx   # provides window state machine to the tree
+
+workflows/            # UI state machines — framework-agnostic logic, no JSX
+  windowManager.ts    # pure reducer/state machine: open, focus, z-order, minimize, close
+  contactForm.ts      # submit flow: idle -> submitting -> success | error
+
+hooks/                # shared/global composables (custom hooks)
+  useMediaQuery.ts
+  useIsMobile.ts
+
+types/                # shared/global TypeScript types
+  index.ts
+
+i18n/                 # next-intl configuration
+  routing.ts          # locales, defaultLocale, localePrefix
+  request.ts          # getRequestConfig (loads messages per request)
+  navigation.ts       # locale-aware Link/useRouter wrappers
+
+messages/             # translation catalogs (user-facing copy)
+  en.json
+  fa.json
 
 lib/
-  apps.config.ts      # registry: id, title, icon, component, default size/position
-  content.ts          # ALL placeholder content (bio, projects, links) — single swap point
+  apps.config.tsx     # app registry: id, titleKey, icon, component, default geometry
+  content.ts          # non-translatable structured data (project URLs, tags, social links)
+  utils.ts            # cn() and shadcn helpers
 ```
 
-## Component Design
+Path aliases (`@/*`) are configured in `tsconfig.json` so `ui`, `hooks`, `features`,
+`workflows`, etc. import cleanly.
 
-### WindowManager (Context)
+## Layer Responsibilities (isolation & clarity)
 
-State per window:
+- **`workflows/`** — pure logic. Given current state + an action, returns next state. No React,
+  no DOM. Unit-testable in isolation. Example: `windowManager` decides z-order and focus.
+- **`context/`** — React wiring. Wraps a workflow in a provider + hooks (`useWindowManager`).
+  Turns pure logic into something components consume.
+- **`features/*`** — presentation. Each feature reads from context/hooks and renders UI. A
+  feature can be understood without reading other features.
+- **`ui/`** — dumb, reusable primitives (shadcn/Base UI). No app knowledge.
+- **`lib/` + `messages/`** — data. Structured config in `lib/`; translatable copy in `messages/`.
 
-- `id` (unique instance id)
-- `appId` (which app registry entry)
-- `x`, `y`, `width`, `height`
-- `zIndex`
-- `isMinimized`
-- `isFocused`
+This keeps each unit answerable: what it does, how you use it, what it depends on.
 
-Actions: `open(appId)`, `close(id)`, `minimize(id)`, `focus(id)`, `moveTo(id, x, y)`,
-`resize(id, w, h)`. The state transitions (open/focus/z-order/minimize/close) are implemented
-as a **pure reducer** so they can be unit-tested independently of the DOM.
+## Component & Logic Design
 
-Rules:
+### Window state machine (`workflows/windowManager.ts`)
+
+State per window: `id`, `appId`, `x`, `y`, `width`, `height`, `zIndex`, `isMinimized`,
+`isFocused`. Actions: `open(appId)`, `close(id)`, `minimize(id)`, `focus(id)`,
+`moveTo(id, x, y)`, `resize(id, w, h)`. Pure reducer — no DOM. Rules:
+
 - `focus(id)` raises the window to the top z-index and marks it focused (others unfocused).
-- Opening an app that is already open focuses the existing window (single-instance per app).
+- Opening an already-open app focuses the existing window (single-instance per app).
 - `close` removes the window; `minimize` hides it but keeps it in state (dock shows it).
 
-### Window
+### `context/WindowManagerContext.tsx`
 
-- macOS title bar with red/yellow/green **traffic lights** = close / minimize / maximize.
-- Drag from the title bar; resize from the bottom-right corner.
-- Clicking anywhere in the window calls `focus(id)`.
-- Body renders the app component resolved from the registry.
+Wraps the reducer via `useReducer`, exposes a typed `useWindowManager()` hook. This is the only
+place the window machine meets React.
 
-### useDrag
+### `features/desktop`
 
-- Pointer Events (covers mouse, touch, trackpad from one path).
-- Position updates batched via `requestAnimationFrame` for smooth ~60fps drag.
-- Viewport clamping so a window can never be dragged fully off-screen.
+- **Window**: macOS title bar with red/yellow/green **traffic lights** (close/minimize/maximize);
+  drag from title bar; resize from bottom-right; clicking anywhere calls `focus(id)`; body
+  renders the app component resolved from `lib/apps.config`.
+- **useDrag**: Pointer Events (mouse+touch+trackpad from one path); updates batched via
+  `requestAnimationFrame`; viewport clamping so windows never get lost off-screen.
+- **MenuBar**: frosted-glass bar; Apple logo, active app name, live clock (`useClock`),
+  language switcher.
+- **Dock**: centered rounded glass bar; icons launch apps; dot indicates open windows;
+  hover magnify effect.
+- **Desktop**: composes wallpaper + menu bar + dock + window layer; switches to `MobileHome`
+  below the mobile breakpoint (`useIsMobile`).
 
-### Apps
+### Apps (`features/about`, `features/projects`, `features/contact`)
 
-Each app is a presentational component reading from `lib/content.ts`. Apps are registered once
-in `lib/apps.config.ts` (id, title, icon, component, default geometry). The Dock, menu bar,
-and window layer all read from this registry — one source of truth.
+Presentational components reading copy from next-intl messages and structured data from
+`lib/content.ts`. Registered once in `lib/apps.config.tsx` (id, title key, icon, component,
+default geometry). The Dock, menu bar, and window layer all read this registry — one source of
+truth. **Adding a future Games app = one registry entry + one feature folder.**
 
-### Desktop chrome
+The contact form is driven by `workflows/contactForm.ts` (idle → submitting → success | error);
+for this build the submit is a placeholder (no backend), surfaced through `useContactForm`.
 
-- **Menu bar**: frosted-glass bar; Apple logo, active app name, live clock (right-aligned).
-- **Dock**: centered rounded glass bar; icons launch apps; a dot indicates open windows;
-  hover-scale ("magnify") effect.
-- **Wallpaper**: macOS-style gradient (original, no copyrighted image), swappable.
+## Internationalization
+
+- Locales: `en` (default), `fa` (Persian, RTL). `localePrefix` on the `[locale]` segment.
+- `middleware.ts` handles locale detection/routing; `app/[locale]/layout.tsx` sets
+  `<html lang dir>` (`dir="rtl"` for `fa`) and wraps children in `NextIntlClientProvider`.
+- All user-facing strings come from `messages/{locale}.json`. A language switcher lives in the
+  menu bar.
+- RTL is handled by Tailwind logical properties + shadcn's `--rtl` init, so the whole desktop
+  (menu bar, dock, windows) mirrors correctly.
 
 ## Mobile Behavior
 
-Below a breakpoint, `Desktop` renders a **stacked mode**:
-- Dock becomes a simple app grid / home screen.
+Below a breakpoint, `Desktop` renders `MobileHome`:
+- Dock/home becomes a simple app grid.
 - Tapping an app opens it **full-screen** (no drag/resize).
-- Back button/gesture returns to the home screen.
-- Same app components as desktop — content authored once.
+- Back button/gesture returns to the home grid.
+- Same feature components as desktop — content authored once.
 
 ## Data / Content Model
 
-`lib/content.ts` exports typed placeholder data:
-- `about`: name, role, bio paragraphs, skills, (optional) avatar.
-- `projects`: array of `{ title, description, tags, links }`.
-- `contact`: email, social links, form target (placeholder).
+- **Translatable copy** (bio, project descriptions, UI labels, form labels): `messages/en.json`
+  and `messages/fa.json`.
+- **Structured, non-translatable data** (project URLs, tech tags, social links, icons, default
+  window geometry): `lib/content.ts` and `lib/apps.config.tsx`, fully typed via `types/`.
 
-Swapping real content = editing this one file. No component changes required.
+Swapping real content = edit the message catalogs + `lib/content.ts`. No component changes.
 
 ## Repo Tooling (`.claude/` + `.agent/`)
 
@@ -138,15 +219,16 @@ These are ignored by the app build and have no runtime effect on the site.
 
 ## Testing & Verification
 
-- **Unit**: the WindowManager reducer (open / focus / z-order / minimize / close) — pure,
-  DOM-independent.
-- **Manual**: dev server verification for drag/resize feel, dock behavior, and the mobile
-  stacked layout.
+- **Unit**: `workflows/windowManager.ts` (open/focus/z-order/minimize/close) and
+  `workflows/contactForm.ts` — pure, DOM-independent.
+- **Manual**: dev server verification for drag/resize feel, dock behavior, the mobile stacked
+  layout, and `en`/`fa` (LTR/RTL) rendering.
 - Per `AGENTS.md`, read the Next.js 16 docs in `node_modules/next/dist/docs/` before writing
-  any framework-touching code.
+  any framework-touching code (routing, middleware, layouts).
 
 ## Extensibility Notes
 
-- Adding a Games app later: one entry in `apps.config.ts` + one component in
-  `components/apps/`. No changes to the window system, dock, or menu bar.
-- Theming (e.g., light/dark, alternate wallpaper) is driven by design tokens in `globals.css`.
+- Adding a Games app later: one entry in `lib/apps.config.tsx` + one folder in `features/`.
+  No changes to the window system, dock, or menu bar.
+- Adding a locale: one `messages/<locale>.json` + one entry in `i18n/routing.ts`.
+- Theming (light/dark, alternate wallpaper) is driven by design tokens in `globals.css`.
