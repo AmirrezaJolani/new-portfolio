@@ -11,8 +11,9 @@ Portfolio content is presented as "apps": **About Me**, **Projects**, and **Cont
 window system is hand-rolled (no windowing dependency). Mobile devices get a simplified
 stacked/full-screen view of the same apps.
 
-The codebase uses a **feature-based architecture** (feature folders, not a flat `components/`
-folder), **shadcn/ui built on Base UI primitives** for the reusable UI layer, **next-intl**
+The codebase uses a **feature-based architecture** (feature folders own all app-specific UI;
+the only thing in `components/` is the shared primitive layer), **shadcn/ui built on Base UI
+primitives** for the reusable UI layer, **next-intl**
 for internationalization (English + Persian with RTL), and a **workflows** layer that holds
 UI state machines separate from presentation.
 
@@ -24,7 +25,7 @@ can be added later with a single registry entry plus one component.
 - A signature "wow" desktop experience: overlapping windows, focus/z-order, dock, menu bar.
 - Zero windowing dependencies — full control over the macOS feel, clean bundle.
 - Feature-based architecture: each feature owns its components, hooks, and types.
-- Reusable primitives via shadcn/ui + Base UI, isolated in a top-level `ui/` folder.
+- Reusable primitives via shadcn/ui + Base UI, isolated in `components/ui/`.
 - Full i18n plumbing (next-intl), English + Persian, with correct RTL handling.
 - UI orchestration logic lives in a `workflows/` layer (state machines), not in components.
 - Content is placeholder now but trivially swappable (structured data + message catalogs).
@@ -54,17 +55,17 @@ to customize).
 - **Tailwind CSS v4** — styling + design tokens.
 - **shadcn/ui on Base UI** — `npx shadcn@latest init --base base --rtl`. Base UI is the current
   shadcn default primitive library; `--rtl` wires RTL-aware primitives for Persian. The `ui`
-  alias in `components.json` points at the top-level `ui/` folder; `hooks` alias points at the
-  top-level `hooks/` folder. Icons via `lucide`.
+  alias in `components.json` points at `@/components/ui`; `hooks` alias points at the top-level
+  `hooks/` folder. Icons via `lucide`.
 - **next-intl** — i18n for the App Router; `[locale]` route segment; middleware for locale
   routing; English (`en`) default + Persian (`fa`, RTL).
 - **Biome** — existing lint/format toolchain.
 
 ## Architecture & File Structure
 
-Feature-first. There is no flat `components/` folder; every feature owns its UI. Shared,
-cross-feature primitives live in `ui/`; shared logic/types/hooks live in dedicated top-level
-folders.
+Feature-first. Every feature owns its app-specific UI. The `components/` folder holds ONLY the
+shared, cross-feature primitive layer (`components/ui/`, managed by shadcn); shared
+logic/types/hooks live in dedicated top-level folders.
 
 ```
 app/
@@ -93,7 +94,8 @@ features/
     types/
     index.ts
 
-ui/                   # shadcn/ui primitives on Base UI (button, dialog, input, tooltip, ...)
+components/
+  ui/                 # shadcn/ui primitives on Base UI (button, dialog, input, tooltip, ...)
 
 context/              # React context providers (the "wiring" layer)
   WindowManagerContext.tsx   # provides window state machine to the tree
@@ -135,7 +137,7 @@ Path aliases (`@/*`) are configured in `tsconfig.json` so `ui`, `hooks`, `featur
   Turns pure logic into something components consume.
 - **`features/*`** — presentation. Each feature reads from context/hooks and renders UI. A
   feature can be understood without reading other features.
-- **`ui/`** — dumb, reusable primitives (shadcn/Base UI). No app knowledge.
+- **`components/ui/`** — dumb, reusable primitives (shadcn/Base UI). No app knowledge.
 - **`lib/` + `messages/`** — data. Structured config in `lib/`; translatable copy in `messages/`.
 
 This keeps each unit answerable: what it does, how you use it, what it depends on.
