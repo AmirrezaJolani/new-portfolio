@@ -1,0 +1,31 @@
+i18n/request.ts
+  s_ceb96337f2f1bb::t_06ac26d697fc39 1-11
+i18n/locale.ts
+  s_ceb96337f2f1bb::t_7ec66b84ccdff9 1-16
+app/layout.tsx
+  s_ceb96337f2f1bb::t_759128226b3cc4 3-4,7-8,11-12,15,17,19-22,25-26,29-31
+messages/fa.json
+  s_ceb96337f2f1bb::t_1a8d54aacaefd9 1-33
+messages/en.json
+  s_ceb96337f2f1bb::t_83a12ee67df2cf 1-33
+app/page.tsx
+  s_ceb96337f2f1bb::t_cdab8093a7b07c 1,4-5
+i18n/config.ts
+  s_ceb96337f2f1bb::t_e3b8bd55a8e721 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "ba11357a93444a5b2de2d415f5a7e2970e1e5f8c",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
