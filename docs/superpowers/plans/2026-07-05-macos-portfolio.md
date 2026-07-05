@@ -20,19 +20,17 @@
 
 ```
 app/
-  [locale]/
-    layout.tsx        # locale root: <html lang dir>, fonts, NextIntlClientProvider
-    page.tsx          # renders <Desktop/>
+  layout.tsx          # root: <html lang dir> from cookie locale, fonts, NextIntlClientProvider
+  page.tsx            # renders <Desktop/>
   globals.css         # Tailwind v4 + shadcn tokens + macOS tokens (shadcn may edit)
-middleware.ts         # next-intl locale routing
 next.config.ts        # wrapped with createNextIntlPlugin()
 components.json        # shadcn config (created by init)
 vitest.config.ts
 
-i18n/
-  routing.ts          # defineRouting: en (default) + fa
-  request.ts          # getRequestConfig: load messages/{locale}.json
-  navigation.ts       # createNavigation wrappers
+i18n/                  # cookie-based, no URL routing, no middleware
+  config.ts           # locales (en default + fa), defaultLocale, Locale type
+  request.ts          # getRequestConfig: read cookie locale, load messages/{locale}.json
+  locale.ts           # "use server": getUserLocale / setUserLocale (NEXT_LOCALE cookie)
 messages/
   en.json
   fa.json
@@ -182,41 +180,53 @@ git commit -m "chore: add vitest, next-intl, shadcn/Base UI tooling"
 
 ## Task 2: Internationalization plumbing (next-intl, EN + FA/RTL)
 
-Read first: `node_modules/next/dist/docs/01-app` routing/middleware/layout guides.
+Read first: `node_modules/next/dist/docs/01-app` layout/rendering guides. This uses next-intl
+**without i18n routing** — locale comes from a cookie, NOT the URL. No `[locale]` segment, no
+middleware.
 
 **Files:**
-- Create: `i18n/routing.ts`, `i18n/request.ts`, `i18n/navigation.ts`
-- Create: `middleware.ts`
+- Create: `i18n/config.ts`, `i18n/request.ts`, `i18n/locale.ts`
 - Create: `messages/en.json`, `messages/fa.json`
-- Create: `app/[locale]/layout.tsx`, `app/[locale]/page.tsx`
-- Delete: `app/layout.tsx`, `app/page.tsx`
+- Modify: `app/layout.tsx` (replace the starter root layout)
+- Replace: `app/page.tsx` (temporary i18n verification page)
 
-- [ ] **Step 1: Create `i18n/routing.ts`**
+- [ ] **Step 1: Create `i18n/config.ts`**
 
 ```ts
-import { defineRouting } from "next-intl/routing";
-
-export const routing = defineRouting({
-  locales: ["en", "fa"],
-  defaultLocale: "en",
-  localePrefix: "always",
-});
-
-export type Locale = (typeof routing.locales)[number];
+export const locales = ["en", "fa"] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = "en";
 ```
 
-- [ ] **Step 2: Create `i18n/request.ts`**
+- [ ] **Step 2: Create `i18n/locale.ts` (server action for the cookie)**
 
 ```ts
-import { hasLocale } from "next-intl";
-import { getRequestConfig } from "next-intl/server";
-import { routing } from "./routing";
+"use server";
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested)
-    ? requested
-    : routing.defaultLocale;
+import { cookies } from "next/headers";
+import { hasLocale } from "next-intl";
+import { defaultLocale, locales, type Locale } from "./config";
+
+const COOKIE_NAME = "NEXT_LOCALE";
+
+export async function getUserLocale(): Promise<Locale> {
+  const value = (await cookies()).get(COOKIE_NAME)?.value;
+  return hasLocale(locales, value) ? value : defaultLocale;
+}
+
+export async function setUserLocale(locale: Locale) {
+  (await cookies()).set(COOKIE_NAME, locale);
+}
+```
+
+- [ ] **Step 3: Create `i18n/request.ts`**
+
+```ts
+import { getRequestConfig } from "next-intl/server";
+import { getUserLocale } from "./locale";
+
+export default getRequestConfig(async () => {
+  const locale = await getUserLocale();
 
   return {
     locale,
@@ -225,30 +235,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 });
 ```
 
-- [ ] **Step 3: Create `i18n/navigation.ts`**
-
-```ts
-import { createNavigation } from "next-intl/navigation";
-import { routing } from "./routing";
-
-export const { Link, redirect, usePathname, useRouter, getPathname } =
-  createNavigation(routing);
-```
-
-- [ ] **Step 4: Create `middleware.ts`**
-
-```ts
-import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
-
-export default createMiddleware(routing);
-
-export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
-};
-```
-
-- [ ] **Step 5: Create `messages/en.json`**
+- [ ] **Step 4: Create `messages/en.json`**
 
 ```json
 {
@@ -286,7 +273,7 @@ export const config = {
 }
 ```
 
-- [ ] **Step 6: Create `messages/fa.json`**
+- [ ] **Step 5: Create `messages/fa.json`**
 
 ```json
 {
@@ -324,23 +311,14 @@ export const config = {
 }
 ```
 
-- [ ] **Step 7: Delete the old root route files**
-
-Run:
-```bash
-git rm app/layout.tsx app/page.tsx
-```
-
-- [ ] **Step 8: Create `app/[locale]/layout.tsx`**
+- [ ] **Step 6: Replace `app/layout.tsx` (root layout, cookie locale)**
 
 ```tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-import "../globals.css";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
+import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -350,22 +328,12 @@ export const metadata: Metadata = {
   description: "An interactive macOS-style portfolio.",
 };
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-  setRequestLocale(locale);
+  const locale = await getLocale();
   const dir = locale === "fa" ? "rtl" : "ltr";
 
   return (
@@ -382,40 +350,30 @@ export default async function LocaleLayout({
 }
 ```
 
-- [ ] **Step 9: Create a temporary `app/[locale]/page.tsx` to verify i18n**
+- [ ] **Step 7: Replace `app/page.tsx` (temporary i18n verification page)**
 
 ```tsx
-import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
-export default function Home({ params }: { params: Promise<{ locale: string }> }) {
-  return <Placeholder params={params} />;
-}
-
-async function Placeholder({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return <Content />;
-}
-
-function Content() {
+export default function Home() {
   const t = useTranslations("apps");
   return <main className="p-8">{t("about")} · i18n works.</main>;
 }
 ```
 
-- [ ] **Step 10: Verify locales render (LTR + RTL)**
+- [ ] **Step 8: Verify build + locale rendering**
 
-Run: `npm run dev`
-Visit `http://localhost:3000/en` → shows "About Me · i18n works."
-Visit `http://localhost:3000/fa` → shows the Persian string; inspect `<html>` and confirm `dir="rtl"`.
-`http://localhost:3000/` should redirect to `/en`.
+Run: `npx tsc --noEmit` → exit 0.
+Run: `npm run build` → succeeds (no `[locale]` route; single root route).
+Optionally `npm run dev` and visit `http://localhost:3000/` → shows "About Me · i18n works."
+(Default locale `en`; there is NO `/en` or `/fa` URL — locale lives in the `NEXT_LOCALE`
+cookie.) Do NOT leave a dev server running.
 
-- [ ] **Step 11: Commit**
+- [ ] **Step 9: Commit**
 
 ```bash
 git add -A
-git commit -m "feat: add next-intl i18n plumbing (en + fa/rtl)"
+git commit -m "feat: add cookie-based next-intl i18n (en + fa/rtl, no url locale)"
 ```
 
 ---
@@ -1384,12 +1342,16 @@ git commit -m "feat: map app ids to feature components"
 ```tsx
 "use client";
 
+import { useTransition } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { Apple } from "lucide-react";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { setUserLocale } from "@/i18n/locale";
+import type { Locale } from "@/i18n/config";
 import { useClock } from "@/features/desktop/hooks/useClock";
 import { useWindowManager } from "@/context/WindowManagerContext";
 import { getApp } from "@/lib/apps.config";
+import type { AppId } from "@/types";
 
 export function MenuBar() {
   const locale = useLocale();
@@ -1397,10 +1359,19 @@ export function MenuBar() {
   const tMenu = useTranslations("menu");
   const clock = useClock(locale);
   const router = useRouter();
-  const pathname = usePathname();
+  const [, startTransition] = useTransition();
   const { focusedId } = useWindowManager();
 
-  const activeTitle = focusedId ? tApps(getApp(focusedId as never).titleKey) : "Finder";
+  const activeTitle = focusedId
+    ? tApps(getApp(focusedId as AppId).titleKey)
+    : "Finder";
+
+  function changeLocale(next: string) {
+    startTransition(async () => {
+      await setUserLocale(next as Locale);
+      router.refresh();
+    });
+  }
 
   return (
     <header className="fixed inset-x-0 top-0 z-[9999] flex h-7 items-center justify-between bg-black/20 px-4 text-sm text-white backdrop-blur-md">
@@ -1413,7 +1384,7 @@ export function MenuBar() {
         <select
           id="lang"
           value={locale}
-          onChange={(e) => router.replace(pathname, { locale: e.target.value })}
+          onChange={(e) => changeLocale(e.target.value)}
           className="bg-transparent text-white outline-none"
         >
           <option className="text-black" value="en">{tMenu("english")}</option>
@@ -1620,21 +1591,14 @@ git commit -m "feat: add desktop shell, window layer, and mobile home"
 ## Task 12: Mount the desktop + final verification
 
 **Files:**
-- Modify: `app/[locale]/page.tsx`
+- Modify: `app/page.tsx`
 
-- [ ] **Step 1: Replace `app/[locale]/page.tsx` with the real desktop**
+- [ ] **Step 1: Replace `app/page.tsx` with the real desktop**
 
 ```tsx
-import { setRequestLocale } from "next-intl/server";
 import { Desktop } from "@/features/desktop";
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default function Home() {
   return <Desktop />;
 }
 ```
@@ -1651,7 +1615,7 @@ Expected: Biome clean, no type errors. Fix any reported issues.
 
 - [ ] **Step 4: Manual verification (desktop)**
 
-Run: `npm run dev`, visit `http://localhost:3000/en`:
+Run: `npm run dev`, visit `http://localhost:3000/` (no locale in the URL):
 - Dock shows three apps; clicking each opens a window.
 - Windows drag from the title bar and resize from the bottom-right corner.
 - Clicking a background window brings it to front (z-order).
@@ -1747,7 +1711,7 @@ git commit -m "chore: add .claude and .agent project tooling"
 
 - **Feature architecture** → Tasks 8–11 (features/*), no flat components folder. ✅
 - **shadcn on Base UI in `components/ui`** → Task 1 (init `--base base --rtl`, alias `@/components/ui`). ✅
-- **i18n en + fa/RTL** → Task 2 (routing/request/navigation/middleware/messages, `dir="rtl"`). ✅
+- **i18n en + fa/RTL (cookie, no URL locale)** → Task 2 (config/request/locale + messages, `dir="rtl"`). ✅
 - **workflows/ state machines** → Task 4 (windowManager) + Task 8 (contactForm), both TDD. ✅
 - **context/, hooks/, types/, lib/** → Tasks 3, 5, 6. ✅
 - **Draggable/resizable/minimizable windows, menu bar, dock** → Tasks 6–11. ✅

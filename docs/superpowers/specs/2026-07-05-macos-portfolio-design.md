@@ -14,8 +14,9 @@ stacked/full-screen view of the same apps.
 The codebase uses a **feature-based architecture** (feature folders own all app-specific UI;
 the only thing in `components/` is the shared primitive layer), **shadcn/ui built on Base UI
 primitives** for the reusable UI layer, **next-intl**
-for internationalization (English + Persian with RTL), and a **workflows** layer that holds
-UI state machines separate from presentation.
+for internationalization (English + Persian with RTL, locale stored in a cookie — **no locale
+prefix in the URL**), and a **workflows** layer that holds UI state machines separate from
+presentation.
 
 Games are **out of scope for this build** but the app registry is structured so a Games app
 can be added later with a single registry entry plus one component.
@@ -57,8 +58,11 @@ to customize).
   shadcn default primitive library; `--rtl` wires RTL-aware primitives for Persian. The `ui`
   alias in `components.json` points at `@/components/ui`; `hooks` alias points at the top-level
   `hooks/` folder. Icons via `lucide`.
-- **next-intl** — i18n for the App Router; `[locale]` route segment; middleware for locale
-  routing; English (`en`) default + Persian (`fa`, RTL).
+- **next-intl** — i18n for the App Router **without locale routing**: the active locale is
+  stored in a `NEXT_LOCALE` cookie and resolved per-request in `i18n/request.ts`. No
+  `[locale]` URL segment and no middleware. English (`en`) default + Persian (`fa`, RTL). A
+  server action (`setUserLocale`) updates the cookie; the language switcher calls it and
+  refreshes.
 - **Biome** — existing lint/format toolchain.
 
 ## Architecture & File Structure
@@ -69,11 +73,9 @@ logic/types/hooks live in dedicated top-level folders.
 
 ```
 app/
-  [locale]/
-    layout.tsx        # locale-aware root: sets <html lang dir>, NextIntlClientProvider, fonts
-    page.tsx          # renders <Desktop/> (client island)
+  layout.tsx          # root: <html lang dir> from cookie locale, fonts, NextIntlClientProvider
+  page.tsx            # renders <Desktop/> (client island)
   globals.css         # Tailwind v4 + shadcn/Base UI tokens + macOS design tokens
-middleware.ts         # next-intl locale routing
 
 features/
   desktop/            # the OS shell feature
@@ -111,10 +113,10 @@ hooks/                # shared/global composables (custom hooks)
 types/                # shared/global TypeScript types
   index.ts
 
-i18n/                 # next-intl configuration
-  routing.ts          # locales, defaultLocale, localePrefix
-  request.ts          # getRequestConfig (loads messages per request)
-  navigation.ts       # locale-aware Link/useRouter wrappers
+i18n/                 # next-intl configuration (cookie-based, no URL routing)
+  config.ts           # locales, defaultLocale, Locale type
+  request.ts          # getRequestConfig (reads cookie locale, loads messages per request)
+  locale.ts           # "use server": getUserLocale / setUserLocale (NEXT_LOCALE cookie)
 
 messages/             # translation catalogs (user-facing copy)
   en.json
@@ -185,11 +187,15 @@ for this build the submit is a placeholder (no backend), surfaced through `useCo
 
 ## Internationalization
 
-- Locales: `en` (default), `fa` (Persian, RTL). `localePrefix` on the `[locale]` segment.
-- `middleware.ts` handles locale detection/routing; `app/[locale]/layout.tsx` sets
-  `<html lang dir>` (`dir="rtl"` for `fa`) and wraps children in `NextIntlClientProvider`.
-- All user-facing strings come from `messages/{locale}.json`. A language switcher lives in the
-  menu bar.
+- **No locale in the URL.** Locales: `en` (default), `fa` (Persian, RTL). The active locale is
+  stored in a `NEXT_LOCALE` cookie.
+- `i18n/request.ts` reads the cookie (via `getUserLocale`) and loads `messages/{locale}.json`
+  per request. No middleware, no `[locale]` segment.
+- The root `app/layout.tsx` awaits `getLocale()` and sets `<html lang dir>` (`dir="rtl"` for
+  `fa`), wrapping children in `NextIntlClientProvider`.
+- The language switcher (in the menu bar) calls the `setUserLocale` server action to write the
+  cookie, then refreshes so the new locale takes effect.
+- All user-facing strings come from `messages/{locale}.json`.
 - RTL is handled by Tailwind logical properties + shadcn's `--rtl` init, so the whole desktop
   (menu bar, dock, windows) mirrors correctly.
 
@@ -232,5 +238,5 @@ These are ignored by the app build and have no runtime effect on the site.
 
 - Adding a Games app later: one entry in `lib/apps.config.tsx` + one folder in `features/`.
   No changes to the window system, dock, or menu bar.
-- Adding a locale: one `messages/<locale>.json` + one entry in `i18n/routing.ts`.
+- Adding a locale: one `messages/<locale>.json` + one entry in `i18n/config.ts`.
 - Theming (light/dark, alternate wallpaper) is driven by design tokens in `globals.css`.
