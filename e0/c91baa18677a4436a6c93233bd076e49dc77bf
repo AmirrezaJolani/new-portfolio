@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-07-05-macos-portfolio-design.md
+  s_ceb96337f2f1bb::t_cba22a214d7ca2 14-18,26-31,40,44-61,65-68,71-119,122-124,127-130,132-139,141,143,145-149,152,155-158,160,162-172,174,176-179,181-182,184,186-192,196-197,199-200,204-207,209,222-225,227,231-234
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e0c91baa18677a4436a6c93233bd076e49dc77bf",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
