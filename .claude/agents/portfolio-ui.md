@@ -56,8 +56,8 @@ Layers flow one direction: **workflows → context → features → components/u
 - `npm test` passes (if you touched anything a workflow test covers).
 - `npm run lint` (Biome) is clean for files you wrote. If you scaffolded shadcn primitives,
   run `biome check --write` on them; the generated `Label` needs the
-  `lint/a11y/noLabelWithoutControl` rule suppressed for `components/ui/**` (already handled in
-  the Biome config).
+  `lint/a11y/noLabelWithoutControl` rule suppressed for `components/ui/**` in the Biome config
+  (add the override if it isn't there yet).
 - New display strings exist in BOTH `messages/en.json` and `messages/fa.json`.
 
 If a change requires an architectural decision the layers above don't obviously answer, stop
