@@ -1,0 +1,25 @@
+hooks/useIsMobile.ts
+  s_ceb96337f2f1bb::t_1703a151cda124 1-8
+hooks/useMediaQuery.ts
+  s_ceb96337f2f1bb::t_9a356e2f79e3d0 1-17
+features/desktop/hooks/useClock.ts
+  s_ceb96337f2f1bb::t_d25f884306f1a7 1-18
+features/desktop/hooks/useDrag.ts
+  s_ceb96337f2f1bb::t_3a784994efd394 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "b5dfc6172de21619f69303600c2e3ef7609362c8",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
