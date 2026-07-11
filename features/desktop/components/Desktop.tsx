@@ -1,5 +1,6 @@
 "use client";
 
+import { useSettings } from "@/context/SettingsContext";
 import { WindowManagerProvider } from "@/context/WindowManagerContext";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { DesktopIcons } from "./DesktopIcons";
@@ -12,11 +13,12 @@ import { WindowLayer } from "./WindowLayer";
 
 export function Desktop() {
   const isMobile = useIsMobile();
+  const { settings } = useSettings();
 
   return (
     <WindowManagerProvider>
       <main className="relative h-dvh w-full overflow-hidden">
-        <Wallpaper />
+        <Wallpaper id={settings.wallpaper} />
         {isMobile ? (
           <MobileHome />
         ) : (
