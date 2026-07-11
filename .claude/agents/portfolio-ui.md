@@ -30,6 +30,23 @@ Layers flow one direction: **workflows → context → features → components/u
 - `types/` — shared types (`AppId`, `Geometry`).
 - `hooks/` — shared/global composables (`useMediaQuery`, `useIsMobile`).
 
+## Liquid Glass visual system
+
+The macOS Tahoe look is encoded as reusable CSS utilities in `app/globals.css`: **`.lg-glass`**
+(app windows), **`.lg-panel`** (menu bar / dock), and **`.lg-chip`** (widgets, tooltips, tiles)
+— each is backdrop blur + saturate + a hairline highlight + a float shadow. Style new surfaces
+with these, not ad-hoc blur/shadow. The generated wallpaper (`Wallpaper.tsx`), calendar/weather
+widgets (`Widgets.tsx`), and desktop folder shortcuts (`DesktopIcons.tsx`) live under
+`features/desktop/components/`.
+
+## Docker / CI
+
+`Dockerfile` + `docker-compose.yml` + `.github/workflows/docker.yml` build a multi-stage
+Next.js **standalone** image (non-root) and run lint / type-check / test / build + an image
+smoke test on every PR, publishing to GHCR on `main`. Don't break `output: "standalone"` in
+`next.config.ts` (and note `i18n/request.ts`'s dynamic message import relies on
+`outputFileTracingIncludes` to bundle the `messages/` catalogs into the standalone output).
+
 ## Hard rules
 
 1. **No flat `components/` for app UI.** App-specific components live under
@@ -55,9 +72,8 @@ Layers flow one direction: **workflows → context → features → components/u
 - `npx tsc --noEmit` is clean.
 - `npm test` passes (if you touched anything a workflow test covers).
 - `npm run lint` (Biome) is clean for files you wrote. If you scaffolded shadcn primitives,
-  run `biome check --write` on them; the generated `Label` needs the
-  `lint/a11y/noLabelWithoutControl` rule suppressed for `components/ui/**` in the Biome config
-  (add the override if it isn't there yet).
+  run `biome check --write` on them. `lint/a11y/noLabelWithoutControl` is already disabled for
+  `components/ui/**` in `biome.json` (the generic shadcn `Label` needs it).
 - New display strings exist in BOTH `messages/en.json` and `messages/fa.json`.
 
 If a change requires an architectural decision the layers above don't obviously answer, stop
