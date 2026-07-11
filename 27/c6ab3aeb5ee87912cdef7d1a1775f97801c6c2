@@ -1,0 +1,27 @@
+features/desktop/components/Desktop.tsx
+  s_ceb96337f2f1bb::t_f256786f1c17fe 16,21
+  s_ceb96337f2f1bb::t_7fa60156bb1d53 3
+lib/apps.config.tsx
+  s_ceb96337f2f1bb::t_afb3bd8a9c88d6 37-43
+  s_ceb96337f2f1bb::t_f92463362fe2f8 2
+features/desktop/components/appRegistry.tsx
+  s_ceb96337f2f1bb::t_c3174b276367ee 4,11
+types/index.ts
+  s_ceb96337f2f1bb::t_e5bc9c7a655b53 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "27c6ab3aeb5ee87912cdef7d1a1775f97801c6c2",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
