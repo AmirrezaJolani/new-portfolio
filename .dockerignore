@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.github
+docs
+coverage
+*.md
+.env*
+*.log
+.DS_Store
+.vscode
+.idea
+.claude
+.agent
+Dockerfile
+.dockerignore
+docker-compose.yml
