@@ -1,0 +1,33 @@
+features/desktop/components/Dock.tsx
+  s_ceb96337f2f1bb::t_570ddccecb4c70 33
+  s_ceb96337f2f1bb::t_0e2faa27fb284b 21
+features/desktop/components/Window.tsx
+  s_ceb96337f2f1bb::t_bce743a4a2d2b8 109,114
+features/desktop/components/MobileHome.tsx
+  s_ceb96337f2f1bb::t_08c62c4ebb5d6f 27,31
+features/desktop/components/MenuBar.tsx
+  s_ceb96337f2f1bb::t_53cc3970fabce4 41
+  s_ceb96337f2f1bb::t_af4f343a744725 58
+features/desktop/components/Widgets.tsx
+  s_ceb96337f2f1bb::t_5b8a75608bd677 77
+  s_ceb96337f2f1bb::t_65e31f8b7a60b3 46
+  s_ceb96337f2f1bb::t_4f5090b0dc9172 42
+  s_ceb96337f2f1bb::t_3d05331a247ed3 51
+  s_ceb96337f2f1bb::t_1b962445da431c 87,89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "63c79050156c72dc9f0f859bcc751b8e38c7560f",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
