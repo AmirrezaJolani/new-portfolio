@@ -76,15 +76,35 @@ function Scene({ palette: p }: { palette: Palette }) {
         </linearGradient>
         <radialGradient id="wp-vig" cx="50%" cy="42%" r="75%">
           <stop offset="60%" stopColor="#000000" stopOpacity="0" />
-          <stop offset="100%" stopColor={p.vignette} stopOpacity={p.vignetteOpacity} />
+          <stop
+            offset="100%"
+            stopColor={p.vignette}
+            stopOpacity={p.vignetteOpacity}
+          />
         </radialGradient>
       </defs>
       <rect width="1440" height="640" fill="url(#wp-sky)" />
       <rect width="1440" height="640" fill="url(#wp-sun)" />
-      <path d="M0 470 L150 430 L320 468 L470 410 L640 460 L820 405 L1010 458 L1200 415 L1440 452 L1440 640 L0 640 Z" fill={p.far} opacity="0.65" />
-      <path d="M0 520 L180 452 L330 512 L520 440 L700 516 L900 448 L1120 520 L1320 462 L1440 500 L1440 660 L0 660 Z" fill={p.mid} opacity="0.85" />
-      <path d="M520 440 L560 470 L600 452 L640 486 L700 516 L520 516 Z M900 448 L940 478 L985 458 L1030 492 L900 500 Z M180 452 L214 480 L250 462 L286 492 L180 500 Z" fill={p.snow} opacity="0.9" />
-      <path d="M0 596 L220 540 L430 598 L640 548 L860 602 L1080 552 L1300 606 L1440 566 L1440 640 L0 640 Z" fill={p.near} opacity="0.92" />
+      <path
+        d="M0 470 L150 430 L320 468 L470 410 L640 460 L820 405 L1010 458 L1200 415 L1440 452 L1440 640 L0 640 Z"
+        fill={p.far}
+        opacity="0.65"
+      />
+      <path
+        d="M0 520 L180 452 L330 512 L520 440 L700 516 L900 448 L1120 520 L1320 462 L1440 500 L1440 660 L0 660 Z"
+        fill={p.mid}
+        opacity="0.85"
+      />
+      <path
+        d="M520 440 L560 470 L600 452 L640 486 L700 516 L520 516 Z M900 448 L940 478 L985 458 L1030 492 L900 500 Z M180 452 L214 480 L250 462 L286 492 L180 500 Z"
+        fill={p.snow}
+        opacity="0.9"
+      />
+      <path
+        d="M0 596 L220 540 L430 598 L640 548 L860 602 L1080 552 L1300 606 L1440 566 L1440 640 L0 640 Z"
+        fill={p.near}
+        opacity="0.92"
+      />
       <rect y="612" width="1440" height="288" fill="url(#wp-lake)" />
       <rect y="612" width="1440" height="3" fill="#ffffff" opacity="0.25" />
       <rect width="1440" height="900" fill="url(#wp-vig)" />

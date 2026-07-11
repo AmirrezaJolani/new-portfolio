@@ -8,8 +8,8 @@ import {
   useMemo,
   useState,
 } from "react";
-import { setSettingsCookie } from "@/settings/cookies";
 import type { Settings, Theme, WallpaperId } from "@/settings/config";
+import { setSettingsCookie } from "@/settings/cookies";
 
 interface SettingsValue {
   settings: Settings;

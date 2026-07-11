@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { parseSettings, defaultSettings } from "./config";
+import { describe, expect, it } from "vitest";
+import { defaultSettings, parseSettings } from "./config";
 
 describe("parseSettings", () => {
   it("returns defaults for undefined/null/empty", () => {
