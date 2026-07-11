@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio OS — an interactive macOS-style portfolio
 
-## Getting Started
+A personal portfolio built as a faithful, interactive **macOS desktop** in the browser.
+Visitors land on a desktop with a menu bar, a dock, and draggable / resizable / minimizable
+windows, and explore the content as "apps". Styled with a macOS **Tahoe "Liquid Glass"**
+aesthetic — a generated scenic wallpaper, frosted translucent surfaces, and desktop widgets —
+and fully internationalized (English + Persian, right-to-left).
 
-First, run the development server:
+## Features
+
+- **A real windowing desktop** — open apps from the dock; windows drag from the title bar,
+  resize from the corner, minimize/close via the traffic lights, and raise to front on click
+  (single instance per app, proper z-order and focus).
+- **Apps** — About, Projects, and Contact, each a self-contained feature. Adding a new app is
+  a single registry entry plus one component.
+- **Liquid Glass UI** — a generated SVG wallpaper (sky, mountains, lake — no copyrighted
+  assets), frosted glass menu bar / dock / windows, a live calendar + weather widget, and
+  desktop folder shortcuts. Icons throughout are [lucide](https://lucide.dev).
+- **Internationalized** — English and Persian via [next-intl](https://next-intl.dev), with the
+  locale stored in a cookie (**no locale in the URL**) and correct RTL mirroring.
+- **Responsive** — on phones the desktop becomes a stacked home screen with full-screen apps.
+- **Containerized + CI/CD** — a multi-stage Docker image (Next.js standalone, non-root) and a
+  GitHub Actions pipeline that lints, type-checks, tests, builds & smoke-tests the image on
+  every PR, and publishes to GHCR on `main`.
+
+## Tech stack
+
+| Area | Choice |
+|------|--------|
+| Framework | Next.js 16 (App Router) + React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4, shadcn/ui on Base UI |
+| i18n | next-intl (cookie-based, EN + FA/RTL) |
+| Icons | lucide-react |
+| Tests | Vitest (pure logic) |
+| Lint/format | Biome |
+| Container | Docker (multi-stage, standalone), GitHub Actions → GHCR |
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build (standalone output) |
+| `npm start` | Serve the production build |
+| `npm test` | Run unit tests (Vitest) |
+| `npm run lint` | Lint with Biome |
+| `npm run format` | Format with Biome |
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The codebase is **feature-first** with a one-directional dependency flow:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+workflows/   pure state machines (no React/DOM, unit-tested)   e.g. windowManager
+   ↓
+context/     React wiring around a workflow (provider + hook)   e.g. WindowManagerContext
+   ↓
+features/*   presentation; each owns components/ hooks/ types/  desktop, about, projects, contact
+   ↓
+components/ui  shared shadcn/Base UI primitives only
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Supporting folders: `lib/` (the app registry `apps.config.tsx` + structured `content.ts`),
+`hooks/` (shared composables), `types/`, `i18n/` (cookie-based next-intl config), and
+`messages/` (`en.json` / `fa.json` translation catalogs, kept at full key parity).
 
-## Deploy on Vercel
+```
+app/                     # App Router entry (layout, page, globals.css)
+components/ui/            # shadcn/Base UI primitives
+context/                 # React context providers
+features/
+  desktop/               # the OS shell: menu bar, dock, windows, wallpaper, widgets, mobile
+  about/ projects/ contact/
+workflows/               # pure reducers + tests (window manager, contact form)
+hooks/  lib/  types/  i18n/  messages/
+Dockerfile  docker-compose.yml  .github/workflows/docker.yml
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Conventions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All user-facing copy comes from next-intl; `en.json` and `fa.json` stay at key parity.
+- RTL uses Tailwind **logical** properties (`ps/pe/start/end`), so Persian mirrors correctly.
+- Window / contact logic lives in `workflows/` as pure, unit-tested reducers.
+
+## Docker
+
+Run the production image locally:
+
+```bash
+docker compose up --build          # → http://localhost:3000
+# or
+docker build -t portfolio .
+docker run --rm -p 3000:3000 portfolio
+```
+
+The image is a multi-stage build on Next.js **standalone** output and runs as a non-root user.
+CI publishes it to the GitHub Container Registry on pushes to `main`
+(`ghcr.io/<owner>/<repo>:latest` + a short-SHA tag).
+
+## Internationalization
+
+The active locale lives in a `NEXT_LOCALE` cookie (there is **no `/en` or `/fa` URL segment**).
+Switch languages from the menu bar; the choice persists and the layout flips `dir` to `rtl` for
+Persian. Add a locale by adding `messages/<locale>.json` and one entry in `i18n/config.ts`.
+
+## Testing
+
+Pure logic in `workflows/` (window z-order/focus/minimize, the contact-form flow) is covered by
+Vitest. UI is verified via the build and browser. Run `npm test`.
