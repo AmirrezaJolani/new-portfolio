@@ -1,0 +1,19 @@
+.claude/agents/portfolio-ui.md
+  s_ceb96337f2f1bb::t_ddf5a7bff3be0e 59-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "d82e25e9d8084dcad56ec09d2d176ee1f6bb76f8",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
