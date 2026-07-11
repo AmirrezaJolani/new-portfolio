@@ -39,16 +39,16 @@ function CalendarWidget({ locale }: { locale: string }) {
   ];
 
   return (
-    <div className="lg-chip w-44 rounded-3xl p-4 text-slate-800">
+    <div className="lg-chip w-44 rounded-3xl p-4 text-slate-800 dark:text-slate-100">
       <div className="mb-1.5 text-[11px] font-bold uppercase tracking-wide text-red-500">
         {monthLabel}
       </div>
-      <div className="grid grid-cols-7 gap-y-1 text-center text-[10px] font-medium text-slate-500">
+      <div className="grid grid-cols-7 gap-y-1 text-center text-[10px] font-medium text-slate-500 dark:text-slate-400">
         {weekdays.map((w) => (
           <span key={w.key}>{w.label}</span>
         ))}
       </div>
-      <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-[11px] font-semibold text-slate-700">
+      <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-[11px] font-semibold text-slate-700 dark:text-slate-300">
         {cells.map((cell) =>
           cell.day === null ? (
             <span key={cell.id} />
@@ -74,7 +74,7 @@ function WeatherWidget({ locale }: { locale: string }) {
   const t = useTranslations("widgets");
   const num = new Intl.NumberFormat(locale);
   return (
-    <div className="lg-chip flex w-44 flex-col justify-between rounded-3xl bg-gradient-to-br from-sky-400/50 to-blue-500/40 p-4 text-slate-800">
+    <div className="lg-chip flex w-44 flex-col justify-between rounded-3xl bg-gradient-to-br from-sky-400/50 to-blue-500/40 p-4 text-slate-800 dark:text-slate-100">
       <div className="flex items-start justify-between">
         <div>
           <div className="text-sm font-semibold">{t("weatherCity")}</div>
@@ -84,9 +84,9 @@ function WeatherWidget({ locale }: { locale: string }) {
         </div>
         <Sun className="size-7 text-amber-400" strokeWidth={2.2} />
       </div>
-      <div className="mt-2 text-xs font-medium text-slate-600">
+      <div className="mt-2 text-xs font-medium text-slate-600 dark:text-slate-400">
         {t("weatherCondition")}
-        <div className="mt-0.5 text-slate-500">
+        <div className="mt-0.5 text-slate-500 dark:text-slate-400">
           {t("high")}:{num.format(34)}° {t("low")}:{num.format(19)}°
         </div>
       </div>

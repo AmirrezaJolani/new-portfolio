@@ -38,7 +38,7 @@ export function MenuBar() {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[9999] flex h-7 items-center justify-between border-b border-white/25 bg-white/15 px-3 text-[13px] text-slate-800 shadow-[0_1px_0_0_rgba(255,255,255,0.35)] backdrop-blur-2xl backdrop-saturate-150">
+    <header className="fixed inset-x-0 top-0 z-[9999] flex h-7 items-center justify-between border-b border-white/25 dark:border-white/10 bg-white/15 dark:bg-black/25 px-3 text-[13px] text-slate-800 dark:text-slate-100 shadow-[0_1px_0_0_rgba(255,255,255,0.35)] backdrop-blur-2xl backdrop-saturate-150">
       <div className="flex items-center gap-4">
         <Apple className="size-4" fill="currentColor" strokeWidth={0} />
         <span className="font-semibold">{activeTitle}</span>
@@ -55,7 +55,7 @@ export function MenuBar() {
           id="lang"
           value={locale}
           onChange={(e) => changeLocale(e.target.value)}
-          className="cursor-pointer rounded bg-transparent font-medium text-slate-800 outline-none hover:bg-white/25"
+          className="cursor-pointer rounded bg-transparent font-medium text-slate-800 dark:text-slate-100 outline-none hover:bg-white/25"
         >
           <option className="text-black" value="en">
             {tMenu("english")}

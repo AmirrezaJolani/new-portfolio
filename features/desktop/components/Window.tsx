@@ -106,12 +106,12 @@ export function Window({
             />
           </span>
         </div>
-        <span className="pointer-events-none mx-auto pe-12 text-[13px] font-semibold text-slate-700">
+        <span className="pointer-events-none mx-auto pe-12 text-[13px] font-semibold text-slate-700 dark:text-slate-200">
           {t(app.titleKey)}
         </span>
       </div>
 
-      <div className="lg-scroll flex-1 overflow-auto bg-white/45 p-5 text-slate-800">
+      <div className="lg-scroll flex-1 overflow-auto bg-white/45 dark:bg-black/30 p-5 text-slate-800 dark:text-slate-100">
         {children}
       </div>
 
