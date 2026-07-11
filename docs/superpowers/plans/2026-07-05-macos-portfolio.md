@@ -498,7 +498,7 @@ import type { Geometry } from "@/types";
 
 const geo: Geometry = { x: 10, y: 10, width: 300, height: 200 };
 
-function open(state: WindowManagerState, appId = "about") {
+function open(state: WindowManagerState, appId: AppId = "about") {
   return windowReducer(state, { type: "open", appId, geometry: geo });
 }
 
