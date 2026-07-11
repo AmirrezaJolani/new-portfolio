@@ -27,8 +27,8 @@ The markdown body is the agent's system prompt.
 
 ## Source of truth
 
-- Design spec: [`../docs/superpowers/specs/2026-07-05-macos-portfolio-design.md`](../docs/superpowers/specs/2026-07-05-macos-portfolio-design.md)
-- Implementation plan: [`../docs/superpowers/plans/2026-07-05-macos-portfolio.md`](../docs/superpowers/plans/2026-07-05-macos-portfolio.md)
-- Repo-wide agent rules: [`../AGENTS.md`](../AGENTS.md) (read it — this is a modified Next.js).
+- Design specs + implementation plans: [`../docs/superpowers/specs/`](../docs/superpowers/specs) and [`../docs/superpowers/plans/`](../docs/superpowers/plans) (portfolio, Docker CI/CD, and further features each have their own).
+- Repo-wide agent rules + project context: [`../AGENTS.md`](../AGENTS.md) (read it — this is a modified Next.js).
+- User-facing docs: [`../README.md`](../README.md).
 
-Architecture in one line: **workflows/ (pure logic) → context/ (React wiring) → features/\* (UI) → components/ui/ (shadcn/Base UI primitives)**.
+Architecture in one line: **workflows/ (pure logic) → context/ (React wiring) → features/\* (UI) → components/ui/ (shadcn/Base UI primitives)**, with a macOS Tahoe **Liquid Glass** surface system (`.lg-*` utilities in `app/globals.css`), cookie-based EN/FA i18n, and a Docker + GitHub Actions pipeline.

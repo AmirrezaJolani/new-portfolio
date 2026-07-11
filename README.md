@@ -92,6 +92,40 @@ Dockerfile  docker-compose.yml  .github/workflows/docker.yml
 - RTL uses Tailwind **logical** properties (`ps/pe/start/end`), so Persian mirrors correctly.
 - Window / contact logic lives in `workflows/` as pure, unit-tested reducers.
 
+### Window management
+
+Every window is driven by a single **pure reducer** (`workflows/windowManager.ts`) wrapped by
+`WindowManagerContext`. Data flows one way: a UI action (open / focus / move / resize /
+minimize / close) dispatches to the reducer, which returns the next state, and the desktop
+re-renders. Apps are **single-instance** — re-opening "About" focuses the existing window
+rather than spawning a duplicate — and depth is managed via `zIndex`. Focus lives in a single
+`focusedId` (not a per-window flag), and the reducer is unit-tested.
+
+Each window is tracked as:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `appId` | `AppId` | Which app (`about` / `projects` / `contact`) |
+| `x`, `y` | `number` | Position on the desktop |
+| `width`, `height` | `number` | Dimensions |
+| `zIndex` | `number` | Stack order relative to other windows |
+| `isMinimized` | `boolean` | Hidden to the dock |
+
+### Liquid Glass surface system
+
+The macOS Tahoe vibrancy is encoded as reusable CSS utilities in `app/globals.css` — backdrop
+blur + saturation, a hairline top highlight, and a soft float shadow — in three tiers:
+
+| Class | Used for | Characteristics |
+|-------|----------|-----------------|
+| `.lg-glass` | app windows | 28px blur, 180% saturate, drop shadow, light border |
+| `.lg-panel` | menu bar + dock | 34px blur, more translucent, 190% saturate |
+| `.lg-chip` | widgets, tooltips, tiles | 20px blur, tuned for small surfaces |
+
+The scenic wallpaper (`Wallpaper.tsx`), the calendar + weather widgets (`Widgets.tsx`), and the
+desktop folder shortcuts (`DesktopIcons.tsx`) — all under `features/desktop/components/` — are
+generated in code (no copyrighted assets).
+
 ## Docker
 
 Run the production image locally:
