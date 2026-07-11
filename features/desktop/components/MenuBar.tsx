@@ -22,7 +22,7 @@ export function MenuBar() {
 
   const activeTitle = focusedId
     ? tApps(getApp(focusedId as AppId).titleKey)
-    : "Finder";
+    : tMenu("finder");
 
   function changeLocale(next: string) {
     startTransition(async () => {
