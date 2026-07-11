@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { apps } from "@/lib/apps.config";
 import { useWindowManager } from "@/context/WindowManagerContext";
+import { apps } from "@/lib/apps.config";
 
 export function Dock() {
   const t = useTranslations("apps");

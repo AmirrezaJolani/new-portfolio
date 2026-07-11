@@ -1,10 +1,7 @@
 "use client";
 
 import { useReducer } from "react";
-import {
-  contactReducer,
-  initialContactState,
-} from "@/workflows/contactForm";
+import { contactReducer, initialContactState } from "@/workflows/contactForm";
 
 export function useContactForm() {
   const [state, dispatch] = useReducer(contactReducer, initialContactState);
@@ -17,5 +14,9 @@ export function useContactForm() {
     dispatch({ type: "resolve" });
   }
 
-  return { status: state.status, submit, reset: () => dispatch({ type: "reset" }) };
+  return {
+    status: state.status,
+    submit,
+    reset: () => dispatch({ type: "reset" }),
+  };
 }

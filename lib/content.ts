@@ -16,13 +16,30 @@ export interface SocialLink {
 }
 
 export const projects: Project[] = [
-  { id: "p1", tags: ["TypeScript", "Next.js"], links: [{ label: "GitHub", href: "https://github.com" }] },
-  { id: "p2", tags: ["React", "Tailwind"], links: [{ label: "Live", href: "https://example.com" }] },
-  { id: "p3", tags: ["Node", "API"], links: [{ label: "GitHub", href: "https://github.com" }] },
+  {
+    id: "p1",
+    tags: ["TypeScript", "Next.js"],
+    links: [{ label: "GitHub", href: "https://github.com" }],
+  },
+  {
+    id: "p2",
+    tags: ["React", "Tailwind"],
+    links: [{ label: "Live", href: "https://example.com" }],
+  },
+  {
+    id: "p3",
+    tags: ["Node", "API"],
+    links: [{ label: "GitHub", href: "https://github.com" }],
+  },
 ];
 
 export const skills: string[] = [
-  "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS", "PostgreSQL",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Tailwind CSS",
+  "PostgreSQL",
 ];
 
 export const socials: SocialLink[] = [

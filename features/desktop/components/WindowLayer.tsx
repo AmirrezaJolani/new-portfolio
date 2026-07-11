@@ -2,8 +2,8 @@
 
 import { createElement } from "react";
 import { useWindowManager } from "@/context/WindowManagerContext";
-import { Window } from "./Window";
 import { appComponents } from "./appRegistry";
+import { Window } from "./Window";
 
 export function WindowLayer() {
   const { windows } = useWindowManager();

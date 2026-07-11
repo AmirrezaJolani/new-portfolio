@@ -4,8 +4,8 @@ import { createContext, useContext, useMemo, useReducer } from "react";
 import type { AppId, Geometry } from "@/types";
 import {
   initialWindowState,
-  windowReducer,
   type WindowState,
+  windowReducer,
 } from "@/workflows/windowManager";
 
 interface WindowManagerValue {
@@ -55,7 +55,9 @@ export function WindowManagerProvider({
 export function useWindowManager(): WindowManagerValue {
   const ctx = useContext(WindowManagerContext);
   if (!ctx) {
-    throw new Error("useWindowManager must be used within WindowManagerProvider");
+    throw new Error(
+      "useWindowManager must be used within WindowManagerProvider",
+    );
   }
   return ctx;
 }

@@ -1,10 +1,10 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
+import type { AppId, Geometry } from "@/types";
 import {
-  windowReducer,
   initialWindowState,
   type WindowManagerState,
+  windowReducer,
 } from "./windowManager";
-import type { AppId, Geometry } from "@/types";
 
 const geo: Geometry = { x: 10, y: 10, width: 300, height: 200 };
 
@@ -57,7 +57,12 @@ describe("windowReducer", () => {
   it("move and resize update geometry", () => {
     let s = open(initialWindowState, "about");
     s = windowReducer(s, { type: "move", id: "about", x: 50, y: 60 });
-    s = windowReducer(s, { type: "resize", id: "about", width: 400, height: 300 });
+    s = windowReducer(s, {
+      type: "resize",
+      id: "about",
+      width: 400,
+      height: 300,
+    });
     const w = s.windows[0];
     expect([w.x, w.y, w.width, w.height]).toEqual([50, 60, 400, 300]);
   });

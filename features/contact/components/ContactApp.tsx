@@ -31,16 +31,29 @@ export function ContactApp() {
         <Button type="submit" disabled={status === "submitting"}>
           {status === "submitting" ? t("sending") : t("send")}
         </Button>
-        {status === "success" && <p className="text-sm text-green-600">{t("success")}</p>}
-        {status === "error" && <p className="text-sm text-red-600">{t("error")}</p>}
+        {status === "success" && (
+          <p className="text-sm text-green-600">{t("success")}</p>
+        )}
+        {status === "error" && (
+          <p className="text-sm text-red-600">{t("error")}</p>
+        )}
       </form>
       <div className="border-t border-black/10 pt-3 text-sm dark:border-white/10">
-        <a href={`mailto:${contactEmail}`} className="text-blue-600 hover:underline dark:text-blue-400">
+        <a
+          href={`mailto:${contactEmail}`}
+          className="text-blue-600 hover:underline dark:text-blue-400"
+        >
           {contactEmail}
         </a>
         <div className="mt-2 flex gap-3">
           {socials.map((s) => (
-            <a key={s.href} href={s.href} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
               {s.label}
             </a>
           ))}

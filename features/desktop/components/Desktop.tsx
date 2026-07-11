@@ -2,10 +2,10 @@
 
 import { WindowManagerProvider } from "@/context/WindowManagerContext";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { MenuBar } from "./MenuBar";
 import { Dock } from "./Dock";
-import { WindowLayer } from "./WindowLayer";
+import { MenuBar } from "./MenuBar";
 import { MobileHome } from "./MobileHome";
+import { WindowLayer } from "./WindowLayer";
 
 export function Desktop() {
   const isMobile = useIsMobile();

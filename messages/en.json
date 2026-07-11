@@ -4,6 +4,11 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "window": {
+    "close": "Close",
+    "minimize": "Minimize",
+    "maximize": "Maximize"
+  },
   "menu": {
     "language": "Language",
     "english": "English",
@@ -16,9 +21,18 @@
   },
   "projects": {
     "intro": "A few things I've built.",
-    "p1": { "title": "Project One", "description": "A placeholder project. Swap this copy in messages/." },
-    "p2": { "title": "Project Two", "description": "Another placeholder project with its own description." },
-    "p3": { "title": "Project Three", "description": "A third placeholder to show the gallery layout." }
+    "p1": {
+      "title": "Project One",
+      "description": "A placeholder project. Swap this copy in messages/."
+    },
+    "p2": {
+      "title": "Project Two",
+      "description": "Another placeholder project with its own description."
+    },
+    "p3": {
+      "title": "Project Three",
+      "description": "A third placeholder to show the gallery layout."
+    }
   },
   "contact": {
     "title": "Get in touch",
