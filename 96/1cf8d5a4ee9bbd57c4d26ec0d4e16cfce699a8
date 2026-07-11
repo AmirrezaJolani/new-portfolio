@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-07-11-settings-app-design.md
+  s_ceb96337f2f1bb::t_cfe91f00b80b0f 1-154
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "961cf8d5a4ee9bbd57c4d26ec0d4e16cfce699a8",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
