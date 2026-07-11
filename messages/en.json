@@ -1,0 +1,48 @@
+{
+  "apps": {
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "window": {
+    "close": "Close",
+    "minimize": "Minimize",
+    "maximize": "Maximize"
+  },
+  "menu": {
+    "finder": "Finder",
+    "language": "Language",
+    "english": "English",
+    "persian": "فارسی"
+  },
+  "about": {
+    "role": "Software Engineer",
+    "bio": "I build thoughtful, well-crafted software for the web. This desktop is my portfolio — open the apps in the dock to look around.",
+    "skillsTitle": "Skills"
+  },
+  "projects": {
+    "intro": "A few things I've built.",
+    "p1": {
+      "title": "Project One",
+      "description": "A placeholder project. Swap this copy in messages/."
+    },
+    "p2": {
+      "title": "Project Two",
+      "description": "Another placeholder project with its own description."
+    },
+    "p3": {
+      "title": "Project Three",
+      "description": "A third placeholder to show the gallery layout."
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending…",
+    "success": "Thanks — this is a demo form, nothing was actually sent.",
+    "error": "Something went wrong. Please try again."
+  }
+}
