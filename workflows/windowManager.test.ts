@@ -61,4 +61,23 @@ describe("windowReducer", () => {
     const w = s.windows[0];
     expect([w.x, w.y, w.width, w.height]).toEqual([50, 60, 400, 300]);
   });
+
+  it("closing a non-focused window leaves focusedId intact", () => {
+    let s = open(initialWindowState, "about");
+    s = open(s, "projects");
+    expect(s.focusedId).toBe("projects");
+    s = windowReducer(s, { type: "close", id: "about" });
+    expect(s.focusedId).toBe("projects");
+    expect(s.windows).toHaveLength(1);
+  });
+
+  it("minimizing a non-focused window leaves focusedId intact", () => {
+    let s = open(initialWindowState, "about");
+    s = open(s, "projects");
+    expect(s.focusedId).toBe("projects");
+    s = windowReducer(s, { type: "minimize", id: "about" });
+    expect(s.focusedId).toBe("projects");
+    const about = s.windows.find((w) => w.appId === "about")!;
+    expect(about.isMinimized).toBe(true);
+  });
 });
