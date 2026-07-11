@@ -1,0 +1,47 @@
+features/desktop/components/Window.tsx
+  s_ceb96337f2f1bb::t_e5bb3064213197 3,65-66,71,73,79-85,91-97,101-107,109,114
+messages/fa.json
+  s_ceb96337f2f1bb::t_42e7895822a9c3 18-23
+features/desktop/components/DesktopIcons.tsx
+  s_ceb96337f2f1bb::t_2109272bd028e9 1-39
+messages/en.json
+  s_ceb96337f2f1bb::t_20c09dc323c383 18-23
+features/desktop/components/MenuBar.tsx
+  s_ceb96337f2f1bb::t_e2adfbef6e398b 3-9,41,43,46-50,58,67
+app/globals.css
+  s_ceb96337f2f1bb::t_9a33ae02e3fc30 131-171,173-190
+  s_ceb96337f2f1bb::t_7916e71f2d4651 172
+features/desktop/components/Desktop.tsx
+  s_ceb96337f2f1bb::t_75958194c0636c 5,9-10,18-19,24-25
+features/desktop/components/Wallpaper.tsx
+  s_ceb96337f2f1bb::t_8e56a68f636c5f 1-10,12-87,104-118
+  s_ceb96337f2f1bb::t_af6df93550495e 11
+  s_ceb96337f2f1bb::t_7916e71f2d4651 88-103
+features/desktop/components/Widgets.tsx
+  s_ceb96337f2f1bb::t_15599ddfa4ad7e 8
+  s_ceb96337f2f1bb::t_bdc03d6100bccf 47-48,52-54,57,59,64
+  s_ceb96337f2f1bb::t_a0642244e8e828 20,23,30-38
+  s_ceb96337f2f1bb::t_2ce39cbd9dc705 1-7,9-19,21-22,24-29,39-46,49-51,55-56,58,60-63,65-105
+features/desktop/components/Dock.tsx
+  s_ceb96337f2f1bb::t_fcb91ba65a753d 12-13,17-23,28,30,32-36
+lib/apps.config.tsx
+  s_ceb96337f2f1bb::t_b04470c5d23975 10-11,20,27,34
+features/desktop/components/MobileHome.tsx
+  s_ceb96337f2f1bb::t_53aca5ef93860c 17-18,22-23,25,27-29,31,39,49-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "628858376c8f1aacc25cc860b5555f106677530d",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
