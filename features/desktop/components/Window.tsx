@@ -1,5 +1,6 @@
 "use client";
 
+import { Minus, Plus, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useWindowManager } from "@/context/WindowManagerContext";
 import { useDrag } from "@/features/desktop/hooks/useDrag";
@@ -61,41 +62,56 @@ export function Window({
         height: win.height,
         zIndex: win.zIndex,
       }}
-      className={`absolute flex flex-col overflow-hidden rounded-xl border border-black/10 bg-white/90 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-zinc-900/90 ${
-        isFocused ? "ring-1 ring-black/10" : "opacity-95"
+      className={`lg-glass absolute flex flex-col overflow-hidden rounded-2xl transition-[opacity,filter] duration-150 ${
+        isFocused ? "" : "opacity-95 saturate-[0.92]"
       }`}
     >
       <div
         onPointerDown={titleDrag.onPointerDown}
-        className="flex h-9 shrink-0 items-center gap-2 border-b border-black/5 bg-zinc-100/80 px-3 dark:border-white/5 dark:bg-zinc-800/80"
+        className="lg-titlebar flex h-9 shrink-0 items-center px-3.5"
       >
-        <div className="flex items-center gap-2">
+        <div className="group/tl flex items-center gap-2">
           <button
             type="button"
             aria-label={tWindow("close")}
             onClick={() => close(win.id)}
             onPointerDown={(e) => e.stopPropagation()}
-            className="size-3 rounded-full bg-red-500 transition hover:brightness-90"
-          />
+            className="flex size-3 items-center justify-center rounded-full bg-[#ff5f57] shadow-[inset_0_0_0_0.5px_rgba(0,0,0,0.15)] transition hover:brightness-95"
+          >
+            <X
+              className="size-2 text-black/55 opacity-0 group-hover/tl:opacity-100"
+              strokeWidth={3.5}
+            />
+          </button>
           <button
             type="button"
             aria-label={tWindow("minimize")}
             onClick={() => minimize(win.id)}
             onPointerDown={(e) => e.stopPropagation()}
-            className="size-3 rounded-full bg-yellow-500 transition hover:brightness-90"
-          />
+            className="flex size-3 items-center justify-center rounded-full bg-[#febc2e] shadow-[inset_0_0_0_0.5px_rgba(0,0,0,0.15)] transition hover:brightness-95"
+          >
+            <Minus
+              className="size-2 text-black/55 opacity-0 group-hover/tl:opacity-100"
+              strokeWidth={3.5}
+            />
+          </button>
           <span
             role="img"
             aria-label={tWindow("maximize")}
-            className="size-3 rounded-full bg-green-500/70"
-          />
+            className="flex size-3 items-center justify-center rounded-full bg-[#28c840] shadow-[inset_0_0_0_0.5px_rgba(0,0,0,0.15)]"
+          >
+            <Plus
+              className="size-2 text-black/45 opacity-0 group-hover/tl:opacity-100"
+              strokeWidth={3.5}
+            />
+          </span>
         </div>
-        <span className="pointer-events-none mx-auto pe-12 text-sm font-medium text-zinc-600 dark:text-zinc-300">
+        <span className="pointer-events-none mx-auto pe-12 text-[13px] font-semibold text-slate-700">
           {t(app.titleKey)}
         </span>
       </div>
 
-      <div className="flex-1 overflow-auto p-5 text-zinc-800 dark:text-zinc-100">
+      <div className="lg-scroll flex-1 overflow-auto bg-white/45 p-5 text-slate-800">
         {children}
       </div>
 
