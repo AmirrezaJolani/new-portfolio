@@ -1,0 +1,31 @@
+features/settings/components/LanguagePane.tsx
+  s_ceb96337f2f1bb::t_9222ea38b4b77d 1-49
+features/settings/components/AppearancePane.tsx
+  s_ceb96337f2f1bb::t_21f170b6d6fca1 1-33
+features/settings/components/WallpaperPane.tsx
+  s_ceb96337f2f1bb::t_149f79c23ca3c3 1-37
+features/settings/components/SettingsApp.tsx
+  s_ceb96337f2f1bb::t_50f76e750580e4 1-59
+features/settings/index.ts
+  s_ceb96337f2f1bb::t_f0d729040fac4a 1
+features/settings/components/AccessibilityPane.tsx
+  s_ceb96337f2f1bb::t_1c1ebb89bfc5c0 1-32
+features/settings/components/Toggle.tsx
+  s_ceb96337f2f1bb::t_8c5d0e507a9719 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "2366a3514c899e5147907767d3c97d04a74838a4",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
