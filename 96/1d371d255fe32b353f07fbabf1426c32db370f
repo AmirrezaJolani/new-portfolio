@@ -1,0 +1,27 @@
+features/desktop/components/Wallpaper.tsx
+  s_ceb96337f2f1bb::t_3b2a6bc1e0023c 79-83,88-107
+context/SettingsContext.tsx
+  s_ceb96337f2f1bb::t_3b2a6bc1e0023c 12
+settings/config.test.ts
+  s_ceb96337f2f1bb::t_3b2a6bc1e0023c 1-2
+features/settings/components/LanguagePane.tsx
+  s_ceb96337f2f1bb::t_3b2a6bc1e0023c 4
+app/layout.tsx
+  s_ceb96337f2f1bb::t_3b2a6bc1e0023c 3,11-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "961d371d255fe32b353f07fbabf1426c32db370f",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
