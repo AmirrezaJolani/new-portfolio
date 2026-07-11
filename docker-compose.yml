@@ -3,5 +3,6 @@ services:
     build: .
     image: portfolio:local
     ports:
-      - "3000:3000"
+      # Bind to localhost only — this is a local dev container, not for LAN exposure.
+      - "127.0.0.1:3000:3000"
     restart: unless-stopped
