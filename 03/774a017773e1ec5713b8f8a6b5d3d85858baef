@@ -1,0 +1,19 @@
+settings/cookies.ts
+  s_ceb96337f2f1bb::t_724f4942116c0e 1-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "03774a017773e1ec5713b8f8a6b5d3d85858baef",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
