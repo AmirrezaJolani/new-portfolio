@@ -1,0 +1,23 @@
+types/index.ts
+  s_ceb96337f2f1bb::t_09493b450b39f4 1-8
+lib/content.ts
+  s_ceb96337f2f1bb::t_c56e41b88c3e37 1-33
+lib/apps.config.tsx
+  s_ceb96337f2f1bb::t_fb5d5da7578b69 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "5180e2b20fa141ae2cb017b260e186e338534c57",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
