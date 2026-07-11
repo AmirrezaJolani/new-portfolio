@@ -19,6 +19,10 @@ app is intentionally deferred but the app registry is built to accept one later.
 - shadcn/ui on **Base UI** primitives (`components/ui/`), lucide icons
 - next-intl **without locale routing** — locale in a `NEXT_LOCALE` cookie (no `/en` `/fa` URLs),
   English + Persian (RTL)
+- macOS Tahoe **Liquid Glass** surfaces — `.lg-glass` / `.lg-panel` / `.lg-chip` utilities in
+  `app/globals.css`; generated wallpaper + calendar/weather widgets + desktop folder shortcuts
+  (`Wallpaper.tsx` / `Widgets.tsx` / `DesktopIcons.tsx` under `features/desktop/components/`)
+- Docker (multi-stage, standalone, non-root) + GitHub Actions CI publishing to GHCR on `main`
 - Vitest for pure logic, Biome for lint/format
 
 ## Architecture (one direction of flow)
@@ -43,6 +47,7 @@ i18n/ messages/  cookie-based next-intl config + en/fa catalogs
 | Lint | `npm run lint` (Biome) |
 | Format | `npm run format` |
 | Prod build | `npm run build` |
+| Run the container | `docker compose up --build` (→ http://localhost:3000) |
 | Add a UI primitive | `npx shadcn@latest add <name>` |
 
 ## Guardrails
