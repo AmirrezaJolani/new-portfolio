@@ -14,18 +14,21 @@ export function MobileHome() {
   if (active) {
     const app = getApp(active);
     return (
-      <div className="flex min-h-dvh flex-col bg-white dark:bg-zinc-900">
-        <div className="flex h-12 items-center gap-2 border-b border-black/10 px-3 dark:border-white/10">
+      <div className="relative z-10 flex min-h-dvh flex-col">
+        <div className="lg-panel flex h-14 items-center gap-2 px-4">
           <button
             type="button"
             onClick={() => setActive(null)}
-            className="flex items-center gap-1 text-blue-600"
+            aria-label={t(app.titleKey)}
+            className="flex items-center text-blue-600"
           >
-            <ChevronLeft className="size-5" />
+            <ChevronLeft className="size-6 rtl:rotate-180" />
           </button>
-          <span className="font-medium">{t(app.titleKey)}</span>
+          <span className="font-semibold text-slate-800">
+            {t(app.titleKey)}
+          </span>
         </div>
-        <div className="flex-1 overflow-auto p-5">
+        <div className="lg-scroll flex-1 overflow-auto bg-white/60 p-5 text-slate-800 backdrop-blur-xl">
           {createElement(appComponents[active])}
         </div>
       </div>
@@ -33,7 +36,7 @@ export function MobileHome() {
   }
 
   return (
-    <div className="grid min-h-dvh grid-cols-3 content-start gap-6 p-8 pt-16">
+    <div className="relative z-10 grid min-h-dvh grid-cols-3 content-start gap-6 p-8 pt-16">
       {apps.map((app) => {
         const Icon = app.icon;
         return (
@@ -43,10 +46,14 @@ export function MobileHome() {
             onClick={() => setActive(app.id)}
             className="flex flex-col items-center gap-2"
           >
-            <span className="flex size-16 items-center justify-center rounded-2xl bg-white/80 text-zinc-800 shadow">
-              <Icon className="size-8" />
+            <span
+              className={`flex size-16 items-center justify-center rounded-[1.15rem] bg-gradient-to-b ${app.tile} text-white shadow-lg ring-1 ring-black/5 [box-shadow:inset_0_1px_0_rgba(255,255,255,0.45)]`}
+            >
+              <Icon className="size-8" strokeWidth={2} />
             </span>
-            <span className="text-xs text-white">{t(app.titleKey)}</span>
+            <span className="text-xs font-medium text-white [text-shadow:0_1px_3px_rgba(2,32,64,0.7)]">
+              {t(app.titleKey)}
+            </span>
           </button>
         );
       })}

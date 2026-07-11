@@ -7,6 +7,8 @@ export interface DesktopApp {
   /** message key under `apps.<id>` */
   titleKey: AppId;
   icon: LucideIcon;
+  /** Tailwind gradient classes for the app's icon tile (dock + desktop + mobile). */
+  tile: string;
   defaultGeometry: Geometry;
 }
 
@@ -15,18 +17,21 @@ export const apps: DesktopApp[] = [
     id: "about",
     titleKey: "about",
     icon: User,
+    tile: "from-sky-400 to-blue-600",
     defaultGeometry: { x: 120, y: 90, width: 520, height: 380 },
   },
   {
     id: "projects",
     titleKey: "projects",
     icon: FolderKanban,
+    tile: "from-amber-400 to-orange-600",
     defaultGeometry: { x: 200, y: 130, width: 640, height: 460 },
   },
   {
     id: "contact",
     titleKey: "contact",
     icon: Mail,
+    tile: "from-emerald-400 to-teal-600",
     defaultGeometry: { x: 280, y: 160, width: 460, height: 480 },
   },
 ];

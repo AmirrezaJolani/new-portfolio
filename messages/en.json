@@ -15,6 +15,12 @@
     "english": "English",
     "persian": "فارسی"
   },
+  "widgets": {
+    "weatherCity": "Cupertino",
+    "weatherCondition": "Sunny",
+    "high": "H",
+    "low": "L"
+  },
   "about": {
     "role": "Software Engineer",
     "bio": "I build thoughtful, well-crafted software for the web. This desktop is my portfolio — open the apps in the dock to look around.",
