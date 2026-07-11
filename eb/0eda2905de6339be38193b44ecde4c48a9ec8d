@@ -1,0 +1,35 @@
+features/contact/index.ts
+  s_ceb96337f2f1bb::t_428f031f20112e 1
+features/projects/components/ProjectsApp.tsx
+  s_ceb96337f2f1bb::t_cc567cdaca3a23 1-33
+features/contact/hooks/useContactForm.ts
+  s_ceb96337f2f1bb::t_5d45d2e56e0c14 1-21
+features/about/index.ts
+  s_ceb96337f2f1bb::t_5a79a169fd3166 1
+features/contact/components/ContactApp.tsx
+  s_ceb96337f2f1bb::t_7cfbfec2c60ef3 1-51
+features/projects/index.ts
+  s_ceb96337f2f1bb::t_117f541f4aa9b6 1
+workflows/contactForm.test.ts
+  s_ceb96337f2f1bb::t_9a46a1482afa47 1-27
+features/about/components/AboutApp.tsx
+  s_ceb96337f2f1bb::t_58c2d468377764 1-26
+workflows/contactForm.ts
+  s_ceb96337f2f1bb::t_2a05ece90fb9fe 1-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "eb0eda2905de6339be38193b44ecde4c48a9ec8d",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
