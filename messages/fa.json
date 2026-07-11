@@ -2,7 +2,8 @@
   "apps": {
     "about": "درباره من",
     "projects": "پروژه‌ها",
-    "contact": "تماس"
+    "contact": "تماس",
+    "settings": "تنظیمات"
   },
   "window": {
     "close": "بستن",
@@ -50,5 +51,20 @@
     "sending": "در حال ارسال…",
     "success": "ممنون — این فرم نمایشی است و چیزی ارسال نشد.",
     "error": "مشکلی پیش آمد. دوباره تلاش کنید."
+  },
+  "settings": {
+    "appearance": "ظاهر",
+    "theme_light": "روشن",
+    "theme_dark": "تیره",
+    "theme_auto": "خودکار",
+    "wallpaper": "تصویر زمینه",
+    "wallpaper_day": "تاهو روز",
+    "wallpaper_night": "تاهو شب",
+    "wallpaper_aurora": "شفق",
+    "accessibility": "دسترس‌پذیری",
+    "reduceTransparency": "کاهش شفافیت",
+    "reduceMotion": "کاهش حرکت",
+    "largerText": "متن بزرگ‌تر",
+    "language": "زبان و منطقه"
   }
 }
