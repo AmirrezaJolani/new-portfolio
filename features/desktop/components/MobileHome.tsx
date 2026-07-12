@@ -24,11 +24,11 @@ export function MobileHome() {
           >
             <ChevronLeft className="size-6 rtl:rotate-180" />
           </button>
-          <span className="font-semibold text-slate-800">
+          <span className="font-semibold text-slate-800 dark:text-slate-100">
             {t(app.titleKey)}
           </span>
         </div>
-        <div className="lg-scroll flex-1 overflow-auto bg-white/60 p-5 text-slate-800 backdrop-blur-xl">
+        <div className="lg-scroll flex-1 overflow-auto bg-white/60 dark:bg-black/40 p-5 text-slate-800 dark:text-slate-100 backdrop-blur-xl">
           {createElement(appComponents[active])}
         </div>
       </div>

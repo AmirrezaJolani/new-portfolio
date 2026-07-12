@@ -2,7 +2,8 @@
   "apps": {
     "about": "About Me",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "settings": "Settings"
   },
   "window": {
     "close": "Close",
@@ -50,5 +51,20 @@
     "sending": "Sending…",
     "success": "Thanks — this is a demo form, nothing was actually sent.",
     "error": "Something went wrong. Please try again."
+  },
+  "settings": {
+    "appearance": "Appearance",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_auto": "Auto",
+    "wallpaper": "Wallpaper",
+    "wallpaper_day": "Tahoe Day",
+    "wallpaper_night": "Tahoe Night",
+    "wallpaper_aurora": "Aurora",
+    "accessibility": "Accessibility",
+    "reduceTransparency": "Reduce Transparency",
+    "reduceMotion": "Reduce Motion",
+    "largerText": "Larger Text",
+    "language": "Language & Region"
   }
 }

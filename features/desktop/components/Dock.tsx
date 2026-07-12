@@ -18,7 +18,7 @@ export function Dock() {
               key={app.id}
               className="group relative flex flex-col items-center"
             >
-              <span className="lg-chip pointer-events-none absolute -top-10 whitespace-nowrap rounded-lg px-2.5 py-1 text-xs font-medium text-slate-800 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+              <span className="lg-chip pointer-events-none absolute -top-10 whitespace-nowrap rounded-lg px-2.5 py-1 text-xs font-medium text-slate-800 dark:text-slate-100 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
                 {t(app.titleKey)}
               </span>
               <button
@@ -30,7 +30,7 @@ export function Dock() {
                 <Icon className="size-7" strokeWidth={2} />
               </button>
               <span
-                className={`mt-1 size-1 rounded-full bg-slate-700/80 transition-opacity ${
+                className={`mt-1 size-1 rounded-full bg-slate-700/80 dark:bg-slate-200/80 transition-opacity ${
                   isOpen(app.id) ? "opacity-100" : "opacity-0"
                 }`}
               />

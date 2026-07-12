@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { FolderKanban, Mail, User } from "lucide-react";
+import { FolderKanban, Mail, Settings, User } from "lucide-react";
 import type { AppId, Geometry } from "@/types";
 
 export interface DesktopApp {
@@ -33,6 +33,13 @@ export const apps: DesktopApp[] = [
     icon: Mail,
     tile: "from-emerald-400 to-teal-600",
     defaultGeometry: { x: 280, y: 160, width: 460, height: 480 },
+  },
+  {
+    id: "settings",
+    titleKey: "settings",
+    icon: Settings,
+    tile: "from-slate-400 to-slate-600",
+    defaultGeometry: { x: 240, y: 110, width: 720, height: 480 },
   },
 ];
 
