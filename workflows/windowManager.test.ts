@@ -18,7 +18,7 @@ describe("windowReducer", () => {
     expect(s.windows).toHaveLength(1);
     expect(s.windows[0].appId).toBe("about");
     expect(s.focusedId).toBe("about");
-    expect(s.windows[0].zIndex).toBeGreaterThan(0);
+    expect(s.windows[0].zIndex).toBeGreaterThanOrEqual(100);
   });
 
   it("is single-instance: re-opening focuses and restores the existing window", () => {

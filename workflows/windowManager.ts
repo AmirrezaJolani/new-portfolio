@@ -14,10 +14,13 @@ export interface WindowManagerState {
   nextZIndex: number;
 }
 
+/** Windows start at z-index 100 so they always sit above desktop widgets and
+ *  icons (z-10) while staying below the menu bar / dock (z-9999). The value
+ *  still increments per focus/open to preserve stacking order. */
 export const initialWindowState: WindowManagerState = {
   windows: [],
   focusedId: null,
-  nextZIndex: 1,
+  nextZIndex: 100,
 };
 
 export type WindowAction =

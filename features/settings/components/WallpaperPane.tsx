@@ -5,7 +5,7 @@ import { useSettings } from "@/context/SettingsContext";
 import { Wallpaper } from "@/features/desktop/components/Wallpaper";
 import type { WallpaperId } from "@/settings/config";
 
-const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora"];
+const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora", "sunset"];
 
 export function WallpaperPane() {
   const t = useTranslations("settings");
@@ -13,7 +13,7 @@ export function WallpaperPane() {
   return (
     <section>
       <h2 className="mb-3 text-lg font-semibold">{t("wallpaper")}</h2>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 gap-3">
         {WALLPAPERS.map((id) => (
           <button
             key={id}

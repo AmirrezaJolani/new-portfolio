@@ -6,7 +6,9 @@ export function Wallpaper({ id = "day" }: { id?: WallpaperId }) {
       {id === "aurora" ? (
         <Aurora />
       ) : (
-        <Scene palette={id === "night" ? NIGHT : DAY} />
+        <Scene
+          palette={id === "night" ? NIGHT : id === "sunset" ? SUNSET : DAY}
+        />
       )}
     </div>
   );
@@ -46,6 +48,18 @@ const NIGHT: Palette = {
   near: "#16233b",
   vignette: "#000008",
   vignetteOpacity: 0.55,
+};
+
+const SUNSET: Palette = {
+  sky: ["#2b1b52", "#7b3f6e", "#e0725c", "#ffd9a0"],
+  sun: "#ffdca0",
+  lake: ["#f2c48f", "#c77f7a", "#7a5a86", "#3e3a5e"],
+  far: "#9b6a8c",
+  mid: "#6e4a6e",
+  snow: "#ffe8d0",
+  near: "#3e2c4a",
+  vignette: "#1a0b2e",
+  vignetteOpacity: 0.4,
 };
 
 function Scene({ palette: p }: { palette: Palette }) {

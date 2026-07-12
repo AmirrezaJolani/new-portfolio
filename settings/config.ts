@@ -1,5 +1,5 @@
 export type Theme = "light" | "dark" | "auto";
-export type WallpaperId = "day" | "night" | "aurora";
+export type WallpaperId = "day" | "night" | "aurora" | "sunset";
 
 export interface Settings {
   theme: Theme;
@@ -20,7 +20,7 @@ export const defaultSettings: Settings = {
 export const SETTINGS_COOKIE = "app-settings";
 
 const THEMES: Theme[] = ["light", "dark", "auto"];
-const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora"];
+const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora", "sunset"];
 
 export function parseSettings(raw?: string | null): Settings {
   if (!raw) return defaultSettings;

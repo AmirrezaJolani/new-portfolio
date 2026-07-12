@@ -1,7 +1,6 @@
 "use client";
 
-import { Sun } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 /** A reference Monday (2024-01-01) for building locale-aware weekday headers. */
 const REFERENCE_MONDAY = new Date(2024, 0, 1);
@@ -70,36 +69,11 @@ function CalendarWidget({ locale }: { locale: string }) {
   );
 }
 
-function WeatherWidget({ locale }: { locale: string }) {
-  const t = useTranslations("widgets");
-  const num = new Intl.NumberFormat(locale);
-  return (
-    <div className="lg-chip flex w-44 flex-col justify-between rounded-3xl bg-gradient-to-br from-sky-400/50 to-blue-500/40 p-4 text-slate-800 dark:text-slate-100">
-      <div className="flex items-start justify-between">
-        <div>
-          <div className="text-sm font-semibold">{t("weatherCity")}</div>
-          <div className="text-3xl font-light leading-tight">
-            {num.format(33)}°
-          </div>
-        </div>
-        <Sun className="size-7 text-amber-400" strokeWidth={2.2} />
-      </div>
-      <div className="mt-2 text-xs font-medium text-slate-600 dark:text-slate-400">
-        {t("weatherCondition")}
-        <div className="mt-0.5 text-slate-500 dark:text-slate-400">
-          {t("high")}:{num.format(34)}° {t("low")}:{num.format(19)}°
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function Widgets() {
   const locale = useLocale();
   return (
     <div className="absolute top-10 start-4 z-10 flex gap-4">
       <CalendarWidget locale={locale} />
-      <WeatherWidget locale={locale} />
     </div>
   );
 }
