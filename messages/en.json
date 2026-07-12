@@ -13,9 +13,7 @@
   "menu": {
     "finder": "Finder",
     "name": "Amirreza Jolani",
-    "language": "Language",
-    "english": "English",
-    "persian": "فارسی"
+    "language": "Language"
   },
   "about": {
     "role": "Software Engineer",

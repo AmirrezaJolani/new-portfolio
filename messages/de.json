@@ -1,0 +1,64 @@
+{
+  "apps": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "settings": "Einstellungen"
+  },
+  "window": {
+    "close": "Schließen",
+    "minimize": "Minimieren",
+    "maximize": "Maximieren"
+  },
+  "menu": {
+    "finder": "Finder",
+    "name": "Amirreza Jolani",
+    "language": "Sprache"
+  },
+  "about": {
+    "role": "Softwareentwickler",
+    "bio": "Ich entwickle durchdachte, sorgfältig gestaltete Software fürs Web. Dieser Desktop ist mein Portfolio — öffne die Apps im Dock, um dich umzusehen.",
+    "skillsTitle": "Fähigkeiten"
+  },
+  "projects": {
+    "intro": "Ein paar Dinge, die ich gebaut habe.",
+    "p1": {
+      "title": "Projekt Eins",
+      "description": "Ein Platzhalterprojekt. Ersetze diesen Text in messages/."
+    },
+    "p2": {
+      "title": "Projekt Zwei",
+      "description": "Ein weiteres Platzhalterprojekt mit eigener Beschreibung."
+    },
+    "p3": {
+      "title": "Projekt Drei",
+      "description": "Ein drittes Platzhalterprojekt für das Galerie-Layout."
+    }
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "success": "Danke — dies ist ein Demoformular, es wurde nichts gesendet.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "settings": {
+    "appearance": "Erscheinungsbild",
+    "theme_light": "Hell",
+    "theme_dark": "Dunkel",
+    "theme_auto": "Automatisch",
+    "wallpaper": "Hintergrundbild",
+    "wallpaper_day": "Tahoe Tag",
+    "wallpaper_night": "Tahoe Nacht",
+    "wallpaper_aurora": "Aurora",
+    "wallpaper_sunset": "Sonnenuntergang",
+    "accessibility": "Bedienungshilfen",
+    "reduceTransparency": "Transparenz reduzieren",
+    "reduceMotion": "Bewegung reduzieren",
+    "largerText": "Größerer Text",
+    "language": "Sprache & Region"
+  }
+}

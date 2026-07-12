@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Vazirmatn } from "next/font/google";
 import { cookies } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { SettingsProvider } from "@/context/SettingsContext";
+import { type Locale, rtlLocales } from "@/i18n/config";
 import { parseSettings, SETTINGS_COOKIE } from "@/settings/config";
 import "./globals.css";
 
@@ -11,6 +12,11 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+// Persian display font — applied via [dir="rtl"] in globals.css.
+const vazir = Vazirmatn({
+  variable: "--font-vazir",
+  subsets: ["arabic", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +34,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
-  const dir = locale === "fa" ? "rtl" : "ltr";
+  const dir = rtlLocales.includes(locale as Locale) ? "rtl" : "ltr";
   const settings = parseSettings((await cookies()).get(SETTINGS_COOKIE)?.value);
   const serverDark = settings.theme === "dark"; // `auto` corrected by NO_FLASH
 
@@ -36,7 +42,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={dir}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased ${serverDark ? "dark" : ""}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${vazir.variable} h-full antialiased ${serverDark ? "dark" : ""}`}
       data-wallpaper={settings.wallpaper}
       data-reduce-transparency={settings.reduceTransparency ? "" : undefined}
       data-reduce-motion={settings.reduceMotion ? "" : undefined}

@@ -1,0 +1,64 @@
+{
+  "apps": {
+    "about": "Chi sono",
+    "projects": "Progetti",
+    "contact": "Contatti",
+    "settings": "Impostazioni"
+  },
+  "window": {
+    "close": "Chiudi",
+    "minimize": "Riduci a icona",
+    "maximize": "Ingrandisci"
+  },
+  "menu": {
+    "finder": "Finder",
+    "name": "Amirreza Jolani",
+    "language": "Lingua"
+  },
+  "about": {
+    "role": "Sviluppatore software",
+    "bio": "Creo software curato e ben fatto per il web. Questa scrivania è il mio portfolio — apri le app nel dock per dare un'occhiata.",
+    "skillsTitle": "Competenze"
+  },
+  "projects": {
+    "intro": "Alcune cose che ho realizzato.",
+    "p1": {
+      "title": "Progetto Uno",
+      "description": "Un progetto segnaposto. Sostituisci questo testo in messages/."
+    },
+    "p2": {
+      "title": "Progetto Due",
+      "description": "Un altro progetto segnaposto con la propria descrizione."
+    },
+    "p3": {
+      "title": "Progetto Tre",
+      "description": "Un terzo segnaposto per mostrare il layout della galleria."
+    }
+  },
+  "contact": {
+    "title": "Mettiti in contatto",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia",
+    "sending": "Invio in corso…",
+    "success": "Grazie — questo è un modulo dimostrativo, non è stato inviato nulla.",
+    "error": "Qualcosa è andato storto. Riprova."
+  },
+  "settings": {
+    "appearance": "Aspetto",
+    "theme_light": "Chiaro",
+    "theme_dark": "Scuro",
+    "theme_auto": "Automatico",
+    "wallpaper": "Sfondo",
+    "wallpaper_day": "Tahoe Giorno",
+    "wallpaper_night": "Tahoe Notte",
+    "wallpaper_aurora": "Aurora",
+    "wallpaper_sunset": "Tramonto",
+    "accessibility": "Accessibilità",
+    "reduceTransparency": "Riduci trasparenza",
+    "reduceMotion": "Riduci movimento",
+    "largerText": "Testo più grande",
+    "language": "Lingua e Regione"
+  }
+}

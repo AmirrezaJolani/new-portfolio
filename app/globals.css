@@ -129,6 +129,11 @@
   }
 }
 
+/* Persian (RTL) uses the Vazirmatn font for proper Farsi letterforms. */
+[dir="rtl"] {
+  font-family: var(--font-vazir), system-ui, sans-serif;
+}
+
 /* ─── Liquid Glass (macOS Tahoe) surface system ───────────────────────────
    Three stacked effects make "vibrancy": backdrop blur + saturate pulls color
    from the wallpaper, a hairline top inner-highlight catches light, and a soft

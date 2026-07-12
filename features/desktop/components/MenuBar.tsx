@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { useWindowManager } from "@/context/WindowManagerContext";
 import { useClock } from "@/features/desktop/hooks/useClock";
-import type { Locale } from "@/i18n/config";
+import { type Locale, localeNames, locales } from "@/i18n/config";
 import { setUserLocale } from "@/i18n/locale";
 import { getApp } from "@/lib/apps.config";
 import type { AppId } from "@/types";
@@ -48,12 +48,11 @@ export function MenuBar() {
           onChange={(e) => changeLocale(e.target.value)}
           className="cursor-pointer rounded bg-transparent font-medium text-slate-800 dark:text-slate-100 outline-none hover:bg-white/25"
         >
-          <option className="text-black" value="en">
-            {tMenu("english")}
-          </option>
-          <option className="text-black" value="fa">
-            {tMenu("persian")}
-          </option>
+          {locales.map((l) => (
+            <option key={l} className="text-black" value={l}>
+              {localeNames[l]}
+            </option>
+          ))}
         </select>
         <span className="tabular-nums font-medium">{clock}</span>
       </div>

@@ -1,0 +1,64 @@
+{
+  "apps": {
+    "about": "Over mij",
+    "projects": "Projecten",
+    "contact": "Contact",
+    "settings": "Instellingen"
+  },
+  "window": {
+    "close": "Sluiten",
+    "minimize": "Minimaliseren",
+    "maximize": "Maximaliseren"
+  },
+  "menu": {
+    "finder": "Finder",
+    "name": "Amirreza Jolani",
+    "language": "Taal"
+  },
+  "about": {
+    "role": "Softwareontwikkelaar",
+    "bio": "Ik bouw doordachte, goed gemaakte software voor het web. Dit bureaublad is mijn portfolio — open de apps in het dock om rond te kijken.",
+    "skillsTitle": "Vaardigheden"
+  },
+  "projects": {
+    "intro": "Een paar dingen die ik heb gebouwd.",
+    "p1": {
+      "title": "Project Een",
+      "description": "Een voorbeeldproject. Vervang deze tekst in messages/."
+    },
+    "p2": {
+      "title": "Project Twee",
+      "description": "Nog een voorbeeldproject met een eigen beschrijving."
+    },
+    "p3": {
+      "title": "Project Drie",
+      "description": "Een derde voorbeeld om de galerij-indeling te tonen."
+    }
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "name": "Naam",
+    "email": "E-mail",
+    "message": "Bericht",
+    "send": "Versturen",
+    "sending": "Bezig met versturen…",
+    "success": "Bedankt — dit is een demoformulier, er is niets verzonden.",
+    "error": "Er ging iets mis. Probeer het opnieuw."
+  },
+  "settings": {
+    "appearance": "Weergave",
+    "theme_light": "Licht",
+    "theme_dark": "Donker",
+    "theme_auto": "Automatisch",
+    "wallpaper": "Achtergrond",
+    "wallpaper_day": "Tahoe Dag",
+    "wallpaper_night": "Tahoe Nacht",
+    "wallpaper_aurora": "Aurora",
+    "wallpaper_sunset": "Zonsondergang",
+    "accessibility": "Toegankelijkheid",
+    "reduceTransparency": "Transparantie verminderen",
+    "reduceMotion": "Beweging verminderen",
+    "largerText": "Grotere tekst",
+    "language": "Taal & Regio"
+  }
+}

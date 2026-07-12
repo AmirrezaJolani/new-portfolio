@@ -43,8 +43,8 @@ export const skills: string[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/amirjm/" },
+  { label: "GitHub", href: "https://github.com/AmirrezaJolani" },
 ];
 
-export const contactEmail = "you@example.com";
+export const contactEmail = "amirreza.jolani1998@gmail.com";
