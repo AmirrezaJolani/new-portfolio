@@ -12,15 +12,10 @@
   },
   "menu": {
     "finder": "Finder",
+    "name": "Amirreza Jolani",
     "language": "Language",
     "english": "English",
     "persian": "فارسی"
-  },
-  "widgets": {
-    "weatherCity": "Cupertino",
-    "weatherCondition": "Sunny",
-    "high": "H",
-    "low": "L"
   },
   "about": {
     "role": "Software Engineer",
@@ -61,6 +56,7 @@
     "wallpaper_day": "Tahoe Day",
     "wallpaper_night": "Tahoe Night",
     "wallpaper_aurora": "Aurora",
+    "wallpaper_sunset": "Sunset",
     "accessibility": "Accessibility",
     "reduceTransparency": "Reduce Transparency",
     "reduceMotion": "Reduce Motion",

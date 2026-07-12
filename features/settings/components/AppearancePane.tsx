@@ -2,9 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useSettings } from "@/context/SettingsContext";
-import type { Theme } from "@/settings/config";
-
-const OPTIONS: Theme[] = ["light", "dark", "auto"];
+import { THEMES } from "@/settings/config";
 
 export function AppearancePane() {
   const t = useTranslations("settings");
@@ -13,7 +11,7 @@ export function AppearancePane() {
     <section>
       <h2 className="mb-3 text-lg font-semibold">{t("appearance")}</h2>
       <div className="inline-flex rounded-xl bg-black/10 p-1 dark:bg-white/10">
-        {OPTIONS.map((opt) => (
+        {THEMES.map((opt) => (
           <button
             key={opt}
             type="button"

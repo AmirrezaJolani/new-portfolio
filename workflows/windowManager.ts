@@ -14,10 +14,13 @@ export interface WindowManagerState {
   nextZIndex: number;
 }
 
+/** Windows start at z-index 100 so they always sit above desktop widgets and
+ *  icons (z-10) while staying below the menu bar / dock (z-9999). The value
+ *  still increments per focus/open to preserve stacking order. */
 export const initialWindowState: WindowManagerState = {
   windows: [],
   focusedId: null,
-  nextZIndex: 1,
+  nextZIndex: 100,
 };
 
 export type WindowAction =
@@ -29,16 +32,42 @@ export type WindowAction =
   | { type: "move"; id: string; x: number; y: number }
   | { type: "resize"; id: string; width: number; height: number };
 
+const BASE_Z = 100;
+/** Compact well before z reaches the reserved menu-bar/dock layer (z-9999). */
+const Z_CEILING = 9000;
+
+/**
+ * Renumber the (single-instance, so few) windows into a compact `BASE_Z..`
+ * range, preserving stacking order, once the counter climbs toward the reserved
+ * UI layer. This keeps window z-indices permanently bounded below z-9999 no
+ * matter how many open/focus operations occur.
+ */
+function compact(state: WindowManagerState): WindowManagerState {
+  if (state.nextZIndex < Z_CEILING) return state;
+  const order = [...state.windows]
+    .sort((a, b) => a.zIndex - b.zIndex)
+    .map((w) => w.id);
+  return {
+    ...state,
+    windows: state.windows.map((w) => ({
+      ...w,
+      zIndex: BASE_Z + order.indexOf(w.id),
+    })),
+    nextZIndex: BASE_Z + order.length,
+  };
+}
+
 function bringToFront(
   state: WindowManagerState,
   id: string,
 ): WindowManagerState {
-  const z = state.nextZIndex;
+  const s = compact(state);
+  const z = s.nextZIndex;
   return {
-    ...state,
+    ...s,
     focusedId: id,
     nextZIndex: z + 1,
-    windows: state.windows.map((w) =>
+    windows: s.windows.map((w) =>
       w.id === id ? { ...w, zIndex: z, isMinimized: false } : w,
     ),
   };
@@ -52,17 +81,18 @@ export function windowReducer(
     case "open": {
       const existing = state.windows.find((w) => w.id === action.appId);
       if (existing) return bringToFront(state, action.appId);
+      const s = compact(state);
       const win: WindowState = {
         id: action.appId,
         appId: action.appId,
         ...action.geometry,
-        zIndex: state.nextZIndex,
+        zIndex: s.nextZIndex,
         isMinimized: false,
       };
       return {
-        windows: [...state.windows, win],
+        windows: [...s.windows, win],
         focusedId: win.id,
-        nextZIndex: state.nextZIndex + 1,
+        nextZIndex: s.nextZIndex + 1,
       };
     }
     case "close": {

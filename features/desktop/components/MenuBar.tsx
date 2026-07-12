@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Apple,
-  BatteryMedium,
-  Search,
-  SlidersHorizontal,
-  Wifi,
-} from "lucide-react";
+import { Apple } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
@@ -44,10 +38,7 @@ export function MenuBar() {
         <span className="font-semibold">{activeTitle}</span>
       </div>
       <div className="flex items-center gap-3.5">
-        <Wifi className="size-[15px]" strokeWidth={2} />
-        <BatteryMedium className="size-[18px]" strokeWidth={2} />
-        <SlidersHorizontal className="size-[15px]" strokeWidth={2} />
-        <Search className="size-[15px]" strokeWidth={2} />
+        <span className="font-semibold">{tMenu("name")}</span>
         <label className="sr-only" htmlFor="lang">
           {tMenu("language")}
         </label>
