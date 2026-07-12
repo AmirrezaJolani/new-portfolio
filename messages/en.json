@@ -22,6 +22,8 @@
   },
   "projects": {
     "intro": "A few things I've built.",
+    "loading": "Loading projects…",
+    "error": "Couldn't load projects.",
     "p1": {
       "title": "Project One",
       "description": "A placeholder project. Swap this copy in messages/."
@@ -43,7 +45,9 @@
     "send": "Send",
     "sending": "Sending…",
     "success": "Thanks — this is a demo form, nothing was actually sent.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address."
   },
   "settings": {
     "appearance": "Appearance",

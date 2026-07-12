@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Vazirmatn } from "next/font/google";
 import { cookies } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
+import { QueryProvider } from "@/context/QueryProvider";
 import { SettingsProvider } from "@/context/SettingsContext";
 import { type Locale, rtlLocales } from "@/i18n/config";
 import { parseSettings, SETTINGS_COOKIE } from "@/settings/config";
@@ -42,6 +43,9 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={dir}
+      // NO_FLASH toggles `dark` on <html> before hydration, so the server (which
+      // can't know the OS preference for `auto`) and client intentionally differ.
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${vazir.variable} h-full antialiased ${serverDark ? "dark" : ""}`}
       data-wallpaper={settings.wallpaper}
       data-reduce-transparency={settings.reduceTransparency ? "" : undefined}
@@ -54,7 +58,9 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full">
         <NextIntlClientProvider>
-          <SettingsProvider initial={settings}>{children}</SettingsProvider>
+          <QueryProvider>
+            <SettingsProvider initial={settings}>{children}</SettingsProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -22,6 +22,8 @@
   },
   "projects": {
     "intro": "Een paar dingen die ik heb gebouwd.",
+    "loading": "Projecten laden…",
+    "error": "Kan projecten niet laden.",
     "p1": {
       "title": "Project Een",
       "description": "Een voorbeeldproject. Vervang deze tekst in messages/."
@@ -43,7 +45,9 @@
     "send": "Versturen",
     "sending": "Bezig met versturen…",
     "success": "Bedankt — dit is een demoformulier, er is niets verzonden.",
-    "error": "Er ging iets mis. Probeer het opnieuw."
+    "error": "Er ging iets mis. Probeer het opnieuw.",
+    "required": "Dit veld is verplicht.",
+    "invalidEmail": "Voer een geldig e-mailadres in."
   },
   "settings": {
     "appearance": "Weergave",

@@ -22,6 +22,8 @@
   },
   "projects": {
     "intro": "Alcune cose che ho realizzato.",
+    "loading": "Caricamento progetti…",
+    "error": "Impossibile caricare i progetti.",
     "p1": {
       "title": "Progetto Uno",
       "description": "Un progetto segnaposto. Sostituisci questo testo in messages/."
@@ -43,7 +45,9 @@
     "send": "Invia",
     "sending": "Invio in corso…",
     "success": "Grazie — questo è un modulo dimostrativo, non è stato inviato nulla.",
-    "error": "Qualcosa è andato storto. Riprova."
+    "error": "Qualcosa è andato storto. Riprova.",
+    "required": "Questo campo è obbligatorio.",
+    "invalidEmail": "Inserisci un indirizzo email valido."
   },
   "settings": {
     "appearance": "Aspetto",

@@ -22,6 +22,8 @@
   },
   "projects": {
     "intro": "Ein paar Dinge, die ich gebaut habe.",
+    "loading": "Projekte werden geladen…",
+    "error": "Projekte konnten nicht geladen werden.",
     "p1": {
       "title": "Projekt Eins",
       "description": "Ein Platzhalterprojekt. Ersetze diesen Text in messages/."
@@ -43,7 +45,9 @@
     "send": "Senden",
     "sending": "Wird gesendet…",
     "success": "Danke — dies ist ein Demoformular, es wurde nichts gesendet.",
-    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "required": "Dieses Feld ist erforderlich.",
+    "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein."
   },
   "settings": {
     "appearance": "Erscheinungsbild",

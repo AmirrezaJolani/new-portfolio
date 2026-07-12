@@ -15,6 +15,15 @@ export interface SocialLink {
   href: string;
 }
 
+/**
+ * Async source for the Projects app (consumed via TanStack Query). There is no
+ * backend, so this resolves the local project data after a short delay to model
+ * a real fetch.
+ */
+export function fetchProjects(): Promise<Project[]> {
+  return new Promise((resolve) => setTimeout(() => resolve(projects), 400));
+}
+
 export const projects: Project[] = [
   {
     id: "p1",
