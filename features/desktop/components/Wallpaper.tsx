@@ -1,3 +1,4 @@
+import { useId } from "react";
 import type { WallpaperId } from "@/settings/config";
 
 export function Wallpaper({ id = "day" }: { id?: WallpaperId }) {
@@ -63,6 +64,14 @@ const SUNSET: Palette = {
 };
 
 function Scene({ palette: p }: { palette: Palette }) {
+  // Unique per-instance ids so multiple mounted scenes (the desktop background
+  // plus the Settings wallpaper previews) don't share gradient ids and end up
+  // cross-referencing each other's fills.
+  const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
+  const sky = `sky-${uid}`;
+  const sun = `sun-${uid}`;
+  const lake = `lake-${uid}`;
+  const vig = `vig-${uid}`;
   return (
     <svg
       aria-hidden="true"
@@ -72,23 +81,23 @@ function Scene({ palette: p }: { palette: Palette }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="wp-sky" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={sky} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={p.sky[0]} />
           <stop offset="42%" stopColor={p.sky[1]} />
           <stop offset="72%" stopColor={p.sky[2]} />
           <stop offset="100%" stopColor={p.sky[3]} />
         </linearGradient>
-        <radialGradient id="wp-sun" cx="78%" cy="20%" r="26%">
+        <radialGradient id={sun} cx="78%" cy="20%" r="26%">
           <stop offset="0%" stopColor={p.sun} stopOpacity="0.9" />
           <stop offset="100%" stopColor={p.sun} stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="wp-lake" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={lake} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={p.lake[0]} />
           <stop offset="18%" stopColor={p.lake[1]} />
           <stop offset="60%" stopColor={p.lake[2]} />
           <stop offset="100%" stopColor={p.lake[3]} />
         </linearGradient>
-        <radialGradient id="wp-vig" cx="50%" cy="42%" r="75%">
+        <radialGradient id={vig} cx="50%" cy="42%" r="75%">
           <stop offset="60%" stopColor="#000000" stopOpacity="0" />
           <stop
             offset="100%"
@@ -97,8 +106,8 @@ function Scene({ palette: p }: { palette: Palette }) {
           />
         </radialGradient>
       </defs>
-      <rect width="1440" height="640" fill="url(#wp-sky)" />
-      <rect width="1440" height="640" fill="url(#wp-sun)" />
+      <rect width="1440" height="640" fill={`url(#${sky})`} />
+      <rect width="1440" height="640" fill={`url(#${sun})`} />
       <path
         d="M0 470 L150 430 L320 468 L470 410 L640 460 L820 405 L1010 458 L1200 415 L1440 452 L1440 640 L0 640 Z"
         fill={p.far}
@@ -119,9 +128,9 @@ function Scene({ palette: p }: { palette: Palette }) {
         fill={p.near}
         opacity="0.92"
       />
-      <rect y="612" width="1440" height="288" fill="url(#wp-lake)" />
+      <rect y="612" width="1440" height="288" fill={`url(#${lake})`} />
       <rect y="612" width="1440" height="3" fill="#ffffff" opacity="0.25" />
-      <rect width="1440" height="900" fill="url(#wp-vig)" />
+      <rect width="1440" height="900" fill={`url(#${vig})`} />
     </svg>
   );
 }

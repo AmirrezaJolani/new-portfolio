@@ -3,9 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useSettings } from "@/context/SettingsContext";
 import { Wallpaper } from "@/features/desktop/components/Wallpaper";
-import type { WallpaperId } from "@/settings/config";
-
-const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora", "sunset"];
+import { WALLPAPERS } from "@/settings/config";
 
 export function WallpaperPane() {
   const t = useTranslations("settings");

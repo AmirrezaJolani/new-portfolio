@@ -19,8 +19,10 @@ export const defaultSettings: Settings = {
 
 export const SETTINGS_COOKIE = "app-settings";
 
-const THEMES: Theme[] = ["light", "dark", "auto"];
-const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora", "sunset"];
+/** Canonical option lists — the single source of truth for validation (below)
+ *  and the Settings pickers, so the two can never drift. */
+export const THEMES: Theme[] = ["light", "dark", "auto"];
+export const WALLPAPERS: WallpaperId[] = ["day", "night", "aurora", "sunset"];
 
 export function parseSettings(raw?: string | null): Settings {
   if (!raw) return defaultSettings;
