@@ -36,14 +36,42 @@ and fully internationalized (English + Persian, right-to-left).
 | Lint/format | Biome |
 | Container | Docker (multi-stage, standalone), GitHub Actions → GHCR |
 
-## Getting started
+## How to run
+
+### Prerequisites
+
+- **Node.js 20+** (CI and the Docker image pin Node 22)
+- **npm** (ships with Node)
+
+### 1. Development
 
 ```bash
+git clone https://github.com/AmirrezaJolani/new-portfolio.git
+cd new-portfolio
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) — the page hot-reloads as you edit.
+
+### 2. Production build
+
+```bash
+npm run build   # compile the standalone server
+npm start       # serve it at http://localhost:3000
+```
+
+### 3. Docker
+
+```bash
+docker compose up --build   # build + run → http://localhost:3000
+```
+
+…or run the image published by CI (see [Docker](#docker) for details):
+
+```bash
+docker run --rm -p 3000:3000 ghcr.io/amirrezajolani/new-portfolio:latest
+```
 
 ### Scripts
 
