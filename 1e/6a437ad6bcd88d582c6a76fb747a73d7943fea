@@ -1,0 +1,33 @@
+features/settings/components/WallpaperPane.tsx
+  s_ceb96337f2f1bb::t_3cc289ce63657d 6
+features/desktop/components/Wallpaper.tsx
+  s_ceb96337f2f1bb::t_22069041d5a4fa 67-74,84
+  s_ceb96337f2f1bb::t_9b7eb41af1dd92 94
+  s_ceb96337f2f1bb::t_6dd40d61382c5f 131
+  s_ceb96337f2f1bb::t_1ea8b19bbc824c 90
+  s_ceb96337f2f1bb::t_7fb212197d2b5d 100
+  s_ceb96337f2f1bb::t_ae03ed2aafed04 1
+  s_ceb96337f2f1bb::t_2f2359458a7aaf 133
+  s_ceb96337f2f1bb::t_c859092c103c54 109-110
+settings/config.ts
+  s_ceb96337f2f1bb::t_536bbbf1500e2b 22-25
+features/settings/components/AppearancePane.tsx
+  s_ceb96337f2f1bb::t_3c6dc38fde79da 5
+  s_ceb96337f2f1bb::t_e4eabc4c314d92 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "1e6a437ad6bcd88d582c6a76fb747a73d7943fea",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
