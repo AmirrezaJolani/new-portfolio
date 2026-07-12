@@ -1,0 +1,23 @@
+workflows/windowManager.test.ts
+  s_ceb96337f2f1bb::t_be6c85cdb02f3f 88-93,98-107
+  s_ceb96337f2f1bb::t_342759eec93b00 94-97
+workflows/windowManager.ts
+  s_ceb96337f2f1bb::t_1d4221ad4b455f 35-59,64-65,67,70
+  s_ceb96337f2f1bb::t_702e65b4a5d65b 84,89,93,95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "c0c3b21a2bcba05b850eb12669316b0935a27bef",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
