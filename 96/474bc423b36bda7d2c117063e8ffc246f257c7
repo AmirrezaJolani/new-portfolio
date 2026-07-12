@@ -1,0 +1,45 @@
+messages/nl.json
+  s_ceb96337f2f1bb::t_800008f2775eb8 1-64
+messages/it.json
+  s_ceb96337f2f1bb::t_a25bb9f6e29518 1-64
+messages/en.json
+  s_ceb96337f2f1bb::t_2601a4713b9f29 16
+lib/content.ts
+  s_ceb96337f2f1bb::t_c0278896a31e32 46-47,50
+app/layout.tsx
+  s_ceb96337f2f1bb::t_4dc4b27e05e330 2,7,16-19
+  s_ceb96337f2f1bb::t_5ac212199edcff 37
+  s_ceb96337f2f1bb::t_cf8b3fc0125561 45
+  s_ceb96337f2f1bb::t_70c65a9dbe2d7d 20
+i18n/config.ts
+  s_ceb96337f2f1bb::t_c40148ca854119 1,4-15
+app/globals.css
+  s_ceb96337f2f1bb::t_f9b0c2fa00e2da 134
+  s_ceb96337f2f1bb::t_1d8d29bebaddb4 132-133,135-136
+features/desktop/components/MenuBar.tsx
+  s_ceb96337f2f1bb::t_0d5dc21566c47e 9
+  s_ceb96337f2f1bb::t_c1e8d29e02cbde 51-55
+features/settings/components/LanguagePane.tsx
+  s_ceb96337f2f1bb::t_5dbf6baf7bbd7c 6
+  s_ceb96337f2f1bb::t_932e859e572f77 26,28,30,32,37
+messages/fa.json
+  s_ceb96337f2f1bb::t_705849760fab3d 16
+messages/de.json
+  s_ceb96337f2f1bb::t_154824d2cb045e 1-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "96474bc423b36bda7d2c117063e8ffc246f257c7",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
