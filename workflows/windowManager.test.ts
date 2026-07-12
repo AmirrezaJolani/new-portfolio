@@ -85,4 +85,24 @@ describe("windowReducer", () => {
     const about = s.windows.find((w) => w.appId === "about")!;
     expect(about.isMinimized).toBe(true);
   });
+
+  it("keeps z-index bounded below the reserved UI layer (9999) after many focus ops", () => {
+    let s = open(initialWindowState, "about");
+    s = open(s, "projects");
+    // Far more operations than it takes to reach the compaction ceiling.
+    for (let i = 0; i < 11000; i++) {
+      s = windowReducer(s, {
+        type: "focus",
+        id: i % 2 === 0 ? "about" : "projects",
+      });
+    }
+    for (const w of s.windows) {
+      expect(w.zIndex).toBeLessThan(9999);
+      expect(w.zIndex).toBeGreaterThanOrEqual(100);
+    }
+    // Stacking order still holds: the last-focused window (projects) is on top.
+    const about = s.windows.find((w) => w.appId === "about")!;
+    const projects = s.windows.find((w) => w.appId === "projects")!;
+    expect(projects.zIndex).toBeGreaterThan(about.zIndex);
+  });
 });
