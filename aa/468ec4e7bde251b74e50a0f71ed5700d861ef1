@@ -1,0 +1,41 @@
+workflows/windowManager.test.ts
+  s_ceb96337f2f1bb::t_351c3c2b6aa3c1 21
+workflows/windowManager.ts
+  s_ceb96337f2f1bb::t_c8c87bdfa789b9 17-19,23
+features/desktop/components/Wallpaper.tsx
+  s_ceb96337f2f1bb::t_504be0dd9324ee 9-11
+  s_ceb96337f2f1bb::t_dc57ad945c6358 53-64
+features/desktop/components/MenuBar.tsx
+  s_ceb96337f2f1bb::t_ed28a636d39637 3
+  s_ceb96337f2f1bb::t_2a7ea82bd119d2 41
+messages/en.json
+  s_ceb96337f2f1bb::t_62897644e51e3f 59
+  s_ceb96337f2f1bb::t_edd8a253ea404f 15
+features/settings/components/WallpaperPane.tsx
+  s_ceb96337f2f1bb::t_1db4996fc140ae 16
+  s_ceb96337f2f1bb::t_28e7f6ce86e3b0 8
+settings/config.ts
+  s_ceb96337f2f1bb::t_47b5234e7db4c0 23
+  s_ceb96337f2f1bb::t_20d8b37575a27b 2
+messages/fa.json
+  s_ceb96337f2f1bb::t_46c19a6ccafb8d 15
+  s_ceb96337f2f1bb::t_6e09addb6f10aa 59
+features/desktop/components/Widgets.tsx
+  s_ceb96337f2f1bb::t_d3bb338f7414ff 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "aa468ec4e7bde251b74e50a0f71ed5700d861ef1",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
