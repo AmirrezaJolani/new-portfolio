@@ -1,0 +1,48 @@
+features/contact/components/ContactApp.tsx
+  s_ceb96337f2f1bb::t_3ad734353fc1aa 3-4,11-18,22-36,41-141,144,148
+messages/de.json
+  s_ceb96337f2f1bb::t_b13854398f2008 25-26
+  s_ceb96337f2f1bb::t_922b71419ab65d 48-50
+package.json
+  s_ceb96337f2f1bb::t_aa021503fd0247 16-17
+messages/fa.json
+  s_ceb96337f2f1bb::t_306edad3786dc5 48-50
+  s_ceb96337f2f1bb::t_edfbbe88eb6c53 25-26
+app/layout.tsx
+  s_ceb96337f2f1bb::t_a2b1cfafd4dc7b 6
+  s_ceb96337f2f1bb::t_c1f76fedada41e 46-48
+  s_ceb96337f2f1bb::t_c9504a5041f30d 61-63
+messages/en.json
+  s_ceb96337f2f1bb::t_1120e58e203b9a 48-50
+  s_ceb96337f2f1bb::t_af5dabe6f0b811 25-26
+features/projects/components/ProjectsApp.tsx
+  s_ceb96337f2f1bb::t_4aec24f21578ab 3,5,9-14,18-63
+context/QueryProvider.tsx
+  s_ceb96337f2f1bb::t_8473413f0ec208 1-16
+messages/nl.json
+  s_ceb96337f2f1bb::t_642f8a4039da26 25-26
+  s_ceb96337f2f1bb::t_0da7d21572e850 48-50
+messages/it.json
+  s_ceb96337f2f1bb::t_0976b38193035a 25-26
+  s_ceb96337f2f1bb::t_f65611ac67267d 48-50
+lib/content.ts
+  s_ceb96337f2f1bb::t_fca3b49baa9c9c 18-26
+package-lock.json
+  s_ceb96337f2f1bb::t_18680d591ffa75 12-13,3009-3128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "9b3c690a01f9db0a20642cb2d8b1db2b68283197",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
