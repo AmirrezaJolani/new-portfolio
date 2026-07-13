@@ -1,0 +1,34 @@
+features/desktop/components/dockMagnification.test.ts
+  s_ceb96337f2f1bb::t_98a96c92d89a8d 1,3-28,32-55
+  s_ceb96337f2f1bb::t_576d45d2635b80 2,29-31
+lib/apps.config.tsx
+  s_ceb96337f2f1bb::t_f53158e0dc09d0 10-11
+features/desktop/components/dockMagnification.ts
+  s_ceb96337f2f1bb::t_1c19779a5ae3cc 1-44,48-93,96-97
+  s_ceb96337f2f1bb::t_df74648b205fc2 94-95
+  s_ceb96337f2f1bb::t_b13d6923a46041 45-47
+features/desktop/components/appLogos.tsx
+  s_ceb96337f2f1bb::t_7bc1536d65056c 1-44,53-132,135,138-247
+  s_ceb96337f2f1bb::t_576d45d2635b80 45-52,133-134,136-137
+features/desktop/components/Dock.tsx
+  s_ceb96337f2f1bb::t_83f1d01c0f02cb 3-5,7,9-15,19-20,22-42,46-54,58-62,64,71-78,80
+features/desktop/components/MobileHome.tsx
+  s_ceb96337f2f1bb::t_2c24f7e4db43df 8
+  s_ceb96337f2f1bb::t_5273d1d41f9674 42,50-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "2276e73f302c068ae60f66fdb6672a855a0ede62",
+  "prompts": {},
+  "sessions": {
+    "s_ceb96337f2f1bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9857e701-bf5a-4e4e-b94a-af2f2a3f8894",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
