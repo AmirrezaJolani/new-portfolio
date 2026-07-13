@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { createElement, useState } from "react";
 import { apps, getApp } from "@/lib/apps.config";
 import type { AppId } from "@/types";
+import { appLogos } from "./appLogos";
 import { appComponents } from "./appRegistry";
 
 export function MobileHome() {
@@ -38,7 +39,7 @@ export function MobileHome() {
   return (
     <div className="relative z-10 grid min-h-dvh grid-cols-3 content-start gap-6 p-8 pt-16">
       {apps.map((app) => {
-        const Icon = app.icon;
+        const Logo = appLogos[app.id];
         return (
           <button
             key={app.id}
@@ -46,10 +47,8 @@ export function MobileHome() {
             onClick={() => setActive(app.id)}
             className="flex flex-col items-center gap-2"
           >
-            <span
-              className={`flex size-16 items-center justify-center rounded-[1.15rem] bg-gradient-to-b ${app.tile} text-white shadow-lg ring-1 ring-black/5 [box-shadow:inset_0_1px_0_rgba(255,255,255,0.45)]`}
-            >
-              <Icon className="size-8" strokeWidth={2} />
+            <span className="rounded-[1.15rem] shadow-lg [box-shadow:0_12px_26px_-10px_rgba(2,6,23,0.55)] transition-transform active:scale-95">
+              <Logo className="size-16" />
             </span>
             <span className="text-xs font-medium text-white [text-shadow:0_1px_3px_rgba(2,32,64,0.7)]">
               {t(app.titleKey)}
