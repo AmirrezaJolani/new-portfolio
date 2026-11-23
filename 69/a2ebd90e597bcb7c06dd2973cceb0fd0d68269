@@ -1,0 +1,55 @@
+features/drive/components/Game.tsx
+  s_c17b2e84ffe0df::t_ea73224fdbb560 39,454
+.agent/agents.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 28
+.claude/agents/i18n-translator.md
+  s_c17b2e84ffe0df::t_ec3ed7667b5766 23
+  s_c17b2e84ffe0df::t_2415b03a03d80c 3,14-15,20,22,29,43
+.claude/README.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 10
+AGENTS.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 15,22,27
+i18n/config.ts
+  s_c17b2e84ffe0df::t_b91817efc66213 1,4-14
+README.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 7,18,30,114,130,186-190
+messages/fa.json
+  s_c17b2e84ffe0df::t_b5e3d80cc18c89 18-20
+features/settings/components/LanguagePane.tsx
+  s_c17b2e84ffe0df::t_b91817efc66213 6,27
+messages/en.json
+  s_c17b2e84ffe0df::t_b5e3d80cc18c89 18-20
+features/desktop/components/MenuBar.tsx
+  s_c17b2e84ffe0df::t_b91817efc66213 9,51-55
+i18n/messages.test.ts
+  s_c17b2e84ffe0df::t_b91817efc66213 1-7,12-29
+  s_c17b2e84ffe0df::t_ea73224fdbb560 8-11
+app/layout.tsx
+  s_c17b2e84ffe0df::t_b91817efc66213 7,32
+messages/de.json
+  s_c17b2e84ffe0df::t_b5e3d80cc18c89 1-360
+features/drive/components/LanguagePicker.tsx
+  s_c17b2e84ffe0df::t_ea73224fdbb560 1-37
+messages/it.json
+  s_c17b2e84ffe0df::t_b5e3d80cc18c89 1-360
+.agent/README.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 21,37,59-60
+.claude/agents/portfolio-ui.md
+  s_c17b2e84ffe0df::t_2415b03a03d80c 58-59,77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "69a2ebd90e597bcb7c06dd2973cceb0fd0d68269",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
