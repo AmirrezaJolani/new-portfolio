@@ -36,6 +36,7 @@ import {
   THEMES,
   type Theme,
 } from "../lib/render";
+import { LanguagePicker } from "./LanguagePicker";
 import { Panel, type PanelKind } from "./Panel";
 import { TouchControls } from "./TouchControls";
 
@@ -450,6 +451,7 @@ export function Game() {
           >
             🖥<span className="hidden sm:inline"> {t("hud.desktop")}</span>
           </Link>
+          <LanguagePicker />
         </nav>
       </header>
 

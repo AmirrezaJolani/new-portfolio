@@ -7,7 +7,7 @@ Claude Code configuration for the macOS-style portfolio.
 - [`agents/`](./agents) — dispatchable subagents scoped to this codebase:
   - **portfolio-ui** — feature-based desktop UI work (shell, dock, windows, shadcn/Base UI, copy).
   - **window-system** — pure state machines in `workflows/` + their context wiring (test-first).
-  - **i18n-translator** — next-intl copy, English/Persian parity, RTL, cookie-based locale.
+  - **i18n-translator** — next-intl copy, parity across en/fa/de/it, RTL, cookie-based locale.
 - [`mcp.md`](./mcp.md) — MCP servers this project uses and why (config in [`../.mcp.json`](../.mcp.json)).
 - `settings.local.json` — local, machine-specific settings (not shared).
 

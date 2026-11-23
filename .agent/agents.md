@@ -25,5 +25,5 @@ new window behavior.
 - Read [`../AGENTS.md`](../AGENTS.md) and the relevant `node_modules/next/dist/docs/01-app/`
   guide before framework code.
 - Definition of done: `npx tsc --noEmit` clean, `npm test` green (if logic changed),
-  `npm run lint` clean for touched files, and en/fa message parity for any new copy.
+  `npm run lint` clean for touched files, and message parity across all catalogs for any new copy.
 - Match the surrounding code's naming, idioms, and comment density.

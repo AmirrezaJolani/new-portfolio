@@ -18,7 +18,7 @@ app is intentionally deferred but the app registry is built to accept one later.
 - Next.js 16 (App Router, React 19), TypeScript, Tailwind CSS v4
 - shadcn/ui on **Base UI** primitives (`components/ui/`), lucide icons
 - next-intl **without locale routing** — locale in a `NEXT_LOCALE` cookie (no `/en` `/fa` URLs),
-  English + Persian (RTL)
+  English, Persian (RTL), German, Italian
 - macOS Tahoe **Liquid Glass** surfaces — `.lg-glass` / `.lg-panel` / `.lg-chip` utilities in
   `app/globals.css`; generated wallpaper + calendar/weather widgets + desktop folder shortcuts
   (`Wallpaper.tsx` / `Widgets.tsx` / `DesktopIcons.tsx` under `features/desktop/components/`)
@@ -34,7 +34,7 @@ features/*   presentation; each owns components/ hooks/ types/  desktop, about, 
 components/ui shadcn/Base UI primitives only
 lib/         apps.config.tsx (app registry) + content.ts (structured, non-translatable data)
 hooks/ types/ shared composables and shared types
-i18n/ messages/  cookie-based next-intl config + en/fa catalogs
+i18n/ messages/  cookie-based next-intl config + en/fa/de/it catalogs
 ```
 
 ## Commands
@@ -56,8 +56,8 @@ i18n/ messages/  cookie-based next-intl config + en/fa catalogs
    Only shadcn primitives live in `components/ui/`.
 2. The dock, menu bar, window layer, and mobile home all read `lib/apps.config.tsx`. Add an
    app there + one feature folder + one line in `features/desktop/components/appRegistry.tsx`.
-3. All display copy comes from next-intl (`messages/en.json` + `messages/fa.json`, kept in
-   parity). Never hardcode strings.
+3. All display copy comes from next-intl (`messages/{en,fa,de,it}.json`, kept in
+   parity; `npm test` checks it). Never hardcode strings.
 4. Use Tailwind **logical** properties (`ps-/pe-/start-/end-`) so Persian mirrors correctly.
 5. Keep business rules in `workflows/` (pure, testable); keep `context/` thin.
 6. `shadcn` is a **devDependency on purpose** — `app/globals.css` imports `shadcn/tailwind.css`,

@@ -15,7 +15,9 @@
     "name": "Amirreza Jolani",
     "language": "Language",
     "english": "English",
-    "persian": "فارسی"
+    "persian": "فارسی",
+    "german": "Deutsch",
+    "italian": "Italiano"
   },
   "about": {
     "role": "Software Engineer",

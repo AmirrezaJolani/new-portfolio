@@ -1,0 +1,360 @@
+{
+  "apps": {
+    "about": "Chi sono",
+    "projects": "Progetti",
+    "contact": "Contatti",
+    "settings": "Impostazioni"
+  },
+  "window": {
+    "close": "Chiudi",
+    "minimize": "Riduci a icona",
+    "maximize": "Ingrandisci"
+  },
+  "menu": {
+    "finder": "Finder",
+    "name": "Amirreza Jolani",
+    "language": "Lingua",
+    "english": "English",
+    "persian": "فارسی",
+    "german": "Deutsch",
+    "italian": "Italiano"
+  },
+  "about": {
+    "role": "Ingegnere del software",
+    "bio": "Creo software per il web curato e ben fatto. Questo desktop è il mio portfolio: apri le app nel Dock per dare un'occhiata.",
+    "skillsTitle": "Competenze"
+  },
+  "projects": {
+    "intro": "Alcune cose che ho costruito.",
+    "p1": {
+      "title": "Progetto uno",
+      "description": "Un progetto segnaposto. Sostituisci questo testo in messages/."
+    },
+    "p2": {
+      "title": "Progetto due",
+      "description": "Un altro progetto segnaposto con la sua descrizione."
+    },
+    "p3": {
+      "title": "Progetto tre",
+      "description": "Un terzo segnaposto per mostrare il layout della galleria."
+    }
+  },
+  "contact": {
+    "title": "Mettiamoci in contatto",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Messaggio",
+    "send": "Invia",
+    "sending": "Invio in corso…",
+    "success": "Grazie! Questo è un modulo dimostrativo: non è stato inviato nulla.",
+    "error": "Qualcosa è andato storto. Riprova."
+  },
+  "settings": {
+    "appearance": "Aspetto",
+    "theme_light": "Chiaro",
+    "theme_dark": "Scuro",
+    "theme_auto": "Automatico",
+    "wallpaper": "Sfondo",
+    "wallpaper_day": "Tahoe giorno",
+    "wallpaper_night": "Tahoe notte",
+    "wallpaper_aurora": "Aurora",
+    "wallpaper_sunset": "Tramonto",
+    "accessibility": "Accessibilità",
+    "reduceTransparency": "Riduci trasparenza",
+    "reduceMotion": "Riduci movimento",
+    "largerText": "Testo più grande",
+    "language": "Lingua e regione"
+  },
+  "drive": {
+    "meta": {
+      "title": "Amirreza Jolani — Sunset Island",
+      "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha aiutato Pillar a crescere da 1 a 4 milioni di euro di ARR."
+    },
+    "hud": {
+      "brand": "AMIRREZA.DRIVE",
+      "stopsVisited": "Tappe visitate",
+      "options": "Opzioni di gioco",
+      "map": "MAPPA",
+      "mapAria": "Mappa",
+      "garage": "GARAGE",
+      "garageAria": "Garage: cambia auto",
+      "trophiesAria": "Obiettivi: {count} su {total}",
+      "themeAria": "Tema: {theme}. Clicca per cambiare.",
+      "music": "Musica",
+      "on": "ON",
+      "off": "OFF",
+      "desktop": "DESKTOP",
+      "desktopAria": "Apri il portfolio desktop classico",
+      "hint": "FRECCE / WASD per guidare · parcheggia su un riquadro luminoso · M mappa · G garage",
+      "kmh": "KM/H",
+      "unlocked": "OBIETTIVO SBLOCCATO",
+      "canvas": "Un'isola in pixel art da esplorare in auto. Usa il pulsante Mappa per un elenco accessibile di tutte le sezioni.",
+      "brakeAria": "Freno / retromarcia",
+      "brake": "FRENO"
+    },
+    "themes": {
+      "day": "GIORNO",
+      "sunset": "TRAMONTO",
+      "night": "NOTTE"
+    },
+    "panel": {
+      "intro": "SUNSET ISLAND",
+      "menu": "MAPPA",
+      "trophies": "OBIETTIVI",
+      "garage": "GARAGE",
+      "drive": "GUIDA ▶",
+      "close": "✕ ESC"
+    },
+    "intro": {
+      "welcome": "Benvenuto sulla mia isola. Sali in macchina e raggiungi ogni edificio: parcheggia sul riquadro luminoso per leggere quel capitolo della mia storia.",
+      "keys": "⌨ Frecce / WASD: guida",
+      "touch": "📱 Touch: trascina il joystick dove vuoi andare · ▼ per frenare",
+      "garage": "🚗 G: garage, scegli tra cinque auto",
+      "map": "🗺 M: mappa e viaggio rapido · Esc: chiudi",
+      "extras": "🏆 {count} obiettivi da sbloccare · 🎨 temi giorno / tramonto / notte · ♪ musica",
+      "arrow": "➤ La freccia gialla indica la prossima tappa da visitare",
+      "wave": "👋 Mi trovi a salutare davanti a CASA",
+      "milan": "🇮🇹 Guida verso sud fino a Milano: il Duomo, la Galleria e lo skyline",
+      "start": "INIZIA A GUIDARE ▶",
+      "skip": "VAI A CHI SONO",
+      "classic": "🖥 Preferisci una vista classica? Apri il portfolio desktop"
+    },
+    "menu": {
+      "about": "Chi sono",
+      "experience": "Esperienza",
+      "projects": "Progetti",
+      "skills": "Competenze",
+      "testimonials": "Referenze",
+      "contact": "Contatti"
+    },
+    "signs": {
+      "about": "CASA",
+      "experience": "QUARTIER GENERALE",
+      "projects": "FABBRICA DEI PROGETTI",
+      "skills": "GARAGE DELLE COMPETENZE",
+      "testimonials": "CAFFÈ DELLE RECENSIONI",
+      "contact": "UFFICIO POSTALE",
+      "duomo": "DUOMO DI MILANO",
+      "galleria": "GALLERIA",
+      "bosco": "BOSCO VERTICALE",
+      "velasca": "TORRE VELASCA",
+      "unicredit": "TORRE UNICREDIT"
+    },
+    "achievements": {
+      "ignition": {
+        "title": "Accensione",
+        "desc": "Inizia a guidare"
+      },
+      "first-stop": {
+        "title": "Prima tappa",
+        "desc": "Parcheggia al tuo primo edificio"
+      },
+      "grand-tour": {
+        "title": "Grand Tour",
+        "desc": "Visita tutti e sei gli edifici"
+      },
+      "speed": {
+        "title": "Pilota",
+        "desc": "Raggiungi la velocità massima su strada"
+      },
+      "bump": {
+        "title": "Ammaccatura",
+        "desc": "Sbatti contro qualcosa a tutta velocità"
+      },
+      "beach": {
+        "title": "Giornata al mare",
+        "desc": "Guida sulla sabbia"
+      },
+      "milano": {
+        "title": "Ciao Milano",
+        "desc": "Entra in Piazza del Duomo"
+      },
+      "lighthouse": {
+        "title": "Guardiano del faro",
+        "desc": "Visita il faro"
+      },
+      "road-trip": {
+        "title": "Viaggio on the road",
+        "desc": "Percorri 1 km"
+      },
+      "test-drive": {
+        "title": "Giro di prova",
+        "desc": "Prendi un'altra auto dal garage"
+      },
+      "teleport": {
+        "title": "Viaggiatore veloce",
+        "desc": "Usa la mappa per spostarti"
+      },
+      "dj": {
+        "title": "DJ",
+        "desc": "Accendi la musica"
+      },
+      "night-owl": {
+        "title": "Nottambulo",
+        "desc": "Passa al tema notte"
+      },
+      "hello": {
+        "title": "Fatti sentire",
+        "desc": "Apri uno dei miei contatti"
+      }
+    },
+    "cars": {
+      "coupe": {
+        "name": "Coupé Tramonto",
+        "desc": "Veloce e agile. L'auto predefinita."
+      },
+      "taxi": {
+        "name": "Taxi Pixel",
+        "desc": "Equilibrato in città, con l'insegna sul tetto."
+      },
+      "van": {
+        "name": "Van da spiaggia",
+        "desc": "Lento e costante, tavola da surf inclusa."
+      },
+      "buggy": {
+        "name": "Dune Buggy",
+        "desc": "Vola su sabbia ed erba."
+      },
+      "pickup": {
+        "name": "Pick-up",
+        "desc": "Un mulo da lavoro pieno di coppia, con una cassa nel cassone."
+      }
+    },
+    "garage": {
+      "speed": "VELOCITÀ",
+      "handling": "MANEGGEVOLEZZA",
+      "offroad": "FUORISTRADA",
+      "driving": "✓ IN USO",
+      "select": "SCEGLI"
+    },
+    "profile": {
+      "portrait": "Ritratto in pixel art di {name}",
+      "available": "● DISPONIBILE PER NUOVI PROGETTI",
+      "title": "Fullstack Engineer",
+      "tagline": "Aiuto i prodotti a crescere",
+      "location": "Milano, Italia",
+      "years": "6+ anni",
+      "focus": "React, Next.js e Node.js",
+      "bio": "Fullstack Engineer con oltre 6 anni di esperienza nello sviluppo di web app in produzione con TypeScript. In Pillar, startup milanese in rapida crescita nel software per l'edilizia, ho aiutato a portare il prodotto da 1 a circa 4 milioni di euro di ARR, consegnando funzionalità end-to-end, dal modello dati all'interfaccia. Esperto di React e Next.js, con una forte inclinazione backend su Node.js e Deno: validazione Zod ai confini delle API, gestione coerente degli errori, integrazioni con servizi terzi e analisi delle cause dei guasti reali in produzione.",
+      "funFact": "Parlo persiano, inglese, un po' di italiano e un po' di tedesco. La mia ricerca magistrale a Padova riguardava la personalizzazione basata sull'IA e la UX adattiva.",
+      "cv": "↓ Scarica il CV",
+      "stats": {
+        "arr": "Crescita ARR in Pillar",
+        "years": "Anni di esperienza",
+        "build": "Tempo di build Vercel"
+      },
+      "pillars": {
+        "product": {
+          "title": "Prodotto",
+          "text": "Funzionalità dall'analisi al rilascio: documenti di conformità, checkout di upsell con Stripe, i18n su 4 mercati"
+        },
+        "fullstack": {
+          "title": "Full-Stack",
+          "text": "React, Next.js, Node.js, Deno, tRPC e Zod su PostgreSQL, Supabase e Redis"
+        },
+        "ai": {
+          "title": "AI-native",
+          "text": "Claude Code, agent skill, MCP e LangGraph.js per rilasciare più in fretta"
+        }
+      }
+    },
+    "experience": {
+      "pillar": {
+        "role": "Fullstack Engineer",
+        "years": "Mag 2026–oggi",
+        "kind": "Attuale · Milano",
+        "text": "Ho aiutato la startup di software per l'edilizia Pillar a crescere da 1 a 4 milioni di euro di ARR. Ho rilasciato un modulo per i documenti di conformità, un modulo per i contatti di cantiere e un checkout di upsell con Stripe basato sui posti, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
+      },
+      "ofoundation": {
+        "role": "Fullstack Engineer",
+        "years": "Lug 2025–Apr 2026",
+        "kind": "Utrecht",
+        "text": "Ho guidato design e architettura di una piattaforma e-commerce in TypeScript, da Figma alla produzione. Ho ridotto gli incidenti in produzione del 40% con Sentry e i tempi di deploy del 25% con CI/CD su Docker, portando l'accessibilità da WCAG A ad AA con punteggi Lighthouse tra 90 e 100."
+      },
+      "karhuno": {
+        "role": "Fullstack Engineer",
+        "years": "Gen–Giu 2025",
+        "kind": "Helsinki",
+        "text": "Ho costruito e gestito la piattaforma principale di una startup B2B in fase iniziale dedicata ai segnali di vendita. Ho standardizzato la validazione Zod ai confini delle API e aggiunto test e2e con Playwright, con regressione visiva e mock delle API."
+      },
+      "padua": {
+        "role": "Laurea magistrale in ICT for Internet & Multimedia",
+        "years": "2023–2026",
+        "kind": "Formazione",
+        "text": "Mi sono trasferito dall'Iran in Italia per una magistrale nel percorso Cybersystems. La mia tesi ha trattato la personalizzazione basata sull'IA e una UX adattiva e inclusiva."
+      },
+      "pap": {
+        "role": "Frontend Engineer (ambito full-stack)",
+        "years": "Set 2022–Lug 2023",
+        "kind": "Teheran",
+        "text": "Ho sviluppato servizi Django REST per siti di agenzie di viaggio, riducendo i bug del backend del 25%. Ho guidato una libreria di componenti Vue.js + Tailwind + Pinia che ha ridotto il lavoro ripetuto del 35% e velocizzato LCP/INP di circa 2 s."
+      },
+      "zharfa": {
+        "role": "Fullstack Developer",
+        "years": "2021",
+        "kind": "Teheran",
+        "text": "Ho realizzato in poche settimane un MVP full-stack con Vue.js e Python/Django, con autenticazione a token e controllo degli accessi basato sui ruoli."
+      },
+      "almas": {
+        "role": "Frontend Developer",
+        "years": "2020–2021",
+        "kind": "Teheran",
+        "text": "Ho sviluppato la dashboard della piattaforma pazienti dell'ospedale Nikan, usata ogni giorno dal personale medico, con report Chart.js sulle cartelle cliniche."
+      }
+    },
+    "projects": {
+      "view": "Vedi su GitHub →",
+      "appversion": {
+        "badge": "Agent Skill",
+        "text": "Agent skill in Node.js che applica gli incrementi SemVer, aggiorna il changelog e crea GitHub Release con tag a partire dalla cronologia dei commit. Funziona in Claude Code, Gemini CLI, Codex, Cursor e GitHub Copilot."
+      },
+      "nodebase": {
+        "badge": "Open source",
+        "text": "SPA React con un editor visuale a nodi (React Flow), flussi di dati in tempo reale e job in background. API type-safe con tRPC + Prisma/PostgreSQL, autenticazione con Better Auth."
+      },
+      "prompter": {
+        "badge": "Open source",
+        "text": "Piattaforma full-stack con Python, Django e PostgreSQL dietro un client TypeScript (shadcn/ui + Tailwind, Zod), containerizzata con Docker per avere gli stessi ambienti in locale e in produzione."
+      },
+      "marketplace": {
+        "badge": "Open source",
+        "text": "Piattaforma modulare con un'architettura in stile CMS e un livello API REST in Python/Django, type-safe da un capo all'altro."
+      },
+      "elevenlabs": {
+        "badge": "Progetto IA",
+        "text": "Usa l'API di ElevenLabs per la sintesi vocale con l'IA. È in sviluppo un'estensione LangChain + RAG per risposte vocali basate sui documenti."
+      }
+    },
+    "skills": {
+      "frontend": "Frontend",
+      "backend": "Backend e dati",
+      "testing": "Test e affidabilità",
+      "devops": "DevOps e cloud",
+      "ai": "AI-native"
+    },
+    "testimonials": {
+      "companies": "AZIENDE CON CUI HO LAVORATO",
+      "clara": {
+        "quote": "Un vero gioco di squadra: sempre pronto ad aiutare, collaborare e far crescere tutto il gruppo. Amirreza porta in ogni sprint profondità tecnica e un ottimo atteggiamento.",
+        "role": "Fullstack Developer · OFoundation"
+      },
+      "massy": {
+        "quote": "Lavora con empatia e professionalità. Rende il lavoro di squadra più fluido e ogni progetto più piacevole. Uno dei migliori ingegneri con cui abbia avuto il piacere di lavorare.",
+        "role": "Project Manager · OFoundation"
+      },
+      "mohammad": {
+        "quote": "Disponibile, affidabile e orientato alle soluzioni. Rafforza qualsiasi team di cui fa parte. La sua capacità di tradurre requisiti complessi in un'interfaccia pulita è eccezionale.",
+        "role": "CEO · Zharfa Academy"
+      }
+    },
+    "contact": {
+      "intro": "Base a {location} · sempre aperto al lavoro asincrono. Ti rispondo entro 24 ore.",
+      "email": "Email",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "whatsappValue": "Call gratuita di 30 minuti",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  }
+}

@@ -4,7 +4,7 @@ A personal portfolio built as a faithful, interactive **macOS desktop** in the b
 Visitors land on a desktop with a menu bar, a dock, and draggable / resizable / minimizable
 windows, and explore the content as "apps". Styled with a macOS **Tahoe "Liquid Glass"**
 aesthetic — a generated scenic wallpaper, frosted translucent surfaces, and desktop widgets —
-and fully internationalized (English + Persian, right-to-left).
+and fully internationalized (English, Persian right-to-left, German and Italian).
 
 The homepage (`/`) is **Pixel Drive**: a pixel-art island you drive around, where each building
 is a chapter of the portfolio (about, experience, projects, skills, testimonials, contact).
@@ -15,7 +15,7 @@ The macOS desktop lives at **`/desktop`**, linked from the game's HUD and intro.
 - **Pixel Drive homepage** — a canvas game with sprite-stacked buildings, five cars, day /
   sunset / night themes, a chiptune soundtrack, 14 achievements, a touch joystick, and a
   hand-drawn Milan district (Duomo, Galleria, Bosco Verticale, Torre Velasca, UniCredit Tower).
-  Every word goes through next-intl, so it plays in English and Persian too. The pure world
+  Every word goes through next-intl, so it plays in English, Persian, German and Italian, with a language picker in its HUD. The pure world
   model and car physics live in `workflows/driveWorld.ts` (Vitest-tested); the UI and renderer
   in `features/drive/`.
 
@@ -27,7 +27,7 @@ The macOS desktop lives at **`/desktop`**, linked from the game's HUD and intro.
 - **Liquid Glass UI** — a generated SVG wallpaper (sky, mountains, lake — no copyrighted
   assets), frosted glass menu bar / dock / windows, a live calendar + weather widget, and
   desktop folder shortcuts. Icons throughout are [lucide](https://lucide.dev).
-- **Internationalized** — English and Persian via [next-intl](https://next-intl.dev), with the
+- **Internationalized** — English, Persian, German and Italian via [next-intl](https://next-intl.dev), with the
   locale stored in a cookie (**no locale in the URL**) and correct RTL mirroring.
 - **Responsive** — on phones the desktop becomes a stacked home screen with full-screen apps.
 - **Containerized + CI/CD** — a multi-stage Docker image (Next.js standalone, non-root) and a
@@ -111,7 +111,7 @@ components/ui  shared shadcn/Base UI primitives only
 
 Supporting folders: `lib/` (the app registry `apps.config.tsx` + structured `content.ts`),
 `hooks/` (shared composables), `types/`, `i18n/` (cookie-based next-intl config), and
-`messages/` (`en.json` / `fa.json` translation catalogs, kept at full key parity).
+`messages/` (`en` / `fa` / `de` / `it` translation catalogs, kept at full key parity).
 
 ```
 app/                     # App Router entry (layout, page, globals.css)
@@ -127,7 +127,7 @@ Dockerfile  docker-compose.yml  .github/workflows/docker.yml
 
 ### Conventions
 
-- All user-facing copy comes from next-intl; `en.json` and `fa.json` stay at key parity.
+- All user-facing copy comes from next-intl; all catalogs stay at key parity (`i18n/messages.test.ts` checks it).
 - RTL uses Tailwind **logical** properties (`ps/pe/start/end`), so Persian mirrors correctly.
 - Window / contact logic lives in `workflows/` as pure, unit-tested reducers.
 
@@ -183,8 +183,11 @@ CI publishes it to the GitHub Container Registry on pushes to `main`
 ## Internationalization
 
 The active locale lives in a `NEXT_LOCALE` cookie (there is **no `/en` or `/fa` URL segment**).
-Switch languages from the menu bar; the choice persists and the layout flips `dir` to `rtl` for
-Persian. Add a locale by adding `messages/<locale>.json` and one entry in `i18n/config.ts`.
+Switch languages from the desktop menu bar, Settings, or the game's HUD; the choice persists and
+the layout flips `dir` to `rtl` for Persian. Add a locale by adding `messages/<locale>.json`, its
+id to `locales` and a `localeOptions` entry in `i18n/config.ts` (plus `rtlLocales` if it is
+right-to-left), and its name under `menu.*` in every catalog. The parity test fails until all of
+that matches.
 
 ## Testing
 

@@ -1,0 +1,360 @@
+{
+  "apps": {
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "settings": "Einstellungen"
+  },
+  "window": {
+    "close": "Schließen",
+    "minimize": "Minimieren",
+    "maximize": "Maximieren"
+  },
+  "menu": {
+    "finder": "Finder",
+    "name": "Amirreza Jolani",
+    "language": "Sprache",
+    "english": "English",
+    "persian": "فارسی",
+    "german": "Deutsch",
+    "italian": "Italiano"
+  },
+  "about": {
+    "role": "Softwareentwickler",
+    "bio": "Ich baue durchdachte, sorgfältig gestaltete Software für das Web. Dieser Desktop ist mein Portfolio – öffne die Apps im Dock, um dich umzusehen.",
+    "skillsTitle": "Fähigkeiten"
+  },
+  "projects": {
+    "intro": "Ein paar Dinge, die ich gebaut habe.",
+    "p1": {
+      "title": "Projekt Eins",
+      "description": "Ein Platzhalterprojekt. Ersetze diesen Text in messages/."
+    },
+    "p2": {
+      "title": "Projekt Zwei",
+      "description": "Ein weiteres Platzhalterprojekt mit eigener Beschreibung."
+    },
+    "p3": {
+      "title": "Projekt Drei",
+      "description": "Ein dritter Platzhalter, um das Galerie-Layout zu zeigen."
+    }
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet …",
+    "success": "Danke – das ist ein Demo-Formular, es wurde nichts gesendet.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+  },
+  "settings": {
+    "appearance": "Erscheinungsbild",
+    "theme_light": "Hell",
+    "theme_dark": "Dunkel",
+    "theme_auto": "Automatisch",
+    "wallpaper": "Hintergrundbild",
+    "wallpaper_day": "Tahoe Tag",
+    "wallpaper_night": "Tahoe Nacht",
+    "wallpaper_aurora": "Polarlicht",
+    "wallpaper_sunset": "Sonnenuntergang",
+    "accessibility": "Bedienungshilfen",
+    "reduceTransparency": "Transparenz reduzieren",
+    "reduceMotion": "Bewegung reduzieren",
+    "largerText": "Größerer Text",
+    "language": "Sprache & Region"
+  },
+  "drive": {
+    "meta": {
+      "title": "Amirreza Jolani — Sunset Island",
+      "description": "Fahr über eine Pixel-Art-Insel und entdecke die Arbeit von Amirreza Jolani Mameghani, Fullstack Engineer in Mailand, der Pillar beim Wachstum von 1 Mio. € auf 4 Mio. € ARR geholfen hat."
+    },
+    "hud": {
+      "brand": "AMIRREZA.DRIVE",
+      "stopsVisited": "Besuchte Stopps",
+      "options": "Spieloptionen",
+      "map": "KARTE",
+      "mapAria": "Karte",
+      "garage": "GARAGE",
+      "garageAria": "Garage: Auto wechseln",
+      "trophiesAria": "Erfolge: {count} von {total}",
+      "themeAria": "Thema: {theme}. Zum Wechseln klicken.",
+      "music": "Musik",
+      "on": "AN",
+      "off": "AUS",
+      "desktop": "DESKTOP",
+      "desktopAria": "Klassisches Desktop-Portfolio öffnen",
+      "hint": "PFEILTASTEN / WASD zum Fahren · auf einem leuchtenden Feld parken · M Karte · G Garage",
+      "kmh": "KM/H",
+      "unlocked": "ERFOLG FREIGESCHALTET",
+      "canvas": "Pixel-Art-Insel, auf der du herumfahren kannst. Über die Karten-Schaltfläche erreichst du eine barrierefreie Liste aller Bereiche.",
+      "brakeAria": "Bremsen / Rückwärts",
+      "brake": "BREMSE"
+    },
+    "themes": {
+      "day": "TAG",
+      "sunset": "ABEND",
+      "night": "NACHT"
+    },
+    "panel": {
+      "intro": "SUNSET ISLAND",
+      "menu": "KARTE",
+      "trophies": "ERFOLGE",
+      "garage": "GARAGE",
+      "drive": "LOS ▶",
+      "close": "✕ ESC"
+    },
+    "intro": {
+      "welcome": "Willkommen auf meiner Insel. Steig ins Auto und fahr zu jedem Gebäude – park auf dem leuchtenden Feld, um dieses Kapitel meiner Geschichte zu lesen.",
+      "keys": "⌨ Pfeiltasten / WASD – fahren",
+      "touch": "📱 Touch: Joystick in Fahrtrichtung ziehen · ▼ zum Bremsen",
+      "garage": "🚗 G – Garage: wähle aus fünf Autos",
+      "map": "🗺 M – Karte & Schnellreise · Esc – schließen",
+      "extras": "🏆 {count} Erfolge zum Freischalten · 🎨 Tag / Abend / Nacht · ♪ Musik",
+      "arrow": "➤ Der gelbe Pfeil zeigt auf deinen nächsten unbesuchten Stopp",
+      "wave": "👋 Vor ZUHAUSE winke ich dir zu",
+      "milan": "🇮🇹 Fahr nach Süden nach Mailand: Dom, Galleria und Skyline",
+      "start": "LOSFAHREN ▶",
+      "skip": "DIREKT ZU ÜBER MICH",
+      "classic": "🖥 Lieber klassisch? Öffne das Desktop-Portfolio"
+    },
+    "menu": {
+      "about": "Über mich",
+      "experience": "Berufserfahrung",
+      "projects": "Projekte",
+      "skills": "Fähigkeiten",
+      "testimonials": "Empfehlungen",
+      "contact": "Kontakt"
+    },
+    "signs": {
+      "about": "ZUHAUSE",
+      "experience": "KARRIERE-ZENTRALE",
+      "projects": "PROJEKTFABRIK",
+      "skills": "SKILL-GARAGE",
+      "testimonials": "REVIEW-CAFÉ",
+      "contact": "POSTAMT",
+      "duomo": "MAILÄNDER DOM",
+      "galleria": "GALLERIA",
+      "bosco": "BOSCO VERTICALE",
+      "velasca": "TORRE VELASCA",
+      "unicredit": "UNICREDIT TOWER"
+    },
+    "achievements": {
+      "ignition": {
+        "title": "Zündung",
+        "desc": "Losfahren"
+      },
+      "first-stop": {
+        "title": "Erster Stopp",
+        "desc": "Parke an deinem ersten Gebäude"
+      },
+      "grand-tour": {
+        "title": "Große Tour",
+        "desc": "Besuche alle sechs Gebäude"
+      },
+      "speed": {
+        "title": "Raser",
+        "desc": "Erreiche auf der Straße die Höchstgeschwindigkeit"
+      },
+      "bump": {
+        "title": "Blechschaden",
+        "desc": "Fahr mit Tempo gegen etwas"
+      },
+      "beach": {
+        "title": "Strandtag",
+        "desc": "Fahr auf den Sand"
+      },
+      "milano": {
+        "title": "Ciao Milano",
+        "desc": "Fahr auf die Piazza del Duomo"
+      },
+      "lighthouse": {
+        "title": "Leuchtturmwärter",
+        "desc": "Besuche den Leuchtturm"
+      },
+      "road-trip": {
+        "title": "Roadtrip",
+        "desc": "Fahr 1 km"
+      },
+      "test-drive": {
+        "title": "Probefahrt",
+        "desc": "Nimm ein anderes Auto aus der Garage"
+      },
+      "teleport": {
+        "title": "Schnellreisender",
+        "desc": "Reise über die Karte"
+      },
+      "dj": {
+        "title": "DJ",
+        "desc": "Schalte die Musik ein"
+      },
+      "night-owl": {
+        "title": "Nachteule",
+        "desc": "Wechsle zum Nacht-Thema"
+      },
+      "hello": {
+        "title": "Sag Hallo",
+        "desc": "Öffne einen meiner Kontaktlinks"
+      }
+    },
+    "cars": {
+      "coupe": {
+        "name": "Sunset-Coupé",
+        "desc": "Schnell und wendig. Das Standardauto."
+      },
+      "taxi": {
+        "name": "Pixel-Taxi",
+        "desc": "Ausgewogener Stadtflitzer mit Dachschild."
+      },
+      "van": {
+        "name": "Strand-Van",
+        "desc": "Langsam und stetig, Surfbrett inklusive."
+      },
+      "buggy": {
+        "name": "Dünen-Buggy",
+        "desc": "Fliegt über Sand und Gras."
+      },
+      "pickup": {
+        "name": "Pick-up",
+        "desc": "Drehmomentstarkes Arbeitstier mit Kiste auf der Ladefläche."
+      }
+    },
+    "garage": {
+      "speed": "TEMPO",
+      "handling": "HANDLING",
+      "offroad": "GELÄNDE",
+      "driving": "✓ AKTIV",
+      "select": "WÄHLEN"
+    },
+    "profile": {
+      "portrait": "Pixel-Art-Porträt von {name}",
+      "available": "● OFFEN FÜR NEUE PROJEKTE",
+      "title": "Fullstack Engineer",
+      "tagline": "Ich helfe Produkten zu wachsen",
+      "location": "Mailand, Italien",
+      "years": "6+ Jahre",
+      "focus": "React, Next.js & Node.js",
+      "bio": "Fullstack Engineer mit über 6 Jahren Erfahrung im Bau produktiver Web-Apps mit TypeScript. Bei Pillar, einem schnell wachsenden Startup für Bausoftware in Mailand, habe ich geholfen, das Produkt von 1 Mio. € auf rund 4 Mio. € ARR zu skalieren, und Features vom Datenmodell bis zur Oberfläche komplett geliefert. Experte für React und Next.js, mit Backend-Schwerpunkt auf Node.js und Deno: Zod-Validierung an API-Grenzen, einheitliche Fehlerbehandlung, Integrationen von Drittanbietern und Ursachenanalyse echter Produktionsfehler.",
+      "funFact": "Ich spreche Persisch, Englisch, etwas Italienisch und etwas Deutsch. Meine Masterforschung in Padua befasste sich mit KI-gestützter Personalisierung und adaptiver UX.",
+      "cv": "↓ Lebenslauf herunterladen",
+      "stats": {
+        "arr": "ARR-Wachstum bei Pillar",
+        "years": "Jahre Erfahrung",
+        "build": "Vercel-Buildzeit"
+      },
+      "pillars": {
+        "product": {
+          "title": "Produkt",
+          "text": "Features von der Analyse bis zur Auslieferung: Compliance-Dokumente, Stripe-Upsell-Checkout, i18n für 4 Märkte"
+        },
+        "fullstack": {
+          "title": "Full-Stack",
+          "text": "React, Next.js, Node.js, Deno, tRPC und Zod auf PostgreSQL, Supabase und Redis"
+        },
+        "ai": {
+          "title": "KI-nativ",
+          "text": "Claude Code, Agent Skills, MCP und LangGraph.js für schnellere Releases"
+        }
+      }
+    },
+    "experience": {
+      "pillar": {
+        "role": "Fullstack Engineer",
+        "years": "Mai 2026–heute",
+        "kind": "Aktuell · Mailand",
+        "text": "Habe Pillars Bausoftware-Startup beim Wachstum von 1 Mio. € auf 4 Mio. € ARR unterstützt. Ein Modul für Compliance-Dokumente, ein Modul für Baustellenkontakte und einen platzbasierten Stripe-Upsell-Checkout ausgeliefert, PostHog eingebunden und i18n-Lücken für Spanien, Kolumbien, Mexiko und Brasilien geschlossen. Monorepo-Lint-Läufe von ~71 s auf ~9 s und Vercel-Builds um ~45 % verkürzt."
+      },
+      "ofoundation": {
+        "role": "Fullstack Engineer",
+        "years": "Juli 2025–April 2026",
+        "kind": "Utrecht",
+        "text": "Design und Architektur einer TypeScript-E-Commerce-Plattform von Figma bis in die Produktion geleitet. Produktionsvorfälle mit Sentry um 40 % und Deploy-Zeit mit Docker-CI/CD um 25 % gesenkt, Barrierefreiheit von WCAG A auf AA gehoben, mit Lighthouse-Werten von 90–100."
+      },
+      "karhuno": {
+        "role": "Fullstack Engineer",
+        "years": "Jan.–Juni 2025",
+        "kind": "Helsinki",
+        "text": "Die Kernplattform eines jungen B2B-Startups für Vertriebssignale gebaut und verantwortet. Zod-Validierung an allen API-Grenzen vereinheitlicht und Playwright-E2E-Tests mit visueller Regression und API-Mocking ergänzt."
+      },
+      "padua": {
+        "role": "MSc, ICT for Internet & Multimedia",
+        "years": "2023–2026",
+        "kind": "Studium",
+        "text": "Für einen Master im Schwerpunkt Cybersystems vom Iran nach Italien gezogen. Meine Abschlussarbeit befasste sich mit KI-gestützter Personalisierung und adaptiver, inklusiver UX."
+      },
+      "pap": {
+        "role": "Frontend Engineer (Full-Stack-Umfang)",
+        "years": "Sept. 2022–Juli 2023",
+        "kind": "Teheran",
+        "text": "Django-REST-Services für Reisebüro-Websites gebaut und Backend-Bugs um 25 % reduziert. Eine Komponentenbibliothek mit Vue.js + Tailwind + Pinia geleitet, die Doppelarbeit um 35 % senkte, und LCP/INP um ~2 s beschleunigt."
+      },
+      "zharfa": {
+        "role": "Fullstack Developer",
+        "years": "2021",
+        "kind": "Teheran",
+        "text": "Ein Full-Stack-MVP mit Vue.js und Python/Django in wenigen Wochen gebaut, inklusive Token-Authentifizierung und rollenbasierter Zugriffskontrolle."
+      },
+      "almas": {
+        "role": "Frontend Developer",
+        "years": "2020–2021",
+        "kind": "Teheran",
+        "text": "Das Dashboard der Patientenplattform des Nikan-Krankenhauses gebaut, täglich vom medizinischen Personal genutzt, mit Chart.js-Berichten zu Patientenakten."
+      }
+    },
+    "projects": {
+      "view": "Auf GitHub ansehen →",
+      "appversion": {
+        "badge": "Agent Skill",
+        "text": "Node.js-Agent-Skill, der SemVer-Versionssprünge anwendet, das Changelog aktualisiert und aus der Commit-Historie getaggte GitHub-Releases erstellt. Läuft in Claude Code, Gemini CLI, Codex, Cursor und GitHub Copilot."
+      },
+      "nodebase": {
+        "badge": "Open Source",
+        "text": "React-SPA mit visuellem, knotenbasiertem Editor (React Flow), Echtzeit-Datenflüssen und Hintergrundjobs. Typsichere APIs über tRPC + Prisma/PostgreSQL, Authentifizierung mit Better Auth."
+      },
+      "prompter": {
+        "badge": "Open Source",
+        "text": "Full-Stack-Plattform mit Python, Django und PostgreSQL hinter einem TypeScript-Client (shadcn/ui + Tailwind, Zod), mit Docker für identische lokale und Produktionsumgebungen."
+      },
+      "marketplace": {
+        "badge": "Open Source",
+        "text": "Modulare Plattform mit CMS-artiger Architektur und einer Python/Django-REST-API-Schicht, durchgehend typsicher."
+      },
+      "elevenlabs": {
+        "badge": "KI-Projekt",
+        "text": "Nutzt die ElevenLabs-API für KI-Sprachausgabe. Eine LangChain- + RAG-Erweiterung für dokumentgestützte Sprachantworten ist in Arbeit."
+      }
+    },
+    "skills": {
+      "frontend": "Frontend",
+      "backend": "Backend & Daten",
+      "testing": "Tests & Zuverlässigkeit",
+      "devops": "DevOps & Cloud",
+      "ai": "KI-nativ"
+    },
+    "testimonials": {
+      "companies": "UNTERNEHMEN, MIT DENEN ICH GEARBEITET HABE",
+      "clara": {
+        "quote": "Ein echter Teamplayer – immer bereit zu helfen, zusammenzuarbeiten und die ganze Gruppe voranzubringen. Amirreza bringt in jeden Sprint technische Tiefe und eine großartige Einstellung.",
+        "role": "Fullstack Developer · OFoundation"
+      },
+      "massy": {
+        "quote": "Arbeitet mit Empathie und Professionalität. Macht Teamarbeit reibungsloser und jedes Projekt angenehmer. Einer der besten Engineers, mit denen ich je arbeiten durfte.",
+        "role": "Projektmanagement · OFoundation"
+      },
+      "mohammad": {
+        "quote": "Hilfsbereit, zuverlässig und lösungsorientiert. Er stärkt jedes Team, in dem er ist. Seine Fähigkeit, komplexe Anforderungen in eine klare Oberfläche zu übersetzen, ist außergewöhnlich.",
+        "role": "CEO · Zharfa Academy"
+      }
+    },
+    "contact": {
+      "intro": "Ansässig in {location} · immer offen für asynchrone Zusammenarbeit. Ich melde mich innerhalb von 24 Stunden.",
+      "email": "E-Mail",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "whatsappValue": "Kostenloser 30-Minuten-Call",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  }
+}

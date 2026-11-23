@@ -3,13 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
-import type { Locale } from "@/i18n/config";
+import { type Locale, localeOptions } from "@/i18n/config";
 import { setUserLocale } from "@/i18n/locale";
-
-const LOCALES: { id: Locale; labelKey: string }[] = [
-  { id: "en", labelKey: "english" },
-  { id: "fa", labelKey: "persian" },
-];
 
 export function LanguagePane() {
   const t = useTranslations("settings");
@@ -29,7 +24,7 @@ export function LanguagePane() {
     <section>
       <h2 className="mb-3 text-lg font-semibold">{t("language")}</h2>
       <div className="flex flex-col gap-2">
-        {LOCALES.map((l) => (
+        {localeOptions.map((l) => (
           <button
             key={l.id}
             type="button"

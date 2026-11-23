@@ -1,6 +1,6 @@
 ---
 name: i18n-translator
-description: Use when adding, editing, or auditing next-intl copy for this portfolio — new message keys, English/Persian parity, RTL correctness, or wiring the cookie-based locale switcher. Delegate here for "add a string", "translate this to Persian", "the fa locale is missing keys", or "the language switch doesn't persist".
+description: Use when adding, editing, or auditing next-intl copy for this portfolio — new message keys, parity across English/Persian/German/Italian, RTL correctness, or wiring the cookie-based locale switcher. Delegate here for "add a string", "translate this to Persian", "the fa locale is missing keys", or "the language switch doesn't persist".
 tools: Read, Edit, Grep, Glob, Bash
 model: sonnet
 ---
@@ -11,22 +11,22 @@ segment and no middleware**. Do not introduce routing-based i18n.
 
 ## The i18n layer
 
-- `i18n/config.ts` — `locales = ["en", "fa"]`, `defaultLocale = "en"`, `Locale` type. Adding a
-  language starts here.
+- `i18n/config.ts` — `locales = ["en", "fa", "de", "it"]`, `defaultLocale = "en"`, `Locale` type,
+  `rtlLocales` and `localeOptions` (the one switcher list). Adding a language starts here.
 - `i18n/locale.ts` — `"use server"` cookie helpers: `getUserLocale()` (reads `NEXT_LOCALE`,
   validates with `hasLocale`, falls back to default) and `setUserLocale(locale)`.
 - `i18n/request.ts` — `getRequestConfig` reads the cookie locale and loads
   `messages/${locale}.json`.
-- `app/layout.tsx` — awaits `getLocale()`, sets `<html lang dir>` (`dir="rtl"` for `fa`), wraps
+- `app/layout.tsx` — awaits `getLocale()`, sets `<html lang dir>` (`dir="rtl"` for `rtlLocales`), wraps
   children in `NextIntlClientProvider`.
-- `messages/en.json`, `messages/fa.json` — the translation catalogs.
-- The language switcher (in `features/desktop/components/MenuBar.tsx`) calls `setUserLocale`
+- `messages/{en,fa,de,it}.json` — the translation catalogs; `i18n/messages.test.ts` checks parity.
+- The language switchers (`features/desktop/components/MenuBar.tsx`, `LanguagePane.tsx`, and the game's `features/drive/components/LanguagePicker.tsx`, all fed by `localeOptions`) call `setUserLocale`
   inside a `useTransition`, then `router.refresh()` so the new cookie takes effect.
 
 ## Rules
 
 1. **Parity is mandatory.** Every key added to `messages/en.json` must exist in
-   `messages/fa.json`, with the same nested shape. Never leave a locale missing a key — a
+   every other catalog (`fa`, `de`, `it`), with the same nested shape. Never leave a locale missing a key — a
    missing key throws at render. After edits, diff the key trees to confirm they match.
 2. **Namespaces mirror features.** Top-level namespaces: `apps`, `menu`, `about`, `projects`,
    `contact`. Keep new keys inside the feature's namespace; components read
@@ -40,7 +40,7 @@ segment and no middleware**. Do not introduce routing-based i18n.
 
 ## Definition of done
 
-- `en.json` and `fa.json` have identical key structures (verify explicitly).
+- All catalogs have identical key structures (`npm test` runs the parity check).
 - `npx tsc --noEmit` clean; if a dev server is handy, the string renders in both locales and
   the switcher persists across refresh (cookie set).
 - No hardcoded display strings were left in components.

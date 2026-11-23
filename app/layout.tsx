@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { SettingsProvider } from "@/context/SettingsContext";
+import { type Locale, rtlLocales } from "@/i18n/config";
 import { parseSettings, SETTINGS_COOKIE } from "@/settings/config";
 import "./globals.css";
 
@@ -28,7 +29,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
-  const dir = locale === "fa" ? "rtl" : "ltr";
+  const dir = rtlLocales.includes(locale as Locale) ? "rtl" : "ltr";
   const settings = parseSettings((await cookies()).get(SETTINGS_COOKIE)?.value);
   const serverDark = settings.theme === "dark"; // `auto` corrected by NO_FLASH
 
