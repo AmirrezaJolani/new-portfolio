@@ -1,0 +1,37 @@
+.claude/skills/extending-pixel-drive/SKILL.md
+  s_c17b2e84ffe0df::t_6e295093b8760d 1-58
+.agent/README.md
+  s_c17b2e84ffe0df::t_a180fd38368843 11-22
+.claude/skills/adding-a-desktop-app/SKILL.md
+  s_c17b2e84ffe0df::t_b1beb8b0ad9188 1-40
+.claude/skills/editing-portfolio-content/SKILL.md
+  s_c17b2e84ffe0df::t_e1fae3d0503554 1-46
+.claude/skills/verifying-a-change/SKILL.md
+  s_c17b2e84ffe0df::t_36770d88ea27de 1-53
+.claude/skills/translating-copy/SKILL.md
+  s_c17b2e84ffe0df::t_bca67812f48160 36,39
+  s_c17b2e84ffe0df::t_48d4d51ee5c516 1-35,37-38,40-54
+AGENTS.md
+  s_c17b2e84ffe0df::t_9113a2f55bf91c 32-46
+.claude/README.md
+  s_c17b2e84ffe0df::t_bff6f1b76a30b9 40
+  s_c17b2e84ffe0df::t_d507efa087fca1 11-16
+.agent/agents.md
+  s_c17b2e84ffe0df::t_302912e0f17d87 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af8d3f58e47650904b8c777a86d3d03fc2956f36",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
