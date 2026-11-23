@@ -8,10 +8,18 @@ writing routing/layout/rendering code.
 
 ## What this project is
 
-A personal portfolio rendered as an interactive **macOS desktop**: a menu bar, a dock, and
-draggable/resizable/minimizable windows. Portfolio content is presented as "apps" — **About**,
-**Projects**, **Contact**. Mobile devices get a simplified stacked/full-screen view. A Games
-app is intentionally deferred but the app registry is built to accept one later.
+A personal portfolio with two faces:
+
+- **`/` — Pixel Drive**, a pixel-art driving game (`features/drive/`, world model in
+  `workflows/driveWorld.ts`). You drive to buildings that open portfolio sections; it has
+  achievements, a garage, themes and a Milan district.
+- **`/desktop`**, an interactive **macOS desktop** with a menu bar, a dock, and draggable,
+  resizable, minimizable windows. Content is presented as apps: **About**, **Projects**,
+  **Contact**, **Settings**. Mobile devices get a simplified stacked/full-screen view.
+
+Step-by-step playbooks for common tasks live in [`../.claude/skills/`](../.claude/skills)
+(plain Markdown; usable by any agent). They cover editing content, translating, extending the
+game, adding a desktop app, and verifying a change.
 
 ## Stack
 

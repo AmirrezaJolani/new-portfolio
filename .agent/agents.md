@@ -8,7 +8,7 @@ vendor-neutral summary of who does what and when to reach for each.
 |-------|-------------|-------|
 | **portfolio-ui** | Building/changing the desktop UI — shell, menu bar, dock, window chrome, an app window, styling, wiring copy | `features/*`, `components/ui/`, `lib/apps.config.tsx`, `app/` |
 | **window-system** | Changing window behavior (focus, z-order, minimize/restore, move/resize) or the contact-form flow — **works test-first** | `workflows/`, `context/` |
-| **i18n-translator** | Adding/editing copy, English↔Persian parity, RTL correctness, the cookie-based locale switcher | `i18n/`, `messages/`, the menu-bar switcher |
+| **i18n-translator** | Adding/editing copy, parity across en/fa/de/it, RTL correctness, the cookie-based locale switcher | `i18n/`, `messages/`, the menu-bar switcher |
 
 ## Picking an agent
 
