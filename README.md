@@ -6,7 +6,18 @@ windows, and explore the content as "apps". Styled with a macOS **Tahoe "Liquid 
 aesthetic — a generated scenic wallpaper, frosted translucent surfaces, and desktop widgets —
 and fully internationalized (English + Persian, right-to-left).
 
+The homepage (`/`) is **Pixel Drive**: a pixel-art island you drive around, where each building
+is a chapter of the portfolio (about, experience, projects, skills, testimonials, contact).
+The macOS desktop lives at **`/desktop`**, linked from the game's HUD and intro.
+
 ## Features
+
+- **Pixel Drive homepage** — a canvas game with sprite-stacked buildings, five cars, day /
+  sunset / night themes, a chiptune soundtrack, 14 achievements, a touch joystick, and a
+  hand-drawn Milan district (Duomo, Galleria, Bosco Verticale, Torre Velasca, UniCredit Tower).
+  Every word goes through next-intl, so it plays in English and Persian too. The pure world
+  model and car physics live in `workflows/driveWorld.ts` (Vitest-tested); the UI and renderer
+  in `features/drive/`.
 
 - **A real windowing desktop** — open apps from the dock; windows drag from the title bar,
   resize from the corner, minimize/close via the traffic lights, and raise to front on click

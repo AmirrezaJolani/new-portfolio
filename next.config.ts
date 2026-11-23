@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   // Next's file tracing can miss; force them into the standalone bundle.
   outputFileTracingIncludes: {
     "/": ["./messages/*.json"],
+    "/desktop": ["./messages/*.json"],
   },
 };
 

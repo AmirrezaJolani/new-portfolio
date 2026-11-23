@@ -6,7 +6,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # Portfolio OS — project context
 
-An interactive **macOS-style desktop** portfolio: menu bar, dock, and draggable/resizable/
+The homepage (`/`) is **Pixel Drive**, a pixel-art driving game (`features/drive/`, pure world
+model in `workflows/driveWorld.ts`, copy under `drive.*` in `messages/`). Its canvas layer is
+deliberately `dir="ltr"` (world coordinates are physical); the HUD uses logical properties.
+
+At `/desktop`: an interactive **macOS-style desktop** portfolio: menu bar, dock, and draggable/resizable/
 minimizable windows presenting content as "apps" (About, Projects, Contact). Styled with a
 macOS Tahoe **Liquid Glass** system; internationalized (English + Persian/RTL); containerized
 with Docker + CI.
