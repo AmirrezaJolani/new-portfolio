@@ -14,6 +14,7 @@ Claude Code configuration for the macOS-style portfolio.
   - **extending-pixel-drive**: achievements, landmarks, signs, cars, world, game CSS.
   - **adding-a-desktop-app**: the registry path for a new `/desktop` window.
   - **verifying-a-change**: the local CI checks, plus a locale-cookie browser check.
+  - **styling-ui**: the checklist for applying the design system in [`../DESIGN.md`](../DESIGN.md).
 - [`mcp.md`](./mcp.md) — MCP servers this project uses and why (config in [`../.mcp.json`](../.mcp.json)).
 - `settings.local.json` — local, machine-specific settings (not shared).
 

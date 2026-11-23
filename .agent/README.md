@@ -19,7 +19,8 @@ A personal portfolio with two faces:
 
 Step-by-step playbooks for common tasks live in [`../.claude/skills/`](../.claude/skills)
 (plain Markdown; usable by any agent). They cover editing content, translating, extending the
-game, adding a desktop app, and verifying a change.
+game, adding a desktop app, styling, and verifying a change. The design system (tokens, the
+two visual languages and component classes) is [`../DESIGN.md`](../DESIGN.md).
 
 ## Stack
 

@@ -369,7 +369,7 @@ export function Panel({
   // biome-ignore lint/correctness/useExhaustiveDependencies: refocus the close button whenever the panel changes
   useEffect(() => closeRef.current?.focus(), [kind]);
   const b = BUILDINGS.find((x) => x.id === kind);
-  const accent = b?.accent ?? "#ffb36b";
+  const accent = b?.accent ?? "var(--px-amber)";
   const title = b
     ? t(`signs.${b.id}`)
     : t(`panel.${kind as "intro" | "menu" | "trophies" | "garage"}`);

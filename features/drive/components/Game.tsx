@@ -348,7 +348,7 @@ export function Game() {
   useEffect(() => () => setMusic(false), []);
 
   return (
-    <main className="drive-root fixed inset-0 overflow-hidden bg-[#38408c] select-none touch-none">
+    <main className="drive-root fixed inset-0 overflow-hidden bg-(--px-sky) select-none touch-none">
       {/* World layer: physical (canvas) coordinates, so it stays LTR under RTL locales. */}
       <div dir="ltr" className="absolute inset-0">
         <canvas
@@ -364,10 +364,10 @@ export function Game() {
             ref={(el) => {
               labelRefs.current[i] = el;
             }}
-            className="absolute start-0 top-0 font-pixel text-[9px] sm:text-[10px] px-1.5 py-1 whitespace-nowrap pointer-events-none text-[#1d1530]"
+            className="absolute start-0 top-0 font-pixel text-[9px] sm:text-[10px] px-1.5 py-1 whitespace-nowrap pointer-events-none text-(--px-ink)"
             style={{
-              background: b.accent ?? "#f3ece2",
-              boxShadow: "0 3px 0 #1d1530",
+              background: b.accent ?? "var(--px-paper)",
+              boxShadow: "0 3px 0 var(--px-ink)",
             }}
           >
             {b.id && visited.has(b.id) ? "✓ " : ""}
@@ -378,7 +378,7 @@ export function Game() {
 
       <header className="absolute top-3 inset-x-3 flex justify-between items-start gap-3 z-10">
         <div className="pixel-box px-2 py-1.5 sm:px-3 sm:py-2 shrink-0">
-          <p className="font-pixel text-[8px] sm:text-[10px] text-[#ffb36b]">
+          <p className="font-pixel text-[8px] sm:text-[10px] text-(--px-amber)">
             {t("hud.brand")}
           </p>
           <p className="text-base sm:text-lg leading-none mt-1">
@@ -469,7 +469,7 @@ export function Game() {
             >
               <span className="text-3xl">{a.icon}</span>
               <span>
-                <span className="block font-pixel text-[9px] text-[#ffcf5c]">
+                <span className="block font-pixel text-[9px] text-(--px-gold)">
                   {t("hud.unlocked")}
                 </span>
                 <span className="block text-xl leading-none">
@@ -481,7 +481,7 @@ export function Game() {
         })}
       </ol>
 
-      <p className="absolute bottom-3 inset-x-0 text-center text-lg text-[#fbe7cf] drop-shadow-[2px_2px_0_#1d1530] pointer-coarse:hidden">
+      <p className="absolute bottom-3 inset-x-0 text-center text-lg text-(--px-cream) drop-shadow-[2px_2px_0_var(--px-ink)] pointer-coarse:hidden">
         {t("hud.hint")}
       </p>
 
@@ -496,7 +496,7 @@ export function Game() {
         >
           0
         </span>
-        <span className="block font-pixel text-[8px] text-[#ffb36b]">
+        <span className="block font-pixel text-[8px] text-(--px-amber)">
           {t("hud.kmh")}
         </span>
       </div>

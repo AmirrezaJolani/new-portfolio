@@ -29,7 +29,8 @@ next-intl) + `messages/` (`en`/`fa`/`de`/`it`, kept at key parity; `i18n/message
 - Business rules stay pure in `workflows/` (Vitest-tested); keep `context/` thin.
 - `shadcn` is a **devDependency on purpose** (`app/globals.css` imports `shadcn/tailwind.css`).
 - Don't break `output: "standalone"` — the Docker image depends on it.
-- Pixel Drive CSS is scoped under `.drive-root` and uses `--px-accent` (shadcn owns `--accent`).
+- Two visual languages, never mixed: **Pixel** (`/`, `--px-*` tokens under `.drive-root`) and
+  **Liquid Glass** (`/desktop`, shadcn tokens + `.lg-*`). No raw hex in components; see [`DESIGN.md`](DESIGN.md).
 - Locale is the `NEXT_LOCALE` cookie; never add `/[locale]` routes. Languages are listed once, in `i18n/config.ts`.
 
 **Done means** CI passes locally — `npm run lint && npx tsc --noEmit && npm test && npm run build` —
@@ -43,6 +44,7 @@ and the changed page was checked in a browser in `en` and `fa` (RTL).
 | Add or rename a string, add a language, fix RTL | `translating-copy` |
 | Achievements, landmarks, signs, cars, map or HUD in the game | `extending-pixel-drive` |
 | New window app on `/desktop` | `adding-a-desktop-app` |
+| Colours, fonts, surfaces, any new styling ([`DESIGN.md`](DESIGN.md) is the design system) | `styling-ui` |
 | Before saying "done", committing, or when CI fails | `verifying-a-change` |
 
 Deeper, role-specific guidance lives in [`.claude/agents/`](.claude/agents) (portfolio-ui,
