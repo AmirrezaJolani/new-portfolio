@@ -9,7 +9,13 @@
   "drive": {
     "meta": {
       "title": "Amirreza Jolani — Sunset Island",
-      "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha aiutato Pillar a crescere da 1 a 4 milioni di euro di ARR."
+      "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha aiutato Pillar a crescere da 1 a 5 milioni di euro di ARR."
+    },
+    "status": {
+      "visited": "Visitata",
+      "notVisited": "Non ancora visitata",
+      "unlocked": "Sbloccato",
+      "locked": "Bloccato"
     },
     "hud": {
       "brand": "AMIRREZA.DRIVE",
@@ -48,14 +54,14 @@
     },
     "intro": {
       "welcome": "Benvenuto sulla mia isola. Sali in macchina e raggiungi ogni edificio: fermati sul riquadro luminoso e premi Invio (o tocca il pulsante) per leggere quel capitolo della mia storia.",
-      "keys": "⌨ Frecce / WASD: guida · frena in curva per derapare",
-      "touch": "📱 Touch: trascina il joystick dove vuoi andare · ▼ per frenare",
-      "garage": "🚗 G: garage, scegli tra cinque auto",
-      "map": "🗺 M: mappa e viaggio rapido · Esc: chiudi",
-      "extras": "🏆 {count} obiettivi da sbloccare · 🎨 temi giorno / tramonto / notte · ♪ musica",
-      "arrow": "➤ La freccia gialla indica la prossima tappa da visitare",
-      "wave": "👋 Mi trovi a salutare davanti a CASA",
-      "milan": "🇮🇹 Guida verso sud fino a Milano: il Duomo, la Galleria e lo skyline",
+      "keys": "Frecce / WASD: guida · frena in curva per derapare",
+      "touch": "Touch: trascina il joystick dove vuoi andare · tocca FRENO per fermarti",
+      "garage": "G: garage, scegli tra cinque auto",
+      "map": "M: mappa e viaggio rapido · Esc: chiudi",
+      "extras": "{count} obiettivi da sbloccare · temi giorno / tramonto / notte · musica",
+      "arrow": "La freccia gialla indica la prossima tappa da visitare",
+      "wave": "Mi trovi a salutare davanti a CASA",
+      "milan": "Guida verso sud fino a Milano: il Duomo, la Galleria e lo skyline",
       "start": "INIZIA A GUIDARE ▶",
       "skip": "VAI A CHI SONO"
     },
@@ -173,9 +179,9 @@
       "title": "Fullstack Engineer",
       "tagline": "Aiuto i prodotti a crescere",
       "location": "Milano, Italia",
-      "years": "6+ anni",
+      "years": "5+ anni",
       "focus": "React, Next.js e Node.js",
-      "bio": "Fullstack Engineer con oltre 6 anni di esperienza nello sviluppo di web app in produzione con TypeScript. In Pillar, startup milanese in rapida crescita nel software per l'edilizia, ho aiutato a portare il prodotto da 1 a circa 4 milioni di euro di ARR, consegnando funzionalità end-to-end, dal modello dati all'interfaccia. Esperto di React e Next.js, con una forte inclinazione backend su Node.js e Deno: validazione Zod ai confini delle API, gestione coerente degli errori, integrazioni con servizi terzi e analisi delle cause dei guasti reali in produzione.",
+      "bio": "Fullstack Engineer con oltre 5 anni di esperienza nello sviluppo end-to-end di web app in produzione con TypeScript: esperto di React e Next.js sul frontend, Node.js, Deno e Python/Django con PostgreSQL sul backend. Costruisco agenti LLM in produzione con Mastra e LangChain/LangGraph, li valuto con Braintrust, li distribuisco su AWS e lavoro ogni giorno con Claude Code, agent skill e MCP. In Pillar ho aiutato a portare il prodotto da 1 a circa 5 milioni di euro di ARR, seguendo le funzionalità dall'analisi al rilascio insieme a Product e Design.",
       "funFact": "Parlo persiano, inglese, un po' di italiano e un po' di tedesco. La mia ricerca magistrale a Padova riguardava la personalizzazione basata sull'IA e la UX adattiva.",
       "cv": "↓ Scarica il CV",
       "stats": {
@@ -194,7 +200,7 @@
         },
         "ai": {
           "title": "AI-native",
-          "text": "Claude Code, agent skill, MCP e LangGraph.js per rilasciare più in fretta"
+          "text": "Agenti Mastra e LangGraph con eval Braintrust su AWS; Claude Code, agent skill e MCP"
         }
       }
     },
@@ -203,7 +209,7 @@
         "role": "Fullstack Engineer",
         "years": "Mag 2026–oggi",
         "kind": "Attuale · Milano",
-        "text": "Ho aiutato la startup di software per l'edilizia Pillar a crescere da 1 a 4 milioni di euro di ARR. Ho rilasciato un modulo per i documenti di conformità, un modulo per i contatti di cantiere e un checkout di upsell con Stripe basato sui posti, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
+        "text": "Ho aiutato la startup di software per l'edilizia Pillar a crescere da 1 a 5 milioni di euro di ARR. Ho rilasciato un modulo per i documenti di conformità, un modulo per i contatti di cantiere e un checkout di upsell con Stripe basato sui posti, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",
@@ -244,6 +250,10 @@
     },
     "projects": {
       "view": "Vedi su GitHub →",
+      "portfolio": {
+        "badge": "Questo sito",
+        "text": "Il gioco in cui stai guidando: un mondo in pixel art con Next.js 16 + TypeScript in cui ogni edificio è un capitolo del CV. Renderer su canvas, fisica del drift testata (Vitest), inglese/persiano (RTL)/tedesco/italiano con next-intl, Docker + GitHub Actions CI."
+      },
       "appversion": {
         "badge": "Agent Skill",
         "text": "Agent skill in Node.js che applica gli incrementi SemVer, aggiorna il changelog e crea GitHub Release con tag a partire dalla cronologia dei commit. Funziona in Claude Code, Gemini CLI, Codex, Cursor e GitHub Copilot."
@@ -255,10 +265,6 @@
       "prompter": {
         "badge": "Open source",
         "text": "Piattaforma full-stack con Python, Django e PostgreSQL dietro un client TypeScript (shadcn/ui + Tailwind, Zod), containerizzata con Docker per avere gli stessi ambienti in locale e in produzione."
-      },
-      "marketplace": {
-        "badge": "Open source",
-        "text": "Piattaforma modulare con un'architettura in stile CMS e un livello API REST in Python/Django, type-safe da un capo all'altro."
       },
       "elevenlabs": {
         "badge": "Progetto IA",
@@ -294,7 +300,8 @@
       "whatsapp": "WhatsApp",
       "whatsappValue": "Call gratuita di 30 minuti",
       "linkedin": "LinkedIn",
-      "github": "GitHub"
+      "github": "GitHub",
+      "github2": "GitHub"
     }
   }
 }

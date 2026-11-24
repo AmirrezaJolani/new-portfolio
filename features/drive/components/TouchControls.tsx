@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { type PointerEvent, useRef } from "react";
+import { Icon } from "./Icon";
 
 const R = 44; // knob travel, CSS px
 
@@ -62,7 +63,7 @@ export function TouchControls({ onStick, onBrake }: Props) {
         onPointerUp={() => onBrake(false)}
         onPointerCancel={() => onBrake(false)}
       >
-        <span className="block text-2xl leading-none">▼</span>
+        <Icon name="brake" size={32} className="mx-auto block" />
         <span className="block text-[8px] mt-1">{t("brake")}</span>
       </button>
     </div>

@@ -37,6 +37,7 @@ import {
   THEMES,
   type Theme,
 } from "../lib/render";
+import { Icon } from "./Icon";
 import { LanguagePicker } from "./LanguagePicker";
 import { Panel, type PanelKind } from "./Panel";
 import { TouchControls } from "./TouchControls";
@@ -413,7 +414,9 @@ export function Game() {
               boxShadow: "0 3px 0 var(--px-ink)",
             }}
           >
-            {b.id && visited.has(b.id) ? "✓ " : ""}
+            {b.id && visited.has(b.id) && (
+              <Icon name="check" className="me-1" label={t("status.visited")} />
+            )}
             <span dir="auto">{t(`signs.${b.id ?? (b.kind as "duomo")}`)}</span>
           </div>
         ))}
@@ -425,8 +428,10 @@ export function Game() {
             {t("hud.brand")}
           </p>
           <p className="text-base sm:text-lg leading-none mt-1">
-            <span className="hidden sm:inline">{t("hud.stopsVisited")} </span>📍{" "}
-            {visited.size}/{BUILDINGS.length}
+            <span className="sr-only sm:not-sr-only">
+              {t("hud.stopsVisited")}{" "}
+            </span>
+            <Icon name="pin" /> {visited.size}/{BUILDINGS.length}
           </p>
         </div>
         {/* Icons only on phones; labels from sm up. */}
@@ -440,7 +445,8 @@ export function Game() {
             className="pixel-btn"
             aria-label={t("hud.mapAria")}
           >
-            🗺<span className="hidden sm:inline"> {t("hud.map")}</span>
+            <Icon name="map" />
+            <span className="hidden sm:inline"> {t("hud.map")}</span>
           </button>
           <button
             type="button"
@@ -448,7 +454,8 @@ export function Game() {
             className="pixel-btn"
             aria-label={t("hud.garageAria")}
           >
-            🚗<span className="hidden sm:inline"> {t("hud.garage")}</span>
+            <Icon name="car" />
+            <span className="hidden sm:inline"> {t("hud.garage")}</span>
           </button>
           <button
             type="button"
@@ -459,7 +466,7 @@ export function Game() {
               total: ACHIEVEMENTS.length,
             })}
           >
-            🏆
+            <Icon name="trophy" />
             <span className="hidden sm:inline">
               {" "}
               {unlocked.size}/{ACHIEVEMENTS.length}
@@ -471,7 +478,11 @@ export function Game() {
             className="pixel-btn"
             aria-label={t("hud.themeAria", { theme: t(`themes.${theme}`) })}
           >
-            {theme === "day" ? "☀" : theme === "night" ? "🌙" : "🌅"}
+            <Icon
+              name={
+                theme === "day" ? "sun" : theme === "night" ? "moon" : "sunset"
+              }
+            />
             <span className="hidden sm:inline"> {t(`themes.${theme}`)}</span>
           </button>
           <button
@@ -481,7 +492,7 @@ export function Game() {
             aria-pressed={music}
             aria-label={t("hud.music")}
           >
-            {music ? "♪" : "🔇"}
+            <Icon name={music ? "note" : "mute"} />
             <span className="hidden sm:inline">
               {" "}
               {music ? t("hud.on") : t("hud.off")}
@@ -503,7 +514,7 @@ export function Game() {
               key={key}
               className="pixel-box toast flex items-center gap-3 px-3 py-2"
             >
-              <span className="text-3xl">{a.icon}</span>
+              <Icon name={a.icon} size={32} />
               <span>
                 <span className="block font-pixel text-[9px] text-(--px-gold)">
                   {t("hud.unlocked")}

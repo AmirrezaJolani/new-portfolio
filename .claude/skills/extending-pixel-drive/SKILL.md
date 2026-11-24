@@ -23,7 +23,7 @@ The game is a canvas world plus a React HUD.
 ## Recipes
 
 **Achievement**
-1. `features/drive/lib/achievements.ts`: `{ id, icon }`.
+1. `features/drive/lib/achievements.ts`: `{ id, icon }` (`icon` is an `IconName`).
 2. `drive.achievements.<id>.{title,desc}` in all four catalogs.
 3. Call `unlock("<id>")` at the trigger in `Game.tsx` (frame loop for driving events, a
    handler for UI events). It's idempotent, so no guard is needed.
@@ -47,6 +47,10 @@ the drift tests in `driveWorld.test.ts`.
 
 **Opening stops**: driving onto a pad only sets `zone`; Enter (keyboard) or the prompt button
 calls `open(id)`. Fast travel from the map opens directly.
+
+**Icon**: draw a 16×16 SVG of whole-pixel `<rect>`s (`shape-rendering="crispEdges"`, ink
+outline) into `public/icons/<name>.svg`, add `<name>` to `ICONS` in `features/drive/lib/icons.ts`, use
+`<Icon name="<name>" />`. Never an emoji. `icons.test.ts` checks the folder against the list.
 
 **World size / new terrain**: change `COLS`/`ROWS` and the tile bake in `driveWorld.ts`, then
 extend `driveWorld.test.ts`: spawn on road, buildings solid, pads reachable.
