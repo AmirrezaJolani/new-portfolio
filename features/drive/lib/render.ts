@@ -1223,7 +1223,12 @@ export type Scene = {
   t: number;
   target: { x: number; y: number } | null;
   pad: SectionId | null;
+  skids: Skid[];
 };
+
+/** Where the car was sliding: world position, heading, time (s). */
+export type Skid = { x: number; y: number; a: number; t: number };
+export const SKID_LIFE = 4; // seconds until a mark has faded out
 
 export function renderFrame(
   g: Ctx,
@@ -1278,6 +1283,24 @@ export function renderFrame(
     for (let k = 0; k < 3; k++)
       px(g, b.accent, c.x - ox - k, c.y - oy - 3 + k + bob, k * 2 + 1, 1); // ▲
   }
+
+  // Skid marks: one dot per rear tyre, 5px behind the centre, 3px either side.
+  for (const k of s.skids) {
+    const age = s.t - k.t;
+    if (age > SKID_LIFE) continue;
+    g.globalAlpha = 0.35 * (1 - age / SKID_LIFE);
+    const [fx, fy] = [Math.sin(k.a), -Math.cos(k.a)];
+    for (const side of [-3, 3])
+      px(
+        g,
+        C.shadow,
+        Math.round(k.x - fx * 5 + fy * -side - ox),
+        Math.round(k.y - fy * 5 + fx * side - oy),
+        2,
+        2,
+      );
+  }
+  g.globalAlpha = 1;
 
   // Y-sorted draw list: everything visible + the car.
   const carEntity: Entity = {

@@ -41,13 +41,20 @@ The game is a canvas world plus a React HUD.
 **Car**: `CARS` entry (only `id, top, accel, turn, offroad`), a `render.ts` case, and
 `drive.cars.<id>.{name,desc}`.
 
+**Physics** (`stepCar`): `speed` is along the nose, `side` is the sideways slide. Grip (per
+surface, lower when braking at speed) shrinks `side` each step. Tune grip numbers there; extend
+the drift tests in `driveWorld.test.ts`.
+
+**Opening stops**: driving onto a pad only sets `zone`; Enter (keyboard) or the prompt button
+calls `open(id)`. Fast travel from the map opens directly.
+
 **World size / new terrain**: change `COLS`/`ROWS` and the tile bake in `driveWorld.ts`, then
 extend `driveWorld.test.ts`: spawn on road, buildings solid, pads reachable.
 
 ## Gotchas
 
-- The accent colour is `--px-accent`, **not** `--accent` (shadcn owns `--accent`). Never add
-  unscoped CSS; prefix with `.drive-root`.
+- Colours are `--px-*` tokens (the section accent is `--px-accent`). Never add unscoped CSS;
+  prefix with `.drive-root`. See `styling-ui`.
 - The world layer is `dir="ltr"`, the HUD is not; see `translating-copy` for the RTL rules.
 - Biome rejects `forEach` returning values, `arr.map((x, i) => <El key={i}/>)`, `role="meter"`
   (use `<meter>`) and buttons without `type="button"`.

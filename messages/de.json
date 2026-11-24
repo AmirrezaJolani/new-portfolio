@@ -1,69 +1,10 @@
 {
-  "apps": {
-    "about": "Über mich",
-    "projects": "Projekte",
-    "contact": "Kontakt",
-    "settings": "Einstellungen"
-  },
-  "window": {
-    "close": "Schließen",
-    "minimize": "Minimieren",
-    "maximize": "Maximieren"
-  },
-  "menu": {
-    "finder": "Finder",
-    "name": "Amirreza Jolani",
-    "language": "Sprache",
+  "languages": {
+    "label": "Sprache",
     "english": "English",
     "persian": "فارسی",
     "german": "Deutsch",
     "italian": "Italiano"
-  },
-  "about": {
-    "role": "Softwareentwickler",
-    "bio": "Ich baue durchdachte, sorgfältig gestaltete Software für das Web. Dieser Desktop ist mein Portfolio – öffne die Apps im Dock, um dich umzusehen.",
-    "skillsTitle": "Fähigkeiten"
-  },
-  "projects": {
-    "intro": "Ein paar Dinge, die ich gebaut habe.",
-    "p1": {
-      "title": "Projekt Eins",
-      "description": "Ein Platzhalterprojekt. Ersetze diesen Text in messages/."
-    },
-    "p2": {
-      "title": "Projekt Zwei",
-      "description": "Ein weiteres Platzhalterprojekt mit eigener Beschreibung."
-    },
-    "p3": {
-      "title": "Projekt Drei",
-      "description": "Ein dritter Platzhalter, um das Galerie-Layout zu zeigen."
-    }
-  },
-  "contact": {
-    "title": "Kontakt aufnehmen",
-    "name": "Name",
-    "email": "E-Mail",
-    "message": "Nachricht",
-    "send": "Senden",
-    "sending": "Wird gesendet …",
-    "success": "Danke – das ist ein Demo-Formular, es wurde nichts gesendet.",
-    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
-  },
-  "settings": {
-    "appearance": "Erscheinungsbild",
-    "theme_light": "Hell",
-    "theme_dark": "Dunkel",
-    "theme_auto": "Automatisch",
-    "wallpaper": "Hintergrundbild",
-    "wallpaper_day": "Tahoe Tag",
-    "wallpaper_night": "Tahoe Nacht",
-    "wallpaper_aurora": "Polarlicht",
-    "wallpaper_sunset": "Sonnenuntergang",
-    "accessibility": "Bedienungshilfen",
-    "reduceTransparency": "Transparenz reduzieren",
-    "reduceMotion": "Bewegung reduzieren",
-    "largerText": "Größerer Text",
-    "language": "Sprache & Region"
   },
   "drive": {
     "meta": {
@@ -83,9 +24,9 @@
       "music": "Musik",
       "on": "AN",
       "off": "AUS",
-      "desktop": "DESKTOP",
-      "desktopAria": "Klassisches Desktop-Portfolio öffnen",
-      "hint": "PFEILTASTEN / WASD zum Fahren · auf einem leuchtenden Feld parken · M Karte · G Garage",
+      "hint": "PFEILTASTEN / WASD zum Fahren · ENTER auf einem leuchtenden Feld · M Karte · G Garage",
+      "visit": "{place} BESUCHEN",
+      "enterKey": "ENTER",
       "kmh": "KM/H",
       "unlocked": "ERFOLG FREIGESCHALTET",
       "canvas": "Pixel-Art-Insel, auf der du herumfahren kannst. Über die Karten-Schaltfläche erreichst du eine barrierefreie Liste aller Bereiche.",
@@ -106,8 +47,8 @@
       "close": "✕ ESC"
     },
     "intro": {
-      "welcome": "Willkommen auf meiner Insel. Steig ins Auto und fahr zu jedem Gebäude – park auf dem leuchtenden Feld, um dieses Kapitel meiner Geschichte zu lesen.",
-      "keys": "⌨ Pfeiltasten / WASD – fahren",
+      "welcome": "Willkommen auf meiner Insel. Steig ins Auto und fahr zu jedem Gebäude – halte auf dem leuchtenden Feld und drück Enter (oder tipp auf den Button), um dieses Kapitel meiner Geschichte zu lesen.",
+      "keys": "⌨ Pfeiltasten / WASD – fahren · in der Kurve bremsen zum Driften",
       "touch": "📱 Touch: Joystick in Fahrtrichtung ziehen · ▼ zum Bremsen",
       "garage": "🚗 G – Garage: wähle aus fünf Autos",
       "map": "🗺 M – Karte & Schnellreise · Esc – schließen",
@@ -116,8 +57,7 @@
       "wave": "👋 Vor ZUHAUSE winke ich dir zu",
       "milan": "🇮🇹 Fahr nach Süden nach Mailand: Dom, Galleria und Skyline",
       "start": "LOSFAHREN ▶",
-      "skip": "DIREKT ZU ÜBER MICH",
-      "classic": "🖥 Lieber klassisch? Öffne das Desktop-Portfolio"
+      "skip": "DIREKT ZU ÜBER MICH"
     },
     "menu": {
       "about": "Über mich",

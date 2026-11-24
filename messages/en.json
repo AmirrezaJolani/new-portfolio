@@ -1,69 +1,10 @@
 {
-  "apps": {
-    "about": "About Me",
-    "projects": "Projects",
-    "contact": "Contact",
-    "settings": "Settings"
-  },
-  "window": {
-    "close": "Close",
-    "minimize": "Minimize",
-    "maximize": "Maximize"
-  },
-  "menu": {
-    "finder": "Finder",
-    "name": "Amirreza Jolani",
-    "language": "Language",
+  "languages": {
+    "label": "Language",
     "english": "English",
     "persian": "فارسی",
     "german": "Deutsch",
     "italian": "Italiano"
-  },
-  "about": {
-    "role": "Software Engineer",
-    "bio": "I build thoughtful, well-crafted software for the web. This desktop is my portfolio — open the apps in the dock to look around.",
-    "skillsTitle": "Skills"
-  },
-  "projects": {
-    "intro": "A few things I've built.",
-    "p1": {
-      "title": "Project One",
-      "description": "A placeholder project. Swap this copy in messages/."
-    },
-    "p2": {
-      "title": "Project Two",
-      "description": "Another placeholder project with its own description."
-    },
-    "p3": {
-      "title": "Project Three",
-      "description": "A third placeholder to show the gallery layout."
-    }
-  },
-  "contact": {
-    "title": "Get in touch",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send",
-    "sending": "Sending…",
-    "success": "Thanks — this is a demo form, nothing was actually sent.",
-    "error": "Something went wrong. Please try again."
-  },
-  "settings": {
-    "appearance": "Appearance",
-    "theme_light": "Light",
-    "theme_dark": "Dark",
-    "theme_auto": "Auto",
-    "wallpaper": "Wallpaper",
-    "wallpaper_day": "Tahoe Day",
-    "wallpaper_night": "Tahoe Night",
-    "wallpaper_aurora": "Aurora",
-    "wallpaper_sunset": "Sunset",
-    "accessibility": "Accessibility",
-    "reduceTransparency": "Reduce Transparency",
-    "reduceMotion": "Reduce Motion",
-    "largerText": "Larger Text",
-    "language": "Language & Region"
   },
   "drive": {
     "meta": {
@@ -83,9 +24,9 @@
       "music": "Music",
       "on": "ON",
       "off": "OFF",
-      "desktop": "DESKTOP",
-      "desktopAria": "Open the classic desktop portfolio",
-      "hint": "ARROWS / WASD to drive · park on a glowing pad · M map · G garage",
+      "hint": "ARROWS / WASD to drive · ENTER on a glowing pad · M map · G garage",
+      "visit": "VISIT {place}",
+      "enterKey": "ENTER",
       "kmh": "KM/H",
       "unlocked": "ACHIEVEMENT UNLOCKED",
       "canvas": "Pixel-art island you can drive around. Use the Map button for an accessible list of every section.",
@@ -106,8 +47,8 @@
       "close": "✕ ESC"
     },
     "intro": {
-      "welcome": "Welcome to my island. Hop in the car and drive to each building — park on its glowing pad to read that chapter of my story.",
-      "keys": "⌨ Arrows / WASD — drive",
+      "welcome": "Welcome to my island. Hop in the car and drive to each building — stop on its glowing pad and press Enter (or tap the button) to read that chapter of my story.",
+      "keys": "⌨ Arrows / WASD — drive · brake mid-turn to drift",
       "touch": "📱 Touch: drag the joystick where you want to go · ▼ to brake",
       "garage": "🚗 G — garage: pick from five cars",
       "map": "🗺 M — map & fast travel · Esc — close",
@@ -116,8 +57,7 @@
       "wave": "👋 Find me waving outside HOME",
       "milan": "🇮🇹 Drive south to Milan: the Duomo, the Galleria and the skyline",
       "start": "START DRIVING ▶",
-      "skip": "SKIP TO ABOUT ME",
-      "classic": "🖥 Prefer a classic view? Open the desktop portfolio"
+      "skip": "SKIP TO ABOUT ME"
     },
     "menu": {
       "about": "About me",

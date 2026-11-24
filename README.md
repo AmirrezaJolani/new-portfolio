@@ -1,37 +1,22 @@
-# Portfolio OS — an interactive macOS-style portfolio
+# Pixel Drive — a portfolio you drive through
 
-A personal portfolio built as a faithful, interactive **macOS desktop** in the browser.
-Visitors land on a desktop with a menu bar, a dock, and draggable / resizable / minimizable
-windows, and explore the content as "apps". Styled with a macOS **Tahoe "Liquid Glass"**
-aesthetic — a generated scenic wallpaper, frosted translucent surfaces, and desktop widgets —
-and fully internationalized (English, Persian right-to-left, German and Italian).
-
-The homepage (`/`) is **Pixel Drive**: a pixel-art island you drive around, where each building
-is a chapter of the portfolio (about, experience, projects, skills, testimonials, contact).
-The macOS desktop lives at **`/desktop`**, linked from the game's HUD and intro.
+A personal portfolio built as a pixel-art driving game. Visitors drive a car around a small
+island; each building is a chapter of the portfolio (about, experience, projects, skills,
+testimonials, contact). Park on a building's glowing pad and press **Enter** (or tap the button
+on a phone) to open it.
 
 ## Features
 
-- **Pixel Drive homepage** — a canvas game with sprite-stacked buildings, five cars, day /
-  sunset / night themes, a chiptune soundtrack, 14 achievements, a touch joystick, and a
-  hand-drawn Milan district (Duomo, Galleria, Bosco Verticale, Torre Velasca, UniCredit Tower).
-  Every word goes through next-intl, so it plays in English, Persian, German and Italian, with a language picker in its HUD. The pure world
-  model and car physics live in `workflows/driveWorld.ts` (Vitest-tested); the UI and renderer
-  in `features/drive/`.
-
-- **A real windowing desktop** — open apps from the dock; windows drag from the title bar,
-  resize from the corner, minimize/close via the traffic lights, and raise to front on click
-  (single instance per app, proper z-order and focus).
-- **Apps** — About, Projects, and Contact, each a self-contained feature. Adding a new app is
-  a single registry entry plus one component.
-- **Liquid Glass UI** — a generated SVG wallpaper (sky, mountains, lake — no copyrighted
-  assets), frosted glass menu bar / dock / windows, a live calendar + weather widget, and
-  desktop folder shortcuts. Icons throughout are [lucide](https://lucide.dev).
-- **Internationalized** — English, Persian, German and Italian via [next-intl](https://next-intl.dev), with the
-  locale stored in a cookie (**no locale in the URL**) and correct RTL mirroring.
-- **Responsive** — on phones the desktop becomes a stacked home screen with full-screen apps.
+- **Canvas game** — sprite-stacked buildings, five cars, drift and momentum physics with skid
+  marks, day / sunset / night themes, a chiptune soundtrack and 14 achievements.
+- **A Milan district** — the Duomo, the Galleria, Bosco Verticale, Torre Velasca and the
+  UniCredit Tower, drawn by hand.
+- **Works on phones** — a touch joystick, a brake pedal and an on-screen button to open stops.
+- **Four languages** — English, Persian (right-to-left), German and Italian via
+  [next-intl](https://next-intl.dev). The locale lives in a cookie (**no locale in the URL**)
+  and the game has a language picker in its top bar.
 - **Containerized + CI/CD** — a multi-stage Docker image (Next.js standalone, non-root) and a
-  GitHub Actions pipeline that lints, type-checks, tests, builds & smoke-tests the image on
+  GitHub Actions pipeline that lints, type-checks, tests, builds and smoke-tests the image on
   every PR, and publishes to GHCR on `main`.
 
 ## Tech stack
@@ -40,51 +25,31 @@ The macOS desktop lives at **`/desktop`**, linked from the game's HUD and intro.
 |------|--------|
 | Framework | Next.js 16 (App Router) + React 19 |
 | Language | TypeScript |
-| Styling | Tailwind CSS v4, shadcn/ui on Base UI |
-| i18n | next-intl (cookie-based, EN + FA/RTL) |
-| Icons | lucide-react |
+| Rendering | HTML canvas (world) + React (HUD, panels) |
+| Styling | Tailwind CSS v4 + a small pixel design system ([`DESIGN.md`](DESIGN.md)) |
+| i18n | next-intl (cookie-based, EN / FA (RTL) / DE / IT) |
 | Tests | Vitest (pure logic) |
 | Lint/format | Biome |
 | Container | Docker (multi-stage, standalone), GitHub Actions → GHCR |
 
 ## How to run
 
-### Prerequisites
-
-- **Node.js 20+** (CI and the Docker image pin Node 22)
-- **npm** (ships with Node)
-
-### 1. Development
+Prerequisites: **Node.js 20+** (CI and the Docker image use Node 22) and npm.
 
 ```bash
 git clone https://github.com/AmirrezaJolani/new-portfolio.git
 cd new-portfolio
 npm install
-npm run dev
+npm run dev        # → http://localhost:3000, hot-reloads as you edit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — the page hot-reloads as you edit.
-
-### 2. Production build
+Production build, or Docker:
 
 ```bash
-npm run build   # compile the standalone server
-npm start       # serve it at http://localhost:3000
+npm run build && npm start      # standalone server on :3000
+docker compose up --build       # same, in the production image
+docker run --rm -p 3000:3000 ghcr.io/amirrezajolani/new-portfolio:latest   # image from CI
 ```
-
-### 3. Docker
-
-```bash
-docker compose up --build   # build + run → http://localhost:3000
-```
-
-…or run the image published by CI (see [Docker](#docker) for details):
-
-```bash
-docker run --rm -p 3000:3000 ghcr.io/amirrezajolani/new-portfolio:latest
-```
-
-### Scripts
 
 | Command | What it does |
 |---------|--------------|
@@ -97,99 +62,44 @@ docker run --rm -p 3000:3000 ghcr.io/amirrezajolani/new-portfolio:latest
 
 ## Architecture
 
-The codebase is **feature-first** with a one-directional dependency flow:
-
 ```
-workflows/   pure state machines (no React/DOM, unit-tested)   e.g. windowManager
-   ↓
-context/     React wiring around a workflow (provider + hook)   e.g. WindowManagerContext
-   ↓
-features/*   presentation; each owns components/ hooks/ types/  desktop, about, projects, contact
-   ↓
-components/ui  shared shadcn/Base UI primitives only
-```
-
-Supporting folders: `lib/` (the app registry `apps.config.tsx` + structured `content.ts`),
-`hooks/` (shared composables), `types/`, `i18n/` (cookie-based next-intl config), and
-`messages/` (`en` / `fa` / `de` / `it` translation catalogs, kept at full key parity).
-
-```
-app/                     # App Router entry (layout, page, globals.css)
-components/ui/            # shadcn/Base UI primitives
-context/                 # React context providers
-features/
-  desktop/               # the OS shell: menu bar, dock, windows, wallpaper, widgets, mobile
-  about/ projects/ contact/
-workflows/               # pure reducers + tests (window manager, contact form)
-hooks/  lib/  types/  i18n/  messages/
-Dockerfile  docker-compose.yml  .github/workflows/docker.yml
+app/                      layout (locale + dir), page (metadata), globals.css
+features/drive/
+  components/             Game (loop, input, HUD), Panel (sections), TouchControls,
+                          LanguagePicker, PixelMe, DrivePage (fonts)
+  lib/                    render.ts (canvas drawing), audio.ts, achievements.ts,
+                          content.ts (CV data that doesn't translate)
+workflows/driveWorld.ts   pure world model: map, buildings, landmarks, cars, physics (+ tests)
+i18n/                     cookie-based next-intl config (+ catalog parity test)
+messages/                 en / fa / de / it catalogs
 ```
 
-### Conventions
+Data flows one way: `workflows/driveWorld.ts` (pure, no DOM, unit-tested) → `features/drive/lib`
+(drawing, sound) → `features/drive/components` (React). Portfolio prose lives in
+`messages/*.json` under `drive.*`, keyed by the ids in `features/drive/lib/content.ts`.
 
-- All user-facing copy comes from next-intl; all catalogs stay at key parity (`i18n/messages.test.ts` checks it).
-- RTL uses Tailwind **logical** properties (`ps/pe/start/end`), so Persian mirrors correctly.
-- Window / contact logic lives in `workflows/` as pure, unit-tested reducers.
+### Physics
 
-### Window management
+The car stores its forward speed and a separate sideways speed. Each frame the two are turned
+into one world velocity, the nose turns, and the velocity is split again relative to the new
+heading. Momentum doesn't turn with the nose, so the car slides; tyre grip (lower on grass and
+sand, and when braking mid-turn) shrinks the slide back to zero.
 
-Every window is driven by a single **pure reducer** (`workflows/windowManager.ts`) wrapped by
-`WindowManagerContext`. Data flows one way: a UI action (open / focus / move / resize /
-minimize / close) dispatches to the reducer, which returns the next state, and the desktop
-re-renders. Apps are **single-instance** — re-opening "About" focuses the existing window
-rather than spawning a duplicate — and depth is managed via `zIndex`. Focus lives in a single
-`focusedId` (not a per-window flag), and the reducer is unit-tested.
+## Internationalization
 
-Each window is tracked as:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `appId` | `AppId` | Which app (`about` / `projects` / `contact`) |
-| `x`, `y` | `number` | Position on the desktop |
-| `width`, `height` | `number` | Dimensions |
-| `zIndex` | `number` | Stack order relative to other windows |
-| `isMinimized` | `boolean` | Hidden to the dock |
-
-### Liquid Glass surface system
-
-The macOS Tahoe vibrancy is encoded as reusable CSS utilities in `app/globals.css` — backdrop
-blur + saturation, a hairline top highlight, and a soft float shadow — in three tiers:
-
-| Class | Used for | Characteristics |
-|-------|----------|-----------------|
-| `.lg-glass` | app windows | 28px blur, 180% saturate, drop shadow, light border |
-| `.lg-panel` | menu bar + dock | 34px blur, more translucent, 190% saturate |
-| `.lg-chip` | widgets, tooltips, tiles | 20px blur, tuned for small surfaces |
-
-The scenic wallpaper (`Wallpaper.tsx`), the calendar + weather widgets (`Widgets.tsx`), and the
-desktop folder shortcuts (`DesktopIcons.tsx`) — all under `features/desktop/components/` — are
-generated in code (no copyrighted assets).
+The active locale lives in a `NEXT_LOCALE` cookie (there is **no `/en` or `/fa` URL segment**).
+Switch languages from the game's top bar; the choice persists and the layout flips `dir` to
+`rtl` for Persian. To add a locale, add `messages/<locale>.json`, its id to `locales` and a
+`localeOptions` entry in `i18n/config.ts` (plus `rtlLocales` if it is right-to-left), and its
+name under `languages.*` in every catalog. The parity test fails until all of that matches.
 
 ## Docker
-
-Run the production image locally:
-
-```bash
-docker compose up --build          # → http://localhost:3000
-# or
-docker build -t portfolio .
-docker run --rm -p 3000:3000 portfolio
-```
 
 The image is a multi-stage build on Next.js **standalone** output and runs as a non-root user.
 CI publishes it to the GitHub Container Registry on pushes to `main`
 (`ghcr.io/<owner>/<repo>:latest` + a short-SHA tag).
 
-## Internationalization
-
-The active locale lives in a `NEXT_LOCALE` cookie (there is **no `/en` or `/fa` URL segment**).
-Switch languages from the desktop menu bar, Settings, or the game's HUD; the choice persists and
-the layout flips `dir` to `rtl` for Persian. Add a locale by adding `messages/<locale>.json`, its
-id to `locales` and a `localeOptions` entry in `i18n/config.ts` (plus `rtlLocales` if it is
-right-to-left), and its name under `menu.*` in every catalog. The parity test fails until all of
-that matches.
-
 ## Testing
 
-Pure logic in `workflows/` (window z-order/focus/minimize, the contact-form flow) is covered by
-Vitest. UI is verified via the build and browser. Run `npm test`.
+`npm test` runs Vitest over the world model (spawn, collisions, pads, joystick, drift and grip)
+and the translation catalogs (every locale has exactly the English keys).

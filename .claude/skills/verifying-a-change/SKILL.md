@@ -33,14 +33,14 @@ Use Playwright (MCP browser tools or a script). Switch locale with the cookie, n
 
 ```js
 await context.addCookies([{ name: "NEXT_LOCALE", value: "fa", url: "http://localhost:3124" }]);
-await page.goto("http://localhost:3124/");          // game; intro panel opens on first visit
-await page.goto("http://localhost:3124/desktop");   // macOS desktop
+await page.goto("http://localhost:3124/");   // intro panel opens on first visit; Esc closes it
+// M opens the map: fast-travel to a stop, Esc, then Enter re-opens it from the pad.
 ```
 
 Checklist:
 - [ ] The page you changed, in `en` **and** `fa` (`<html dir="rtl">`); add `de`/`it` if the copy is long
 - [ ] No console errors
-- [ ] Mobile width (390×844) if you touched the HUD or the desktop
+- [ ] Touch viewport (390×844, `hasTouch: true`) if you touched the HUD or controls
 - [ ] No raw keys (`drive.…`) visible
 
 Stop the server when done.

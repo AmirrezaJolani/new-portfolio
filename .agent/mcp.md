@@ -5,8 +5,8 @@ rationale is in [`../.claude/mcp.md`](../.claude/mcp.md).
 
 | Server | Package | Use it for |
 |--------|---------|-----------|
-| **context7** | `@upstash/context7-mcp` | Current docs for the fast-moving stack — Next.js 16 App Router, next-intl v4, shadcn/Base UI, Tailwind v4. Query BEFORE coding framework APIs; `AGENTS.md` warns this Next.js differs from training data. |
-| **playwright** | `@playwright/mcp` | Drive a real browser against `npm run dev` to verify interaction: open/drag/resize/minimize windows, dock focus + z-order, locale switch → `<html dir="rtl">`, and the sub-768px `MobileHome` view. |
+| **context7** | `@upstash/context7-mcp` | Current docs for the fast-moving stack — Next.js 16 App Router, next-intl v4, Tailwind v4. Query BEFORE coding framework APIs; `AGENTS.md` warns this Next.js differs from training data. |
+| **playwright** | `@playwright/mcp` | Drive a real browser against `npm run dev` to verify interaction: driving, the pad prompt + Enter, panels, locale switch → `<html dir="rtl">`, and the touch controls at phone size. |
 
 Optional (enable with a token when there's a real design source): **figma**
 (`figma-developer-mcp`) for design↔code.

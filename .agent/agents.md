@@ -6,19 +6,10 @@ vendor-neutral summary of who does what and when to reach for each.
 
 | Agent | Use it when | Scope |
 |-------|-------------|-------|
-| **portfolio-ui** | Building/changing the desktop UI — shell, menu bar, dock, window chrome, an app window, styling, wiring copy | `features/*`, `components/ui/`, `lib/apps.config.tsx`, `app/` |
-| **window-system** | Changing window behavior (focus, z-order, minimize/restore, move/resize) or the contact-form flow — **works test-first** | `workflows/`, `context/` |
-| **i18n-translator** | Adding/editing copy, parity across en/fa/de/it, RTL correctness, the cookie-based locale switcher | `i18n/`, `messages/`, the menu-bar switcher |
+| **i18n-translator** | Adding/editing copy, parity across en/fa/de/it, RTL correctness, the cookie-based locale switcher | `i18n/`, `messages/`, `features/drive/components/LanguagePicker.tsx` |
 
-## Picking an agent
-
-- Changing what a window *does* → **window-system** (pure logic, TDD).
-- Changing what the user *sees* → **portfolio-ui** (presentation).
-- Changing the *words* the user reads → **i18n-translator** (messages + parity).
-
-Cross-cutting work (e.g. "add a Notes app") typically touches **portfolio-ui** for the feature
-+ registry, and **i18n-translator** for its copy; only involves **window-system** if it needs
-new window behavior.
+Game work (world, physics, rendering, HUD) has no dedicated agent: follow the
+`extending-pixel-drive` playbook in [`../.claude/skills/`](../.claude/skills).
 
 ## Conventions every agent follows
 

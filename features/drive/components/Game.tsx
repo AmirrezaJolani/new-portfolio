@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
@@ -33,6 +32,8 @@ import {
   createAssets,
   labelTop,
   renderFrame,
+  SKID_LIFE,
+  type Skid,
   THEMES,
   type Theme,
 } from "../lib/render";
@@ -89,7 +90,9 @@ export function Game() {
   const stick = useRef({ x: 0, y: 0 }); // touch joystick, -1..1
   const speedRef = useRef<HTMLSpanElement>(null);
   const car = useRef<Car>({ ...SPAWN, speed: 0 });
-  const lastPad = useRef<SectionId | null>(null);
+  const lastPad = useRef<SectionId | null>(null); // the pad the car is on now
+  const skids = useRef<Skid[]>([]);
+  const [zone, setZone] = useState<SectionId | null>(null); // mirrors lastPad for the prompt
   const [panel, setPanel] = useState<PanelKind | null>("intro");
   const [visited, setVisited] = useState<Set<SectionId>>(new Set());
   const [theme, setTheme] = useState<Theme>("sunset");
@@ -166,6 +169,7 @@ export function Game() {
       const b = BUILDINGS.find((x) => x.id === id)!;
       car.current = { ...padCenter(b), angle: 0, speed: 0 };
       lastPad.current = id;
+      setZone(id);
       open(id);
     },
     [open],
@@ -240,8 +244,16 @@ export function Game() {
         left: k.left || st.left,
         right: k.right || st.right,
       };
-      const c = paused ? { ...prev, speed: 0 } : stepCar(prev, inp, dt, spec);
+      const c = paused
+        ? { ...prev, speed: 0, side: 0 }
+        : stepCar(prev, inp, dt, spec);
       car.current = c;
+      // Tyres leave marks while the car slides sideways; oldest fade first.
+      if (Math.abs(c.side ?? 0) > 22) {
+        skids.current.push({ x: c.x, y: c.y, a: c.angle, t: now / 1000 });
+      }
+      while (skids.current[0]?.t < now / 1000 - SKID_LIFE)
+        skids.current.shift();
 
       // km/h with 1px = 0.25 m: px/s × 0.25 × 3.6.
       const kmh = `${c.speed < -1 ? "R " : ""}${Math.round(Math.abs(c.speed) * 0.9)}`;
@@ -269,10 +281,11 @@ export function Game() {
         if (meters >= 1000) unlock("road-trip");
       }
 
+      // Rolling onto a pad only offers the stop; Enter or the prompt opens it.
       const pad = padAt(c.x, c.y);
       if (pad !== lastPad.current) {
         lastPad.current = pad;
-        if (pad && !paused) open(pad);
+        setZone(pad);
       }
 
       // Smooth follow camera with a little look-ahead.
@@ -293,7 +306,15 @@ export function Game() {
       renderFrame(
         g,
         assets,
-        { car: c, model: spec.id, cam, t: now / 1000, target, pad },
+        {
+          car: c,
+          model: spec.id,
+          cam,
+          t: now / 1000,
+          target,
+          pad,
+          skids: skids.current,
+        },
         vw,
         vh,
       );
@@ -314,7 +335,7 @@ export function Game() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [open, unlock]);
+  }, [unlock]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -331,19 +352,41 @@ export function Game() {
       if (e.code === "KeyM") setPanel((p) => (p === "menu" ? null : "menu"));
       if (e.code === "KeyG")
         setPanel((p) => (p === "garage" ? null : "garage"));
+      // Enter on a pad opens that stop, unless Enter is pressing a focused control.
+      const onControl =
+        e.target instanceof Element &&
+        e.target.closest("button, a, select, input, textarea");
+      if (
+        (e.code === "Enter" || e.code === "NumpadEnter") &&
+        !e.repeat &&
+        !onControl &&
+        panelRef.current === null &&
+        lastPad.current
+      ) {
+        e.preventDefault();
+        open(lastPad.current);
+      }
     };
     const reset = () => {
       input.current = { up: false, down: false, left: false, right: false };
     };
     window.addEventListener("keydown", onKey);
     window.addEventListener("keyup", onKey);
+    // A mouse click leaves its HUD button focused, which would swallow Enter on
+    // the next pad. Keyboard activation (detail 0) keeps its focus.
+    const onClick = (e: MouseEvent) => {
+      if (e.detail > 0 && e.target instanceof Element)
+        e.target.closest<HTMLElement>("header button")?.blur();
+    };
     window.addEventListener("blur", reset);
+    window.addEventListener("click", onClick);
     return () => {
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("keyup", onKey);
       window.removeEventListener("blur", reset);
+      window.removeEventListener("click", onClick);
     };
-  }, []);
+  }, [open]);
 
   useEffect(() => () => setMusic(false), []);
 
@@ -444,13 +487,6 @@ export function Game() {
               {music ? t("hud.on") : t("hud.off")}
             </span>
           </button>
-          <Link
-            href="/desktop"
-            className="pixel-btn"
-            aria-label={t("hud.desktopAria")}
-          >
-            🖥<span className="hidden sm:inline"> {t("hud.desktop")}</span>
-          </Link>
           <LanguagePicker />
         </nav>
       </header>
@@ -484,6 +520,29 @@ export function Game() {
       <p className="absolute bottom-3 inset-x-0 text-center text-lg text-(--px-cream) drop-shadow-[2px_2px_0_var(--px-ink)] pointer-coarse:hidden">
         {t("hud.hint")}
       </p>
+
+      {/* Pad prompt: Enter on a keyboard, or tap/click this button. */}
+      <div
+        aria-live="polite"
+        className="absolute inset-x-0 bottom-14 pointer-coarse:bottom-44 flex justify-center z-10 pointer-events-none"
+      >
+        {zone && panel === null && (
+          <button
+            type="button"
+            onClick={() => open(zone)}
+            className="pixel-btn toast pointer-events-auto flex items-center gap-2 pointer-coarse:min-h-11 pointer-coarse:px-5"
+            style={{
+              ["--px-accent" as string]: BUILDINGS.find((b) => b.id === zone)
+                ?.accent,
+            }}
+          >
+            <kbd className="pointer-coarse:hidden bg-(--px-ink) text-(--px-cream) px-1.5 py-0.5">
+              ⏎ {t("hud.enterKey")}
+            </kbd>
+            <span>{t("hud.visit", { place: t(`signs.${zone}`) })}</span>
+          </button>
+        )}
+      </div>
 
       {/* Speedometer: bottom-start on desktop, bottom-centre between the thumbs on touch. */}
       <div
