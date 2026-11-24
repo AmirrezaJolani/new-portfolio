@@ -46,6 +46,14 @@
     4px 0 0 0 var(--edge),
     0 10px 0 0 rgb(0 0 0 / 0.35);
 }
+/* Pixel icons (public/icons): inline, nudged onto the text baseline, never smoothed. */
+.drive-root .pixel-icon {
+  display: inline-block;
+  vertical-align: -0.2em;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
 .drive-root .pixel-btn {
   font-family: var(--font-pixel), monospace;
   font-size: 10px;
@@ -56,6 +64,17 @@
     inset -3px -3px 0 rgb(0 0 0 / 0.3),
     0 4px 0 var(--px-drop);
   cursor: pointer;
+}
+/* <option> can't hold an <img>, so the globe icon is a background. */
+.drive-root .lang-picker {
+  background-image: url(/icons/globe.svg);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: left 8px center;
+  padding-inline-start: 30px;
+}
+[dir="rtl"] .drive-root .lang-picker {
+  background-position: right 8px center;
 }
 .drive-root .pixel-btn:active {
   transform: translateY(3px);

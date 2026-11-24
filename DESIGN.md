@@ -26,7 +26,9 @@ not by hardcoding it in a component.
 - **Touch:** touch-only controls are big (pedal 80px, joystick 136px, pad prompt 44px tall).
   New touch targets should be at least 44px. Anything the joystick does also exists as a real
   button.
-- **Icons:** emoji.
+- **Icons:** pixel SVGs in `public/icons/` (16×16 grid, `crispEdges`, literal colours with an
+  ink outline), rendered with `<Icon name="…" />` at 16, 32 or 48px. Names are listed in
+  `features/drive/lib/icons.ts`. No emoji; `icons.test.ts` fails on them.
 
 ## Colour tokens (`.drive-root`)
 
@@ -70,6 +72,7 @@ strings out of `.font-pixel` where possible.
 | `.pedal` | 80px square touch pedal (brake) |
 | `.joystick` / `.joystick-knob` | 136px ring + square knob; `aria-hidden` |
 | `.toast` | Pop-in, `steps(4)`: achievement toasts and the pad prompt |
+| `Icon` / `.pixel-icon` | Decorative pixel icon (`alt=""`); the button or text around it carries the label |
 | `Meter` (Panel.tsx) | Segmented bar plus a visually hidden `<meter>` for screen readers |
 
 ## Rules

@@ -19,6 +19,7 @@ import {
   testimonials,
 } from "../lib/content";
 import { drawCarPreview } from "../lib/render";
+import { Icon } from "./Icon";
 import { PixelMe } from "./PixelMe";
 
 const Tag = ({ children }: { children: ReactNode }) => (
@@ -89,7 +90,8 @@ function Section({ id }: { id: SectionId }) {
                 {t("profile.tagline")}
               </p>
               <p className="mt-2 opacity-80">
-                ⚡ {t("profile.years")} · 📍 {t("profile.location")} · 🚀{" "}
+                <Icon name="bolt" /> {t("profile.years")} · <Icon name="pin" />{" "}
+                {t("profile.location")} · <Icon name="rocket" />{" "}
                 {t("profile.focus")}
               </p>
             </div>
@@ -123,7 +125,9 @@ function Section({ id }: { id: SectionId }) {
               </div>
             ))}
           </div>
-          <p className="opacity-80">✨ {t("profile.funFact")}</p>
+          <p className="opacity-80">
+            <Icon name="sparkle" /> {t("profile.funFact")}
+          </p>
           <div className="flex flex-wrap gap-3">
             <Out href={profile.cv}>{t("profile.cv")}</Out>
             <Out href={profile.github}>GitHub</Out>
@@ -340,6 +344,17 @@ function Garage({
   );
 }
 
+const INTRO_TIPS = [
+  ["keys", "keyboard"],
+  ["touch", "phone"],
+  ["garage", "car"],
+  ["map", "map"],
+  ["extras", "trophy"],
+  ["arrow", "arrow"],
+  ["wave", "wave"],
+  ["milan", "italy"],
+] as const;
+
 export type PanelKind = SectionId | "intro" | "menu" | "trophies" | "garage";
 
 type Props = {
@@ -425,14 +440,17 @@ export function Panel({
             </div>
             <p>{t("intro.welcome")}</p>
             <ul className="leading-tight opacity-90">
-              <li>{t("intro.keys")}</li>
-              <li>{t("intro.touch")}</li>
-              <li>{t("intro.garage")}</li>
-              <li>{t("intro.map")}</li>
-              <li>{t("intro.extras", { count: ACHIEVEMENTS.length })}</li>
-              <li>{t("intro.arrow")}</li>
-              <li>{t("intro.wave")}</li>
-              <li>{t("intro.milan")}</li>
+              {INTRO_TIPS.map(([key, icon]) => (
+                <li key={key} className="flex items-start gap-2">
+                  <Icon
+                    name={icon}
+                    className={`mt-0.5 ${icon === "arrow" ? "rtl:-scale-x-100" : ""}`}
+                  />
+                  <span>
+                    {t(`intro.${key}`, { count: ACHIEVEMENTS.length })}
+                  </span>
+                </li>
+              ))}
             </ul>
             <div className="flex flex-wrap gap-3">
               <button
@@ -467,7 +485,10 @@ export function Panel({
                     className="font-pixel text-[10px]"
                     style={{ color: x.accent }}
                   >
-                    {visited.has(x.id) ? "✓ " : "○ "}
+                    <Icon
+                      name={visited.has(x.id) ? "check" : "ring"}
+                      className="me-1"
+                    />
                     {t(`signs.${x.id}`)}
                   </span>
                   <span className="block opacity-80">{t(`menu.${x.id}`)}</span>
@@ -486,9 +507,7 @@ export function Panel({
                   key={a.id}
                   className={`flex items-center gap-3 border-2 p-2 ${done ? "border-(--px-accent)" : "border-current/20 opacity-50"}`}
                 >
-                  <span className={`text-3xl ${done ? "" : "grayscale"}`}>
-                    {done ? a.icon : "🔒"}
-                  </span>
+                  <Icon name={done ? a.icon : "lock"} size={32} />
                   <span>
                     <span className="block font-pixel text-(--px-accent) text-[10px]">
                       {t(`achievements.${a.id}.title`).toUpperCase()}

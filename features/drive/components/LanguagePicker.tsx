@@ -25,11 +25,11 @@ export function LanguagePicker() {
           router.refresh();
         })
       }
-      className="pixel-btn appearance-none text-center"
+      className="pixel-btn lang-picker appearance-none text-center"
     >
       {localeOptions.map((l) => (
         <option key={l.id} value={l.id}>
-          🌐 {t(l.labelKey)}
+          {t(l.labelKey)}
         </option>
       ))}
     </select>

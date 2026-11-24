@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - German and Italian, alongside English and Persian (RTL) (#11).
 - Pixel design system (`--px-*` tokens, `DESIGN.md`) and project skills for agents (#11).
 - Contact: second GitHub account (AmirrezaJM); Telegram is now @JooliAR.
+- Pixel-art SVG icons (`public/icons/`) replace every emoji in the HUD, panels, achievements and
+  touch controls, with tests that keep the folder and the icon list in sync.
 
 ### Fixed
 - Enter no longer gets swallowed by a HUD button focused by a mouse click (#12).
