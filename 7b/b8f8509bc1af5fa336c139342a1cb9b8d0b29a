@@ -1,0 +1,37 @@
+features/drive/components/Panel.tsx
+  s_c17b2e84ffe0df::t_4994e6f72e0571 491,495,515-519
+  s_c17b2e84ffe0df::t_786c85d024dee8 492-494
+features/drive/lib/icons.test.ts
+  s_c17b2e84ffe0df::t_4994e6f72e0571 33
+messages/fa.json
+  s_c17b2e84ffe0df::t_4994e6f72e0571 14-19,58
+features/drive/components/Game.tsx
+  s_c17b2e84ffe0df::t_786c85d024dee8 431-433
+  s_c17b2e84ffe0df::t_4994e6f72e0571 418
+messages/en.json
+  s_c17b2e84ffe0df::t_4994e6f72e0571 14-19,58
+.claude/skills/extending-pixel-drive/SKILL.md
+  s_c17b2e84ffe0df::t_4994e6f72e0571 52
+messages/de.json
+  s_c17b2e84ffe0df::t_4994e6f72e0571 14-19,58
+messages/it.json
+  s_c17b2e84ffe0df::t_4994e6f72e0571 14-19,58
+features/drive/components/Icon.tsx
+  s_c17b2e84ffe0df::t_4994e6f72e0571 3-6,11,16,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7bb8f8509bc1af5fa336c139342a1cb9b8d0b29a",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
