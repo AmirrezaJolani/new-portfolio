@@ -8,17 +8,26 @@ writing routing/layout/rendering code.
 
 ## What this project is
 
-A personal portfolio rendered as an interactive **macOS desktop**: a menu bar, a dock, and
-draggable/resizable/minimizable windows. Portfolio content is presented as "apps" — **About**,
-**Projects**, **Contact**. Mobile devices get a simplified stacked/full-screen view. A Games
-app is intentionally deferred but the app registry is built to accept one later.
+A personal portfolio with two faces:
+
+- **`/` — Pixel Drive**, a pixel-art driving game (`features/drive/`, world model in
+  `workflows/driveWorld.ts`). You drive to buildings that open portfolio sections; it has
+  achievements, a garage, themes and a Milan district.
+- **`/desktop`**, an interactive **macOS desktop** with a menu bar, a dock, and draggable,
+  resizable, minimizable windows. Content is presented as apps: **About**, **Projects**,
+  **Contact**, **Settings**. Mobile devices get a simplified stacked/full-screen view.
+
+Step-by-step playbooks for common tasks live in [`../.claude/skills/`](../.claude/skills)
+(plain Markdown; usable by any agent). They cover editing content, translating, extending the
+game, adding a desktop app, styling, and verifying a change. The design system (tokens, the
+two visual languages and component classes) is [`../DESIGN.md`](../DESIGN.md).
 
 ## Stack
 
 - Next.js 16 (App Router, React 19), TypeScript, Tailwind CSS v4
 - shadcn/ui on **Base UI** primitives (`components/ui/`), lucide icons
 - next-intl **without locale routing** — locale in a `NEXT_LOCALE` cookie (no `/en` `/fa` URLs),
-  English + Persian (RTL)
+  English, Persian (RTL), German, Italian
 - macOS Tahoe **Liquid Glass** surfaces — `.lg-glass` / `.lg-panel` / `.lg-chip` utilities in
   `app/globals.css`; generated wallpaper + calendar/weather widgets + desktop folder shortcuts
   (`Wallpaper.tsx` / `Widgets.tsx` / `DesktopIcons.tsx` under `features/desktop/components/`)
@@ -34,7 +43,7 @@ features/*   presentation; each owns components/ hooks/ types/  desktop, about, 
 components/ui shadcn/Base UI primitives only
 lib/         apps.config.tsx (app registry) + content.ts (structured, non-translatable data)
 hooks/ types/ shared composables and shared types
-i18n/ messages/  cookie-based next-intl config + en/fa catalogs
+i18n/ messages/  cookie-based next-intl config + en/fa/de/it catalogs
 ```
 
 ## Commands
@@ -56,8 +65,8 @@ i18n/ messages/  cookie-based next-intl config + en/fa catalogs
    Only shadcn primitives live in `components/ui/`.
 2. The dock, menu bar, window layer, and mobile home all read `lib/apps.config.tsx`. Add an
    app there + one feature folder + one line in `features/desktop/components/appRegistry.tsx`.
-3. All display copy comes from next-intl (`messages/en.json` + `messages/fa.json`, kept in
-   parity). Never hardcode strings.
+3. All display copy comes from next-intl (`messages/{en,fa,de,it}.json`, kept in
+   parity; `npm test` checks it). Never hardcode strings.
 4. Use Tailwind **logical** properties (`ps-/pe-/start-/end-`) so Persian mirrors correctly.
 5. Keep business rules in `workflows/` (pure, testable); keep `context/` thin.
 6. `shadcn` is a **devDependency on purpose** — `app/globals.css` imports `shadcn/tailwind.css`,

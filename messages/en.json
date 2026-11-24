@@ -15,7 +15,9 @@
     "name": "Amirreza Jolani",
     "language": "Language",
     "english": "English",
-    "persian": "فارسی"
+    "persian": "فارسی",
+    "german": "Deutsch",
+    "italian": "Italiano"
   },
   "about": {
     "role": "Software Engineer",
@@ -62,5 +64,297 @@
     "reduceMotion": "Reduce Motion",
     "largerText": "Larger Text",
     "language": "Language & Region"
+  },
+  "drive": {
+    "meta": {
+      "title": "Amirreza Jolani — Sunset Island",
+      "description": "Drive around a pixel-art island to explore the work of Amirreza Jolani Mameghani, Fullstack Engineer in Milan who helped scale Pillar from 1M€ to 4M€ ARR."
+    },
+    "hud": {
+      "brand": "AMIRREZA.DRIVE",
+      "stopsVisited": "Stops visited",
+      "options": "Game options",
+      "map": "MAP",
+      "mapAria": "Map",
+      "garage": "GARAGE",
+      "garageAria": "Garage: change car",
+      "trophiesAria": "Achievements: {count} of {total}",
+      "themeAria": "Theme: {theme}. Click to change.",
+      "music": "Music",
+      "on": "ON",
+      "off": "OFF",
+      "desktop": "DESKTOP",
+      "desktopAria": "Open the classic desktop portfolio",
+      "hint": "ARROWS / WASD to drive · park on a glowing pad · M map · G garage",
+      "kmh": "KM/H",
+      "unlocked": "ACHIEVEMENT UNLOCKED",
+      "canvas": "Pixel-art island you can drive around. Use the Map button for an accessible list of every section.",
+      "brakeAria": "Brake / reverse",
+      "brake": "BRAKE"
+    },
+    "themes": {
+      "day": "DAY",
+      "sunset": "SUNSET",
+      "night": "NIGHT"
+    },
+    "panel": {
+      "intro": "SUNSET ISLAND",
+      "menu": "MAP",
+      "trophies": "ACHIEVEMENTS",
+      "garage": "GARAGE",
+      "drive": "DRIVE ▶",
+      "close": "✕ ESC"
+    },
+    "intro": {
+      "welcome": "Welcome to my island. Hop in the car and drive to each building — park on its glowing pad to read that chapter of my story.",
+      "keys": "⌨ Arrows / WASD — drive",
+      "touch": "📱 Touch: drag the joystick where you want to go · ▼ to brake",
+      "garage": "🚗 G — garage: pick from five cars",
+      "map": "🗺 M — map & fast travel · Esc — close",
+      "extras": "🏆 {count} achievements to unlock · 🎨 Day / Sunset / Night themes · ♪ music",
+      "arrow": "➤ The yellow arrow points to your next unvisited stop",
+      "wave": "👋 Find me waving outside HOME",
+      "milan": "🇮🇹 Drive south to Milan: the Duomo, the Galleria and the skyline",
+      "start": "START DRIVING ▶",
+      "skip": "SKIP TO ABOUT ME",
+      "classic": "🖥 Prefer a classic view? Open the desktop portfolio"
+    },
+    "menu": {
+      "about": "About me",
+      "experience": "Experience",
+      "projects": "Projects",
+      "skills": "Skills",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "signs": {
+      "about": "HOME",
+      "experience": "CAREER HQ",
+      "projects": "PROJECT FACTORY",
+      "skills": "SKILL GARAGE",
+      "testimonials": "REVIEW CAFE",
+      "contact": "POST OFFICE",
+      "duomo": "DUOMO DI MILANO",
+      "galleria": "GALLERIA",
+      "bosco": "BOSCO VERTICALE",
+      "velasca": "TORRE VELASCA",
+      "unicredit": "UNICREDIT TOWER"
+    },
+    "achievements": {
+      "ignition": {
+        "title": "Ignition",
+        "desc": "Start driving"
+      },
+      "first-stop": {
+        "title": "First Stop",
+        "desc": "Park at your first building"
+      },
+      "grand-tour": {
+        "title": "Grand Tour",
+        "desc": "Visit all six buildings"
+      },
+      "speed": {
+        "title": "Speed Demon",
+        "desc": "Hit top speed on the road"
+      },
+      "bump": {
+        "title": "Fender Bender",
+        "desc": "Crash into something at speed"
+      },
+      "beach": {
+        "title": "Beach Day",
+        "desc": "Drive onto the sand"
+      },
+      "milano": {
+        "title": "Ciao Milano",
+        "desc": "Drive into Piazza del Duomo"
+      },
+      "lighthouse": {
+        "title": "Lighthouse Keeper",
+        "desc": "Visit the lighthouse"
+      },
+      "road-trip": {
+        "title": "Road Trip",
+        "desc": "Drive 1 km"
+      },
+      "test-drive": {
+        "title": "Test Drive",
+        "desc": "Take a different car from the garage"
+      },
+      "teleport": {
+        "title": "Fast Traveler",
+        "desc": "Use the map to travel"
+      },
+      "dj": {
+        "title": "DJ",
+        "desc": "Turn on the music"
+      },
+      "night-owl": {
+        "title": "Night Owl",
+        "desc": "Switch to the night theme"
+      },
+      "hello": {
+        "title": "Say Hello",
+        "desc": "Open one of my contact links"
+      }
+    },
+    "cars": {
+      "coupe": {
+        "name": "Sunset Coupe",
+        "desc": "Quick and nimble. The default ride."
+      },
+      "taxi": {
+        "name": "Pixel Taxi",
+        "desc": "Balanced city cruiser with a roof sign."
+      },
+      "van": {
+        "name": "Beach Van",
+        "desc": "Slow and steady, surfboard included."
+      },
+      "buggy": {
+        "name": "Dune Buggy",
+        "desc": "Flies over sand and grass."
+      },
+      "pickup": {
+        "name": "Pickup Truck",
+        "desc": "Torquey workhorse with a crate in the back."
+      }
+    },
+    "garage": {
+      "speed": "SPEED",
+      "handling": "HANDLING",
+      "offroad": "OFF-ROAD",
+      "driving": "✓ DRIVING",
+      "select": "SELECT"
+    },
+    "profile": {
+      "portrait": "Pixel-art portrait of {name}",
+      "available": "● AVAILABLE FOR WORK",
+      "title": "Fullstack Engineer",
+      "tagline": "I help products grow",
+      "location": "Milan, Italy",
+      "years": "6+ years",
+      "focus": "React, Next.js & Node.js",
+      "bio": "Fullstack Engineer with 6+ years of experience building production web apps in TypeScript. At Pillar, a fast-growing construction-software startup in Milan, I helped scale the product from 1M€ to around 4M€ ARR, shipping features end to end from data model to interface. Expert in React and Next.js, with a backend-leaning bent on Node.js and Deno: Zod validation at API boundaries, consistent error handling, third-party integrations and root-cause analysis of real production failures.",
+      "funFact": "I speak Persian, English, some Italian and some German. My MSc research at Padua was on AI-driven personalisation and adaptive UX.",
+      "cv": "↓ Download CV",
+      "stats": {
+        "arr": "ARR scaled at Pillar",
+        "years": "Years shipping",
+        "build": "Vercel build time"
+      },
+      "pillars": {
+        "product": {
+          "title": "Product",
+          "text": "Features from analysis to delivery: compliance docs, Stripe upsell checkout, i18n across 4 markets"
+        },
+        "fullstack": {
+          "title": "Full-Stack",
+          "text": "React, Next.js, Node.js, Deno, tRPC and Zod on PostgreSQL, Supabase and Redis"
+        },
+        "ai": {
+          "title": "AI-Native",
+          "text": "Claude Code, agent skills, MCP and LangGraph.js to ship faster"
+        }
+      }
+    },
+    "experience": {
+      "pillar": {
+        "role": "Fullstack Engineer",
+        "years": "May 2026–Now",
+        "kind": "Current · Milan",
+        "text": "Helped scale Pillar's construction-software startup from 1M€ to 4M€ ARR. Shipped a compliance-document module, a site-contact module and a seat-based Stripe upsell checkout, instrumented PostHog, and closed i18n gaps for Spain, Colombia, Mexico and Brazil. Cut monorepo lint passes from ~71s to ~9s and Vercel builds by ~45%."
+      },
+      "ofoundation": {
+        "role": "Fullstack Engineer",
+        "years": "Jul 2025–Apr 2026",
+        "kind": "Utrecht",
+        "text": "Led the design and architecture of a TypeScript e-commerce platform from Figma to production. Cut production incidents 40% with Sentry, deploy time 25% with Docker CI/CD, and raised accessibility from WCAG A to AA with Lighthouse scores of 90–100."
+      },
+      "karhuno": {
+        "role": "Fullstack Engineer",
+        "years": "Jan–Jun 2025",
+        "kind": "Helsinki",
+        "text": "Built and owned the core platform of an early-stage B2B sales-signal startup. Standardised Zod validation across API boundaries and added Playwright e2e tests with visual regression and API mocking."
+      },
+      "padua": {
+        "role": "MSc, ICT for Internet & Multimedia",
+        "years": "2023–2026",
+        "kind": "Education",
+        "text": "Moved from Iran to Italy for a master's on the Cybersystems track. My thesis research covered AI-driven personalisation and adaptive, inclusive UX."
+      },
+      "pap": {
+        "role": "Frontend Engineer (full-stack scope)",
+        "years": "Sep 2022–Jul 2023",
+        "kind": "Tehran",
+        "text": "Built Django REST services for travel-agency sites, cutting backend bugs 25%. Led a Vue.js + Tailwind + Pinia component library that cut repeated work 35%, and sped up LCP/INP by ~2s."
+      },
+      "zharfa": {
+        "role": "Fullstack Developer",
+        "years": "2021",
+        "kind": "Tehran",
+        "text": "Built a full-stack MVP with Vue.js and Python/Django in weeks, including token auth and role-based access control."
+      },
+      "almas": {
+        "role": "Frontend Developer",
+        "years": "2020–2021",
+        "kind": "Tehran",
+        "text": "Built the dashboard for Nikan Hospital's patient platform, used daily by medical staff, with Chart.js reports for patient records."
+      }
+    },
+    "projects": {
+      "view": "View on GitHub →",
+      "appversion": {
+        "badge": "Agent Skill",
+        "text": "Node.js agent skill that applies SemVer bumps, updates the changelog and cuts tagged GitHub Releases from commit history. Runs in Claude Code, Gemini CLI, Codex, Cursor and GitHub Copilot."
+      },
+      "nodebase": {
+        "badge": "Open Source",
+        "text": "React SPA with a visual node-based editor (React Flow), real-time data flows and background jobs. Type-safe APIs via tRPC + Prisma/PostgreSQL, auth via Better Auth."
+      },
+      "prompter": {
+        "badge": "Open Source",
+        "text": "Full-stack platform with Python, Django and PostgreSQL behind a TypeScript client (shadcn/ui + Tailwind, Zod), Dockerised for local/production parity."
+      },
+      "marketplace": {
+        "badge": "Open Source",
+        "text": "Modular platform with a CMS-style architecture and a Python/Django REST API layer, with end-to-end type safety."
+      },
+      "elevenlabs": {
+        "badge": "AI Project",
+        "text": "Uses the ElevenLabs API for AI text-to-speech. A LangChain + RAG extension for document-grounded voice answers is in progress."
+      }
+    },
+    "skills": {
+      "frontend": "Frontend",
+      "backend": "Backend & Data",
+      "testing": "Testing & Reliability",
+      "devops": "DevOps & Cloud",
+      "ai": "AI-Native"
+    },
+    "testimonials": {
+      "companies": "COMPANIES I’VE WORKED WITH",
+      "clara": {
+        "quote": "A true team player — always ready to help, collaborate, and lift the whole group forward. Amirreza brings both technical depth and a great attitude to every sprint.",
+        "role": "Fullstack Developer · OFoundation"
+      },
+      "massy": {
+        "quote": "Works with empathy and professionalism. Makes teamwork smoother and every project more enjoyable. One of the best engineers I’ve had the pleasure to work with.",
+        "role": "Project Manager · OFoundation"
+      },
+      "mohammad": {
+        "quote": "Supportive, reliable, and solution-oriented. He strengthens any team he’s part of. His ability to translate complex requirements into clean UI is exceptional.",
+        "role": "CEO · Zharfa Academy"
+      }
+    },
+    "contact": {
+      "intro": "Based in {location} · always async-friendly. I’ll get back to you within 24 hours.",
+      "email": "Email",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "whatsappValue": "Free 30-min call",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
   }
 }

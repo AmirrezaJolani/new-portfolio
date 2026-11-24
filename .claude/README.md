@@ -7,7 +7,14 @@ Claude Code configuration for the macOS-style portfolio.
 - [`agents/`](./agents) — dispatchable subagents scoped to this codebase:
   - **portfolio-ui** — feature-based desktop UI work (shell, dock, windows, shadcn/Base UI, copy).
   - **window-system** — pure state machines in `workflows/` + their context wiring (test-first).
-  - **i18n-translator** — next-intl copy, English/Persian parity, RTL, cookie-based locale.
+  - **i18n-translator** — next-intl copy, parity across en/fa/de/it, RTL, cookie-based locale.
+- [`skills/`](./skills): project skills, loaded on demand when a task matches the skill's `description`:
+  - **editing-portfolio-content**: CV data (`content.ts`) plus `drive.*` prose in all locales.
+  - **translating-copy**: new strings, new languages, parity, RTL rules.
+  - **extending-pixel-drive**: achievements, landmarks, signs, cars, world, game CSS.
+  - **adding-a-desktop-app**: the registry path for a new `/desktop` window.
+  - **verifying-a-change**: the local CI checks, plus a locale-cookie browser check.
+  - **styling-ui**: the checklist for applying the design system in [`../DESIGN.md`](../DESIGN.md).
 - [`mcp.md`](./mcp.md) — MCP servers this project uses and why (config in [`../.mcp.json`](../.mcp.json)).
 - `settings.local.json` — local, machine-specific settings (not shared).
 
@@ -31,4 +38,4 @@ The markdown body is the agent's system prompt.
 - Repo-wide agent rules + project context: [`../AGENTS.md`](../AGENTS.md) (read it — this is a modified Next.js).
 - User-facing docs: [`../README.md`](../README.md).
 
-Architecture in one line: **workflows/ (pure logic) → context/ (React wiring) → features/\* (UI) → components/ui/ (shadcn/Base UI primitives)**, with a macOS Tahoe **Liquid Glass** surface system (`.lg-*` utilities in `app/globals.css`), cookie-based EN/FA i18n, and a Docker + GitHub Actions pipeline.
+Architecture in one line: **workflows/ (pure logic) → context/ (React wiring) → features/\* (UI) → components/ui/ (shadcn/Base UI primitives)**, with a macOS Tahoe **Liquid Glass** surface system (`.lg-*` utilities in `app/globals.css`), cookie-based EN/FA/DE/IT i18n, and a Docker + GitHub Actions pipeline. The homepage `/` is the **Pixel Drive** game (`features/drive/`); the desktop lives at `/desktop`.

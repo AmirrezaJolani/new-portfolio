@@ -55,8 +55,8 @@ smoke test on every PR, publishing to GHCR on `main`. Don't break `output: "stan
    iterate `lib/apps.config.tsx`. Adding an app = one registry entry + one feature folder +
    one line in `features/desktop/components/appRegistry.tsx`. Do not special-case an app
    anywhere else. (A future Games app plugs in exactly this way.)
-3. **All user-facing copy comes from next-intl**, keyed in `messages/en.json` +
-   `messages/fa.json`. Never hardcode display strings in a component. Read with
+3. **All user-facing copy comes from next-intl**, keyed in every
+   `messages/*.json` (en, fa, de, it). Never hardcode display strings in a component. Read with
    `useTranslations('<namespace>')`.
 4. **RTL is first-class.** i18n is cookie-based (no locale in the URL); the root layout sets
    `dir` from the locale. Always use Tailwind **logical** properties (`ps-*`, `pe-*`,
@@ -74,7 +74,7 @@ smoke test on every PR, publishing to GHCR on `main`. Don't break `output: "stan
 - `npm run lint` (Biome) is clean for files you wrote. If you scaffolded shadcn primitives,
   run `biome check --write` on them. `lint/a11y/noLabelWithoutControl` is already disabled for
   `components/ui/**` in `biome.json` (the generic shadcn `Label` needs it).
-- New display strings exist in BOTH `messages/en.json` and `messages/fa.json`.
+- New display strings exist in EVERY catalog (`messages/en|fa|de|it.json`); `npm test` checks parity.
 
 If a change requires an architectural decision the layers above don't obviously answer, stop
 and ask rather than guessing.
