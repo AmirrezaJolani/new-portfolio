@@ -1,0 +1,111 @@
+public/icons/check.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+features/drive/components/TouchControls.tsx
+  s_c17b2e84ffe0df::t_872fd9de88f640 5,66
+public/icons/sunset.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/note.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/road.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+features/drive/components/Panel.tsx
+  s_c17b2e84ffe0df::t_872fd9de88f640 22,93-94,128-130,347-357,443,445-446,448-453,488
+  s_c17b2e84ffe0df::t_f3944c26259b87 444,447
+  s_c17b2e84ffe0df::t_ed42313dec7401 489-491,510
+features/drive/lib/achievements.ts
+  s_c17b2e84ffe0df::t_7fe22ecb46f1df 1-2,5-19
+public/icons/globe.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+features/drive/components/Icon.tsx
+  s_c17b2e84ffe0df::t_7fe22ecb46f1df 1-24
+messages/de.json
+  s_c17b2e84ffe0df::t_b38f6f6fec0f72 51-58
+public/icons/rocket.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+messages/fa.json
+  s_c17b2e84ffe0df::t_b38f6f6fec0f72 51-58
+features/drive/lib/icons.test.ts
+  s_c17b2e84ffe0df::t_9bafb8450128c4 11-12,32-36
+  s_c17b2e84ffe0df::t_c1ad35fdd61d71 1-10,13-31,37-60
+public/icons/trophy.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/arrow.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/lock.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/flag.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/key.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/map.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+features/drive/components/LanguagePicker.tsx
+  s_c17b2e84ffe0df::t_872fd9de88f640 32
+  s_c17b2e84ffe0df::t_f3944c26259b87 28
+app/globals.css
+  s_c17b2e84ffe0df::t_7fe22ecb46f1df 50-56
+  s_c17b2e84ffe0df::t_f3944c26259b87 49,68-78
+.claude/skills/extending-pixel-drive/SKILL.md
+  s_c17b2e84ffe0df::t_84cea96c6774a1 26,51-53
+  s_c17b2e84ffe0df::t_1b8ff630fdf875 54
+DESIGN.md
+  s_c17b2e84ffe0df::t_84cea96c6774a1 29-31,75
+features/drive/lib/icons.ts
+  s_c17b2e84ffe0df::t_7fe22ecb46f1df 1-36
+features/drive/components/Game.tsx
+  s_c17b2e84ffe0df::t_9bafb8450128c4 40,417-419,431-432,446-447,455-456,467,479-483,493,515
+messages/it.json
+  s_c17b2e84ffe0df::t_b38f6f6fec0f72 51-58
+public/icons/keyboard.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/ring.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/beach.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/wave.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/bolt.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/italy.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/sun.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/mute.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/boom.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/car.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/pin.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/lighthouse.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/moon.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/sparkle.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+public/icons/brake.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+messages/en.json
+  s_c17b2e84ffe0df::t_b38f6f6fec0f72 51-58
+public/icons/phone.svg
+  s_c17b2e84ffe0df::t_e28fd48a992289 1
+CHANGELOG.md
+  s_c17b2e84ffe0df::t_edfdf4f0f0bcc1 27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "120aa50e4ecab13bfaa6b01620b8b17a5c999703",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
