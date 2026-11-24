@@ -1,0 +1,19 @@
+README.md
+  s_c17b2e84ffe0df::t_60148bcbdc48f1 3-4,16-17,38-39,75,77-78,103-119,128-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8dc71f70c1d71930f279258cf3a858db64d02df",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
