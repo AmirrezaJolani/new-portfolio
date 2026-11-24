@@ -1,0 +1,106 @@
+messages/it.json
+  s_c17b2e84ffe0df::t_e9aeeb3b55a428 2-3
+  s_c17b2e84ffe0df::t_c88805c8fbfa8d 27-29,50-51
+  s_c17b2e84ffe0df::t_b4d8fca304add4 60
+features/drive/components/Game.tsx
+  s_c17b2e84ffe0df::t_d9f9213b18b9f0 282,286
+  s_c17b2e84ffe0df::t_71495947dda42d 307-315
+  s_c17b2e84ffe0df::t_02fdd8f9d40083 35
+  s_c17b2e84ffe0df::t_316128e7a1797b 171
+  s_c17b2e84ffe0df::t_1ac165a1c54bd8 514-516,518-536
+  s_c17b2e84ffe0df::t_8e92a7b447eb24 353-366
+  s_c17b2e84ffe0df::t_4a8beb2b641718 92-94
+  s_c17b2e84ffe0df::t_65306727e4f0d7 517
+  s_c17b2e84ffe0df::t_bccdb2f2d8d83e 246-248,250-254
+  s_c17b2e84ffe0df::t_386922a3e5893e 336
+  s_c17b2e84ffe0df::t_d1fbed609fc119 379
+AGENTS.md
+  s_c17b2e84ffe0df::t_6c5cdfb98392df 4,6-8,10-14,17-23,25,28,36-37,40-41
+features/drive/lib/render.ts
+  s_c17b2e84ffe0df::t_31a7a379edcaad 1226,1229-1231
+  s_c17b2e84ffe0df::t_d87e6df0f2f326 1287-1298,1301-1304
+  s_c17b2e84ffe0df::t_088773a40bcbb9 1299-1300
+  s_c17b2e84ffe0df::t_31a2b206218ef9 1232
+.agent/README.md
+  s_c17b2e84ffe0df::t_119674d53a1e96 11-15,19,24,33-36,44,53-54,56-58
+.claude/mcp.md
+  s_c17b2e84ffe0df::t_9261683d7d3147 6,16,18-19,22,24-28,34-35,48
+messages/fa.json
+  s_c17b2e84ffe0df::t_b4d8fca304add4 60
+  s_c17b2e84ffe0df::t_e9aeeb3b55a428 2-3
+  s_c17b2e84ffe0df::t_c88805c8fbfa8d 27-29,50-51
+.claude/skills/editing-portfolio-content/SKILL.md
+  s_c17b2e84ffe0df::t_8df0494df981b6 3
+  s_c17b2e84ffe0df::t_ffccd40e63a472 16-17
+package.json
+  s_c17b2e84ffe0df::t_46cff06ab4ca11 18
+.claude/skills/verifying-a-change/SKILL.md
+  s_c17b2e84ffe0df::t_8df0494df981b6 36-37,43
+.claude/agents/i18n-translator.md
+  s_c17b2e84ffe0df::t_9c20a513bef739 23-25,32-34,37-38
+DESIGN.md
+  s_c17b2e84ffe0df::t_d56ac76425bffe 3,5-12,17,20-21,23-28,30,43,53,63,65,71,76-80
+README.md
+  s_c17b2e84ffe0df::t_4221c30138d9ba 1,3-6,10-17,19,28-30,37,43,46,49-51,66-74,77-79,81,83-86,88,90-94,104-105
+biome.json
+  s_c17b2e84ffe0df::t_67e277686f2ced 36
+.claude/skills/styling-ui/SKILL.md
+  s_c17b2e84ffe0df::t_9f033f574a86e9 3,13-18,20,23-24
+.claude/skills/extending-pixel-drive/SKILL.md
+  s_c17b2e84ffe0df::t_8df0494df981b6 44-50,56-57
+i18n/messages.test.ts
+  s_c17b2e84ffe0df::t_20fa3beb384d89 27-28
+workflows/driveWorld.test.ts
+  s_c17b2e84ffe0df::t_a90a0e388d9037 116-121,123-126,130-131,135-141,143,145,149-154,156,160-161
+  s_c17b2e84ffe0df::t_409a7e0dad6d13 163-164,166-168
+  s_c17b2e84ffe0df::t_b8af2eef4fb4c4 133-134,155,157,162,165
+  s_c17b2e84ffe0df::t_29acf32a3ad2bd 115,122,127-129,132,142,144,146-148,158-159
+.agent/mcp.md
+  s_c17b2e84ffe0df::t_9261683d7d3147 8-9
+app/globals.css
+  s_c17b2e84ffe0df::t_9430fcba7d13ec 3
+  s_c17b2e84ffe0df::t_46cff06ab4ca11 13-15
+i18n/config.ts
+  s_c17b2e84ffe0df::t_9430fcba7d13ec 8
+features/drive/components/LanguagePicker.tsx
+  s_c17b2e84ffe0df::t_e9aeeb3b55a428 9,12,21
+workflows/driveWorld.ts
+  s_c17b2e84ffe0df::t_8b67970d2e1c35 241-248
+  s_c17b2e84ffe0df::t_0bdc63b62bf1a8 297,299-301,303
+  s_c17b2e84ffe0df::t_f6e79bd5d7dc4b 341-342,345-351
+  s_c17b2e84ffe0df::t_6bcaa266c03253 312-322,332-333,338,340,343-344
+messages/en.json
+  s_c17b2e84ffe0df::t_b4d8fca304add4 60
+  s_c17b2e84ffe0df::t_c88805c8fbfa8d 27-29,50-51
+  s_c17b2e84ffe0df::t_e9aeeb3b55a428 2-3
+.claude/README.md
+  s_c17b2e84ffe0df::t_2377e52b468fb8 3,7-8,12,14-16,24,35-36,39
+.agent/agents.md
+  s_c17b2e84ffe0df::t_598170040ab501 9,11-12
+messages/de.json
+  s_c17b2e84ffe0df::t_b4d8fca304add4 60
+  s_c17b2e84ffe0df::t_e9aeeb3b55a428 2-3
+  s_c17b2e84ffe0df::t_c88805c8fbfa8d 27-29,50-51
+app/layout.tsx
+  s_c17b2e84ffe0df::t_5f376189e0f788 6,16,18
+.claude/skills/translating-copy/SKILL.md
+  s_c17b2e84ffe0df::t_8df0494df981b6 29,32-33
+package-lock.json
+  s_c17b2e84ffe0df::t_e4e472f4dcfb7c 14,215-218,220-221,223-224,2203,2397-2400,2402,2404-2408,2410,2413-2416,2420-2421,2424,2427-2430,2432,2435-2437,2441,2444-2447,2449,2451,2454-2457,2460-2469,2472-2475,2477,2479-2484,2487-2490,2492,2494-2497,2500-2501,2506,2509-2516,2519-2522,2525,2528-2531,2534,2536-2537,2540-2543,2546-2547,2823-2826,2829-2830,2952-2955,2957-2958,2961,2964-2965,2967-2987,2990-3007,3009-3013,3015,3018-3021,3024-3027,3029-3032,3035,3095,3098-3101,3107-3118,3196-3201,3204-3211,3214,3217-3220,3222,3224-3228,3230,3233-3236,3238,3240-3243,3245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b473246be386f62c35e5a33caba3dcf440fdc577",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "unknown"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
