@@ -9,8 +9,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/amirjm/",
   /** drive.profile.stats.<id> */
   stats: [
-    { id: "arr", value: "1M€→4M€" },
-    { id: "years", value: "6+" },
+    { id: "arr", value: "1M€→5M€" },
+    { id: "years", value: "5+" },
     { id: "build", value: "−45%" },
   ],
   /** drive.profile.pillars.<id> */
@@ -29,6 +29,8 @@ export const experience = [
       "Stripe",
       "PostHog",
       "Playwright",
+      "Mastra",
+      "Braintrust",
     ],
   },
   {
@@ -66,6 +68,19 @@ export const experience = [
 /** drive.projects.<id> */
 export const projects = [
   {
+    id: "portfolio",
+    name: "Pixel Drive Portfolio",
+    tags: [
+      "Next.js 16",
+      "TypeScript",
+      "Canvas",
+      "next-intl",
+      "Vitest",
+      "Docker",
+    ],
+    url: "https://github.com/AmirrezaJolani/new-portfolio",
+  },
+  {
     id: "appversion",
     name: "AppVersion",
     tags: ["Node.js", "Agent Skills", "SemVer", "GitHub"],
@@ -82,12 +97,6 @@ export const projects = [
     name: "Prompter",
     tags: ["TypeScript", "Django", "PostgreSQL", "Zod", "Docker"],
     url: "https://github.com/AmirrezaJolani/prompter",
-  },
-  {
-    id: "marketplace",
-    name: "E-commerce Marketplace",
-    tags: ["Python", "Django", "REST API", "Clean Architecture"],
-    url: "https://github.com/AmirrezaJolani/ecommerce-marketplace",
   },
   {
     id: "elevenlabs",
@@ -152,7 +161,6 @@ export const skills = [
       "GitHub Actions",
       "AWS",
       "Vercel",
-      "Kubernetes",
       "pnpm monorepos",
       "Biome",
     ],
@@ -161,6 +169,8 @@ export const skills = [
     id: "ai",
     level: 80,
     items: [
+      "Mastra",
+      "Braintrust",
       "Claude Code",
       "Agent Skills",
       "MCP",

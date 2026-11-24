@@ -9,7 +9,7 @@
   "drive": {
     "meta": {
       "title": "Amirreza Jolani — Sunset Island",
-      "description": "Fahr über eine Pixel-Art-Insel und entdecke die Arbeit von Amirreza Jolani Mameghani, Fullstack Engineer in Mailand, der Pillar beim Wachstum von 1 Mio. € auf 4 Mio. € ARR geholfen hat."
+      "description": "Fahr über eine Pixel-Art-Insel und entdecke die Arbeit von Amirreza Jolani Mameghani, Fullstack Engineer in Mailand, der Pillar beim Wachstum von 1 Mio. € auf 5 Mio. € ARR geholfen hat."
     },
     "status": {
       "visited": "Besucht",
@@ -179,9 +179,9 @@
       "title": "Fullstack Engineer",
       "tagline": "Ich helfe Produkten zu wachsen",
       "location": "Mailand, Italien",
-      "years": "6+ Jahre",
+      "years": "5+ Jahre",
       "focus": "React, Next.js & Node.js",
-      "bio": "Fullstack Engineer mit über 6 Jahren Erfahrung im Bau produktiver Web-Apps mit TypeScript. Bei Pillar, einem schnell wachsenden Startup für Bausoftware in Mailand, habe ich geholfen, das Produkt von 1 Mio. € auf rund 4 Mio. € ARR zu skalieren, und Features vom Datenmodell bis zur Oberfläche komplett geliefert. Experte für React und Next.js, mit Backend-Schwerpunkt auf Node.js und Deno: Zod-Validierung an API-Grenzen, einheitliche Fehlerbehandlung, Integrationen von Drittanbietern und Ursachenanalyse echter Produktionsfehler.",
+      "bio": "Fullstack Engineer mit über 5 Jahren Erfahrung im End-to-End-Bau produktiver Web-Apps mit TypeScript: Experte für React und Next.js im Frontend, Node.js, Deno und Python/Django mit PostgreSQL im Backend. Ich baue produktive LLM-Agenten mit Mastra und LangChain/LangGraph, evaluiere sie mit Braintrust, betreibe sie auf AWS und arbeite täglich mit Claude Code, Agent Skills und MCP. Bei Pillar habe ich geholfen, das Produkt von 1 Mio. € auf rund 5 Mio. € ARR zu skalieren, und Features von der Analyse bis zur Auslieferung gemeinsam mit Product und Design verantwortet.",
       "funFact": "Ich spreche Persisch, Englisch, etwas Italienisch und etwas Deutsch. Meine Masterforschung in Padua befasste sich mit KI-gestützter Personalisierung und adaptiver UX.",
       "cv": "↓ Lebenslauf herunterladen",
       "stats": {
@@ -200,7 +200,7 @@
         },
         "ai": {
           "title": "KI-nativ",
-          "text": "Claude Code, Agent Skills, MCP und LangGraph.js für schnellere Releases"
+          "text": "Mastra- und LangGraph-Agenten mit Braintrust-Evals auf AWS; Claude Code, Agent Skills und MCP"
         }
       }
     },
@@ -209,7 +209,7 @@
         "role": "Fullstack Engineer",
         "years": "Mai 2026–heute",
         "kind": "Aktuell · Mailand",
-        "text": "Habe Pillars Bausoftware-Startup beim Wachstum von 1 Mio. € auf 4 Mio. € ARR unterstützt. Ein Modul für Compliance-Dokumente, ein Modul für Baustellenkontakte und einen platzbasierten Stripe-Upsell-Checkout ausgeliefert, PostHog eingebunden und i18n-Lücken für Spanien, Kolumbien, Mexiko und Brasilien geschlossen. Monorepo-Lint-Läufe von ~71 s auf ~9 s und Vercel-Builds um ~45 % verkürzt."
+        "text": "Habe Pillars Bausoftware-Startup beim Wachstum von 1 Mio. € auf 5 Mio. € ARR unterstützt. Ein Modul für Compliance-Dokumente, ein Modul für Baustellenkontakte und einen platzbasierten Stripe-Upsell-Checkout ausgeliefert, PostHog eingebunden und i18n-Lücken für Spanien, Kolumbien, Mexiko und Brasilien geschlossen. Monorepo-Lint-Läufe von ~71 s auf ~9 s und Vercel-Builds um ~45 % verkürzt."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",
@@ -250,6 +250,10 @@
     },
     "projects": {
       "view": "Auf GitHub ansehen →",
+      "portfolio": {
+        "badge": "Diese Seite",
+        "text": "Das Spiel, in dem du gerade fährst: eine Pixel-Art-Welt mit Next.js 16 + TypeScript, in der jedes Gebäude ein CV-Kapitel ist. Canvas-Renderer, getestete Drift-Physik (Vitest), Englisch/Persisch (RTL)/Deutsch/Italienisch über next-intl, Docker + GitHub Actions CI."
+      },
       "appversion": {
         "badge": "Agent Skill",
         "text": "Node.js-Agent-Skill, der SemVer-Versionssprünge anwendet, das Changelog aktualisiert und aus der Commit-Historie getaggte GitHub-Releases erstellt. Läuft in Claude Code, Gemini CLI, Codex, Cursor und GitHub Copilot."
@@ -261,10 +265,6 @@
       "prompter": {
         "badge": "Open Source",
         "text": "Full-Stack-Plattform mit Python, Django und PostgreSQL hinter einem TypeScript-Client (shadcn/ui + Tailwind, Zod), mit Docker für identische lokale und Produktionsumgebungen."
-      },
-      "marketplace": {
-        "badge": "Open Source",
-        "text": "Modulare Plattform mit CMS-artiger Architektur und einer Python/Django-REST-API-Schicht, durchgehend typsicher."
       },
       "elevenlabs": {
         "badge": "KI-Projekt",
