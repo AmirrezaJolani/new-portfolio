@@ -20,7 +20,8 @@ not by hardcoding it in a component.
   page through `<html dir>`. Numbers, money, handles and units get `dir="ltr"`. The canvas layer
   is always `dir="ltr"`; RTL text inside it goes in an inner `<span dir="auto">`.
 - **Copy:** every visible string and `aria-label` comes from `messages/*.json`.
-- **Focus:** always visible: `outline: 3px dashed var(--px-focus)`.
+- **Focus:** always visible. `.pixel-btn` and `.pedal` use `outline: 3px dashed var(--px-focus)`;
+  links keep the browser default.
 - **Motion:** respect `prefers-reduced-motion`; `.toast` and `.blink` switch off under it.
 - **Touch:** touch-only controls are big (pedal 80px, joystick 136px, pad prompt 44px tall).
   New touch targets should be at least 44px. Anything the joystick does also exists as a real

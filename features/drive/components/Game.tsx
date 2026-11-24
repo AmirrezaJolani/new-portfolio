@@ -32,6 +32,7 @@ import {
   createAssets,
   labelTop,
   renderFrame,
+  SKID_LIFE,
   type Skid,
   THEMES,
   type Theme,
@@ -250,8 +251,9 @@ export function Game() {
       // Tyres leave marks while the car slides sideways; oldest fade first.
       if (Math.abs(c.side ?? 0) > 22) {
         skids.current.push({ x: c.x, y: c.y, a: c.angle, t: now / 1000 });
-        if (skids.current.length > 400) skids.current.shift();
       }
+      while (skids.current[0]?.t < now / 1000 - SKID_LIFE)
+        skids.current.shift();
 
       // km/h with 1px = 0.25 m: px/s × 0.25 × 3.6.
       const kmh = `${c.speed < -1 ? "R " : ""}${Math.round(Math.abs(c.speed) * 0.9)}`;
@@ -370,11 +372,19 @@ export function Game() {
     };
     window.addEventListener("keydown", onKey);
     window.addEventListener("keyup", onKey);
+    // A mouse click leaves its HUD button focused, which would swallow Enter on
+    // the next pad. Keyboard activation (detail 0) keeps its focus.
+    const onClick = (e: MouseEvent) => {
+      if (e.detail > 0 && e.target instanceof Element)
+        e.target.closest<HTMLElement>("header button")?.blur();
+    };
     window.addEventListener("blur", reset);
+    window.addEventListener("click", onClick);
     return () => {
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("keyup", onKey);
       window.removeEventListener("blur", reset);
+      window.removeEventListener("click", onClick);
     };
   }, [open]);
 

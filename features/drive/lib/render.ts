@@ -1228,7 +1228,7 @@ export type Scene = {
 
 /** Where the car was sliding: world position, heading, time (s). */
 export type Skid = { x: number; y: number; a: number; t: number };
-const SKID_LIFE = 4; // seconds until a mark has faded out
+export const SKID_LIFE = 4; // seconds until a mark has faded out
 
 export function renderFrame(
   g: Ctx,

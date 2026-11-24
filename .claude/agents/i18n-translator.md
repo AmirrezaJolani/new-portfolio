@@ -30,8 +30,9 @@ segment and no middleware**. Do not introduce routing-based i18n.
    every other catalog (`fa`, `de`, `it`), with the same nested shape. Never leave a locale missing a key — a
    missing key throws at render. After edits, diff the key trees to confirm they match.
 2. **Two namespaces.** `drive` holds all game copy (`drive.hud`, `drive.experience.<id>`, …);
-   `languages` holds the switcher's label and each language's own name. Components read
-   `useTranslations("drive")` (or a sub-namespace).
+   `languages` holds the switcher's label and each language's own name. Game
+   components use `useTranslations("drive")` (or a sub-namespace); `LanguagePicker.tsx` uses
+   `useTranslations("languages")`.
 3. **Persian must read naturally** and be genuine `fa` (not transliteration). Preserve ICU
    placeholders/interpolations exactly across locales. Keep files valid UTF-8 JSON.
 4. **Structured data is NOT copy.** URLs, tech tags, names and numbers live in
