@@ -195,8 +195,9 @@ export const contact = [
     value: "amirreza.jolani1998@gmail.com",
     href: "mailto:amirreza.jolani1998@gmail.com",
   },
-  { id: "telegram", value: "@AmirrezaJMM", href: "https://t.me/AmirrezaJMM" },
+  { id: "telegram", value: "@JooliAR", href: "https://t.me/JooliAR" },
   { id: "whatsapp", value: null, href: "https://wa.me/393716769094" },
   { id: "linkedin", value: "in/amirjm", href: profile.linkedin },
   { id: "github", value: "AmirrezaJolani", href: profile.github },
+  { id: "github2", value: "AmirrezaJM", href: "https://github.com/AmirrezaJM" },
 ] as const;
