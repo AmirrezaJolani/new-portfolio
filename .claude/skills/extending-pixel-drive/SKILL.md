@@ -49,7 +49,7 @@ the drift tests in `driveWorld.test.ts`.
 calls `open(id)`. Fast travel from the map opens directly.
 
 **Icon**: draw a 16×16 SVG of whole-pixel `<rect>`s (`shape-rendering="crispEdges"`, ink
-outline) into `public/icons/<name>.svg`, add `<name>` to `ICONS` in `lib/icons.ts`, use
+outline) into `public/icons/<name>.svg`, add `<name>` to `ICONS` in `features/drive/lib/icons.ts`, use
 `<Icon name="<name>" />`. Never an emoji. `icons.test.ts` checks the folder against the list.
 
 **World size / new terrain**: change `COLS`/`ROWS` and the tile bake in `driveWorld.ts`, then

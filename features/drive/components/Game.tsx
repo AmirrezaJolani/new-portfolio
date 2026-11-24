@@ -415,7 +415,7 @@ export function Game() {
             }}
           >
             {b.id && visited.has(b.id) && (
-              <Icon name="check" className="me-1" />
+              <Icon name="check" className="me-1" label={t("status.visited")} />
             )}
             <span dir="auto">{t(`signs.${b.id ?? (b.kind as "duomo")}`)}</span>
           </div>
@@ -428,7 +428,9 @@ export function Game() {
             {t("hud.brand")}
           </p>
           <p className="text-base sm:text-lg leading-none mt-1">
-            <span className="hidden sm:inline">{t("hud.stopsVisited")} </span>
+            <span className="sr-only sm:not-sr-only">
+              {t("hud.stopsVisited")}{" "}
+            </span>
             <Icon name="pin" /> {visited.size}/{BUILDINGS.length}
           </p>
         </div>

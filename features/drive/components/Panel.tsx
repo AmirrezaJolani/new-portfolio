@@ -488,6 +488,11 @@ export function Panel({
                     <Icon
                       name={visited.has(x.id) ? "check" : "ring"}
                       className="me-1"
+                      label={t(
+                        visited.has(x.id)
+                          ? "status.visited"
+                          : "status.notVisited",
+                      )}
                     />
                     {t(`signs.${x.id}`)}
                   </span>
@@ -507,7 +512,11 @@ export function Panel({
                   key={a.id}
                   className={`flex items-center gap-3 border-2 p-2 ${done ? "border-(--px-accent)" : "border-current/20 opacity-50"}`}
                 >
-                  <Icon name={done ? a.icon : "lock"} size={32} />
+                  <Icon
+                    name={done ? a.icon : "lock"}
+                    size={32}
+                    label={t(done ? "status.unlocked" : "status.locked")}
+                  />
                   <span>
                     <span className="block font-pixel text-(--px-accent) text-[10px]">
                       {t(`achievements.${a.id}.title`).toUpperCase()}

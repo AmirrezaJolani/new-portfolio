@@ -30,7 +30,7 @@ describe("pixel icons", () => {
     expect(rects.join("")).toBe(body);
     for (const r of rects) {
       const n = (k: string) =>
-        Number(r.match(new RegExp(`${k}="(\\d+)"`))?.[1]);
+        Number(r.match(new RegExp(`\\s${k}="(\\d+)"`))?.[1]);
       expect(Number.isInteger(n("x")) && Number.isInteger(n("width"))).toBe(
         true,
       );

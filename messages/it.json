@@ -11,6 +11,12 @@
       "title": "Amirreza Jolani — Sunset Island",
       "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha aiutato Pillar a crescere da 1 a 4 milioni di euro di ARR."
     },
+    "status": {
+      "visited": "Visitata",
+      "notVisited": "Non ancora visitata",
+      "unlocked": "Sbloccato",
+      "locked": "Bloccato"
+    },
     "hud": {
       "brand": "AMIRREZA.DRIVE",
       "stopsVisited": "Tappe visitate",
@@ -49,7 +55,7 @@
     "intro": {
       "welcome": "Benvenuto sulla mia isola. Sali in macchina e raggiungi ogni edificio: fermati sul riquadro luminoso e premi Invio (o tocca il pulsante) per leggere quel capitolo della mia storia.",
       "keys": "Frecce / WASD: guida · frena in curva per derapare",
-      "touch": "Touch: trascina il joystick dove vuoi andare · ▼ per frenare",
+      "touch": "Touch: trascina il joystick dove vuoi andare · tocca FRENO per fermarti",
       "garage": "G: garage, scegli tra cinque auto",
       "map": "M: mappa e viaggio rapido · Esc: chiudi",
       "extras": "{count} obiettivi da sbloccare · temi giorno / tramonto / notte · musica",
