@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef } from "react";
 import {
@@ -451,12 +450,6 @@ export function Panel({
                 {t("intro.skip")}
               </button>
             </div>
-            <Link
-              href="/desktop"
-              className="inline-block underline opacity-80 hover:opacity-100"
-            >
-              {t("intro.classic")}
-            </Link>
           </div>
         )}
 

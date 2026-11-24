@@ -1,6 +1,6 @@
 ---
 name: editing-portfolio-content
-description: Use when changing what the portfolio says about Amirreza — a job, project, skill, testimonial, stat, bio line, contact link or the CV PDF — on the Pixel Drive homepage or the /desktop apps.
+description: Use when changing what the portfolio says about Amirreza — a job, project, skill, testimonial, stat, bio line, contact link or the CV PDF — in the Pixel Drive game.
 ---
 
 # Editing portfolio content
@@ -13,9 +13,10 @@ a raw key like `drive.experience.acme.role` on screen, or fails the parity test.
 
 ## Where things live
 
+Data: `features/drive/lib/content.ts`. Prose: the `drive.*` namespace.
+
 | What | Data (ids, tags, links, numbers) | Prose |
 |------|----------------------------------|-------|
-| Homepage game (`/`) | `features/drive/lib/content.ts` | `drive.*` |
 | Experience entry | `experience[]` `{ id, company, tags }` | `drive.experience.<id>.{years,kind,role,text}` |
 | Project | `projects[]` `{ id, name, tags, url }` | `drive.projects.<id>.{badge,text}` |
 | Skill group | `skills[]` `{ id, level, items }` | `drive.skills.<id>` |
@@ -23,7 +24,6 @@ a raw key like `drive.experience.acme.role` on screen, or fails the parity test.
 | Stat / pillar | `profile.stats[]` / `profile.pillars` | `drive.profile.stats.<id>` / `.pillars.<id>` |
 | Contact row | `contact[]` (`value: null` = translated) | `drive.contact.<id>` (+ `<id>Value`) |
 | CV download | `public/Amirreza_Jolani_CV.pdf` (path in `profile.cv`) | — |
-| Desktop apps (`/desktop`) | `lib/content.ts` | `projects.*`, `about.*`, `contact.*` |
 
 Copy an existing entry's exact key shape from `messages/en.json` before adding a new one.
 

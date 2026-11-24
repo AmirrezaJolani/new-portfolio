@@ -1,69 +1,10 @@
 {
-  "apps": {
-    "about": "Chi sono",
-    "projects": "Progetti",
-    "contact": "Contatti",
-    "settings": "Impostazioni"
-  },
-  "window": {
-    "close": "Chiudi",
-    "minimize": "Riduci a icona",
-    "maximize": "Ingrandisci"
-  },
-  "menu": {
-    "finder": "Finder",
-    "name": "Amirreza Jolani",
-    "language": "Lingua",
+  "languages": {
+    "label": "Lingua",
     "english": "English",
     "persian": "فارسی",
     "german": "Deutsch",
     "italian": "Italiano"
-  },
-  "about": {
-    "role": "Ingegnere del software",
-    "bio": "Creo software per il web curato e ben fatto. Questo desktop è il mio portfolio: apri le app nel Dock per dare un'occhiata.",
-    "skillsTitle": "Competenze"
-  },
-  "projects": {
-    "intro": "Alcune cose che ho costruito.",
-    "p1": {
-      "title": "Progetto uno",
-      "description": "Un progetto segnaposto. Sostituisci questo testo in messages/."
-    },
-    "p2": {
-      "title": "Progetto due",
-      "description": "Un altro progetto segnaposto con la sua descrizione."
-    },
-    "p3": {
-      "title": "Progetto tre",
-      "description": "Un terzo segnaposto per mostrare il layout della galleria."
-    }
-  },
-  "contact": {
-    "title": "Mettiamoci in contatto",
-    "name": "Nome",
-    "email": "Email",
-    "message": "Messaggio",
-    "send": "Invia",
-    "sending": "Invio in corso…",
-    "success": "Grazie! Questo è un modulo dimostrativo: non è stato inviato nulla.",
-    "error": "Qualcosa è andato storto. Riprova."
-  },
-  "settings": {
-    "appearance": "Aspetto",
-    "theme_light": "Chiaro",
-    "theme_dark": "Scuro",
-    "theme_auto": "Automatico",
-    "wallpaper": "Sfondo",
-    "wallpaper_day": "Tahoe giorno",
-    "wallpaper_night": "Tahoe notte",
-    "wallpaper_aurora": "Aurora",
-    "wallpaper_sunset": "Tramonto",
-    "accessibility": "Accessibilità",
-    "reduceTransparency": "Riduci trasparenza",
-    "reduceMotion": "Riduci movimento",
-    "largerText": "Testo più grande",
-    "language": "Lingua e regione"
   },
   "drive": {
     "meta": {
@@ -83,9 +24,9 @@
       "music": "Musica",
       "on": "ON",
       "off": "OFF",
-      "desktop": "DESKTOP",
-      "desktopAria": "Apri il portfolio desktop classico",
-      "hint": "FRECCE / WASD per guidare · parcheggia su un riquadro luminoso · M mappa · G garage",
+      "hint": "FRECCE / WASD per guidare · INVIO su un riquadro luminoso · M mappa · G garage",
+      "visit": "VISITA {place}",
+      "enterKey": "INVIO",
       "kmh": "KM/H",
       "unlocked": "OBIETTIVO SBLOCCATO",
       "canvas": "Un'isola in pixel art da esplorare in auto. Usa il pulsante Mappa per un elenco accessibile di tutte le sezioni.",
@@ -106,8 +47,8 @@
       "close": "✕ ESC"
     },
     "intro": {
-      "welcome": "Benvenuto sulla mia isola. Sali in macchina e raggiungi ogni edificio: parcheggia sul riquadro luminoso per leggere quel capitolo della mia storia.",
-      "keys": "⌨ Frecce / WASD: guida",
+      "welcome": "Benvenuto sulla mia isola. Sali in macchina e raggiungi ogni edificio: fermati sul riquadro luminoso e premi Invio (o tocca il pulsante) per leggere quel capitolo della mia storia.",
+      "keys": "⌨ Frecce / WASD: guida · frena in curva per derapare",
       "touch": "📱 Touch: trascina il joystick dove vuoi andare · ▼ per frenare",
       "garage": "🚗 G: garage, scegli tra cinque auto",
       "map": "🗺 M: mappa e viaggio rapido · Esc: chiudi",
@@ -116,8 +57,7 @@
       "wave": "👋 Mi trovi a salutare davanti a CASA",
       "milan": "🇮🇹 Guida verso sud fino a Milano: il Duomo, la Galleria e lo skyline",
       "start": "INIZIA A GUIDARE ▶",
-      "skip": "VAI A CHI SONO",
-      "classic": "🖥 Preferisci una vista classica? Apri il portfolio desktop"
+      "skip": "VAI A CHI SONO"
     },
     "menu": {
       "about": "Chi sono",

@@ -8,42 +8,32 @@ writing routing/layout/rendering code.
 
 ## What this project is
 
-A personal portfolio with two faces:
-
-- **`/` — Pixel Drive**, a pixel-art driving game (`features/drive/`, world model in
-  `workflows/driveWorld.ts`). You drive to buildings that open portfolio sections; it has
-  achievements, a garage, themes and a Milan district.
-- **`/desktop`**, an interactive **macOS desktop** with a menu bar, a dock, and draggable,
-  resizable, minimizable windows. Content is presented as apps: **About**, **Projects**,
-  **Contact**, **Settings**. Mobile devices get a simplified stacked/full-screen view.
+A personal portfolio built as **Pixel Drive**, a pixel-art driving game on one page (`/`). You
+drive around an island; parking on a building's glowing pad and pressing Enter (or tapping the
+prompt on a phone) opens that chapter: about, experience, projects, skills, testimonials,
+contact. It has drift physics, achievements, a garage of five cars, day/sunset/night themes
+and a Milan district.
 
 Step-by-step playbooks for common tasks live in [`../.claude/skills/`](../.claude/skills)
 (plain Markdown; usable by any agent). They cover editing content, translating, extending the
-game, adding a desktop app, styling, and verifying a change. The design system (tokens, the
-two visual languages and component classes) is [`../DESIGN.md`](../DESIGN.md).
+game, styling, and verifying a change. The design system is [`../DESIGN.md`](../DESIGN.md).
 
 ## Stack
 
 - Next.js 16 (App Router, React 19), TypeScript, Tailwind CSS v4
-- shadcn/ui on **Base UI** primitives (`components/ui/`), lucide icons
+- HTML canvas for the world, React for the HUD and panels
 - next-intl **without locale routing** — locale in a `NEXT_LOCALE` cookie (no `/en` `/fa` URLs),
   English, Persian (RTL), German, Italian
-- macOS Tahoe **Liquid Glass** surfaces — `.lg-glass` / `.lg-panel` / `.lg-chip` utilities in
-  `app/globals.css`; generated wallpaper + calendar/weather widgets + desktop folder shortcuts
-  (`Wallpaper.tsx` / `Widgets.tsx` / `DesktopIcons.tsx` under `features/desktop/components/`)
 - Docker (multi-stage, standalone, non-root) + GitHub Actions CI publishing to GHCR on `main`
 - Vitest for pure logic, Biome for lint/format
 
 ## Architecture (one direction of flow)
 
 ```
-workflows/   pure state machines (no React/DOM, unit-tested)   e.g. windowManager, contactForm
-context/     React wiring around a workflow (provider + hook)   e.g. WindowManagerContext
-features/*   presentation; each owns components/ hooks/ types/  desktop, about, projects, contact
-components/ui shadcn/Base UI primitives only
-lib/         apps.config.tsx (app registry) + content.ts (structured, non-translatable data)
-hooks/ types/ shared composables and shared types
-i18n/ messages/  cookie-based next-intl config + en/fa/de/it catalogs
+workflows/driveWorld.ts      pure world model: map, buildings, cars, physics (unit-tested)
+features/drive/lib/          render.ts (canvas), audio.ts, achievements.ts, content.ts (data)
+features/drive/components/   Game (loop, input, HUD), Panel, TouchControls, LanguagePicker
+i18n/ messages/              cookie-based next-intl config + en/fa/de/it catalogs
 ```
 
 ## Commands
@@ -51,25 +41,20 @@ i18n/ messages/  cookie-based next-intl config + en/fa/de/it catalogs
 | Task | Command |
 |------|---------|
 | Dev server | `npm run dev` |
-| Unit tests | `npm test` (Vitest, pure logic in `workflows/`) |
+| Unit tests | `npm test` (Vitest) |
 | Type-check | `npx tsc --noEmit` |
 | Lint | `npm run lint` (Biome) |
 | Format | `npm run format` |
 | Prod build | `npm run build` |
 | Run the container | `docker compose up --build` (→ http://localhost:3000) |
-| Add a UI primitive | `npx shadcn@latest add <name>` |
 
 ## Guardrails
 
-1. App-specific UI goes under `features/<feature>/components/`, never a flat `components/`.
-   Only shadcn primitives live in `components/ui/`.
-2. The dock, menu bar, window layer, and mobile home all read `lib/apps.config.tsx`. Add an
-   app there + one feature folder + one line in `features/desktop/components/appRegistry.tsx`.
-3. All display copy comes from next-intl (`messages/{en,fa,de,it}.json`, kept in
+1. Logic that doesn't need the DOM goes in `workflows/driveWorld.ts`, with a test.
+2. All display copy comes from next-intl (`messages/{en,fa,de,it}.json`, kept in
    parity; `npm test` checks it). Never hardcode strings.
-4. Use Tailwind **logical** properties (`ps-/pe-/start-/end-`) so Persian mirrors correctly.
-5. Keep business rules in `workflows/` (pure, testable); keep `context/` thin.
-6. `shadcn` is a **devDependency on purpose** — `app/globals.css` imports `shadcn/tailwind.css`,
-   so removing the package breaks the build. Do not "clean it up."
+3. Use Tailwind **logical** properties (`ps-/pe-/start-/end-`) so Persian mirrors correctly;
+   the canvas layer stays `dir="ltr"`.
+4. Styles use the `--px-*` tokens and pixel classes under `.drive-root` ([`../DESIGN.md`](../DESIGN.md)).
 
 See [`agents.md`](./agents.md) for the specialist roster and [`mcp.md`](./mcp.md) for tooling.

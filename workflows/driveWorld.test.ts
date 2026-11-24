@@ -112,3 +112,57 @@ test("Milan: the piazza is drivable at road speed, landmarks are solid", () => {
   );
   assert.ok(end.speed > 100, "full road speed on the paving");
 });
+
+// Open ground for short manoeuvres: the piazza's west half, and the first
+// grass tile with clear grass all around it.
+const PLAZA = { x: 12.5 * TILE, y: 38.5 * TILE };
+const GRASS = (() => {
+  for (let ty = 1; ty < 53; ty++)
+    for (let tx = 1; tx < 55; tx++) {
+      let ok = true;
+      for (let dy = -1; dy <= 1; dy++)
+        for (let dx = -1; dx <= 1; dx++)
+          ok &&=
+            tileAt(tx + dx, ty + dy) === "grass" &&
+            !solidAt((tx + dx + 0.5) * TILE, (ty + dy + 0.5) * TILE);
+      if (ok) return { x: (tx + 0.5) * TILE, y: (ty + 0.5) * TILE };
+    }
+  throw new Error("no open grass");
+})();
+
+const sideOf = (c: Car) => c.side ?? 0;
+
+// A hard right turn while heading south.
+const turn = (
+  at: { x: number; y: number },
+  speed: number,
+  seconds: number,
+  extra: Partial<typeof idle> = {},
+) =>
+  drive(
+    { ...at, angle: Math.PI, speed },
+    { up: true, right: true, ...extra },
+    seconds,
+  );
+
+test("drift: a fast turn slides the tail out; grip straightens it again", () => {
+  const drifting = turn(PLAZA, 140, 0.25);
+  assert.equal(
+    tileAt(Math.floor(drifting.x / TILE), Math.floor(drifting.y / TILE)),
+    "plaza",
+  );
+  // Momentum keeps carrying the car to the left of its new nose.
+  assert.ok(sideOf(drifting) < -15, `side ${drifting.side}`);
+  const straight = drive(drifting, { up: true }, 0.8);
+  assert.ok(Math.abs(sideOf(straight)) < 1, `side ${straight.side}`);
+});
+
+test("drift: grass slides more than paving, and braking in a turn slides more", () => {
+  // 80 px/s is under the grass speed limit, so both surfaces turn at one speed.
+  assert.ok(sideOf(turn(GRASS, 80, 0.2)) < sideOf(turn(PLAZA, 80, 0.2)));
+  // Braking mid-turn (a handbrake turn) swings the tail wider: a bigger
+  // slip angle between where the nose points and where the car is going.
+  const slip = (c: Car) => Math.atan2(Math.abs(sideOf(c)), c.speed);
+  const handbrake = turn(PLAZA, 140, 0.15, { up: false, down: true });
+  assert.ok(slip(handbrake) > slip(turn(PLAZA, 140, 0.15)) * 1.5);
+});

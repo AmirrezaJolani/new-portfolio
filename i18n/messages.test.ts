@@ -24,6 +24,7 @@ describe("message catalogs", () => {
 
   test("every switcher option is a real locale with a label", () => {
     expect(localeOptions.map((l) => l.id).sort()).toEqual([...locales].sort());
-    for (const l of localeOptions) expect(base).toContain(`menu.${l.labelKey}`);
+    for (const l of localeOptions)
+      expect(base).toContain(`languages.${l.labelKey}`);
   });
 });

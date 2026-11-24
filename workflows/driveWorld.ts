@@ -238,7 +238,14 @@ export const padCenter = (b: Building) => ({
 
 // ---------- car ----------
 
-export type Car = { x: number; y: number; angle: number; speed: number };
+/** speed: along the nose (px/s, negative = reverse). side: sideways slide, + = to the car's right. */
+export type Car = {
+  x: number;
+  y: number;
+  angle: number;
+  speed: number;
+  side?: number;
+};
 export type Input = {
   up: boolean;
   down: boolean;
@@ -287,12 +294,13 @@ export function stepCar(
   model: CarModel = CARS[0],
 ): Car {
   const t = tileAt(Math.floor(car.x / TILE), Math.floor(car.y / TILE));
+  const paved = t === "road" || t === "plaza";
   // Off-road is slower, unless the car is built for it.
-  const max =
-    t === "road" || t === "plaza"
-      ? model.top
-      : Math.min(model.top, (t === "sand" ? 60 : 85) * model.offroad);
+  const max = paved
+    ? model.top
+    : Math.min(model.top, (t === "sand" ? 60 : 85) * model.offroad);
   let { speed, angle } = car;
+  let side = car.side ?? 0;
 
   if (input.up) speed += model.accel * dt;
   else if (input.down) speed -= (speed > 0 ? 360 : 180) * dt;
@@ -300,6 +308,17 @@ export function stepCar(
 
   if (speed > max) speed = Math.max(max, speed - 400 * dt);
   speed = Math.max(speed, -60);
+
+  // Grip: tyres kill sideways sliding at this rate (1/s). Loose ground and
+  // braking hard at speed (a handbrake turn) let the tail step out.
+  let grip = paved ? 9 : (t === "sand" ? 2.5 : 4.5) * model.offroad;
+  if (input.down && speed > 60) grip *= 0.35;
+  side *= Math.max(0, 1 - grip * dt);
+
+  // World velocity before steering; it carries over, so turning the nose
+  // doesn't turn the momentum: that difference is the drift.
+  let vx = Math.sin(angle) * speed + Math.cos(angle) * side;
+  let vy = -Math.cos(angle) * speed + Math.sin(angle) * side;
 
   const steer = (input.right ? 1 : 0) - (input.left ? 1 : 0);
   angle +=
@@ -310,17 +329,24 @@ export function stepCar(
     dt;
 
   // Move per axis so the car slides along walls instead of sticking.
-  const nx = car.x + Math.sin(angle) * speed * dt;
-  const ny = car.y - Math.cos(angle) * speed * dt;
+  const nx = car.x + vx * dt;
+  const ny = car.y + vy * dt;
   let x = car.x;
   let y = car.y;
   let hits = 0;
   if (!blocked(nx, y)) x = nx;
-  else hits++;
+  else [vx, hits] = [0, hits + 1];
   if (!blocked(x, ny)) y = ny;
-  else hits++;
-  if (hits === 2) speed *= -0.3;
-  else if (hits === 1) speed *= 0.9;
+  else [vy, hits] = [0, hits + 1];
+  // Nose-first into a corner: small bounce back, slide killed.
+  if (hits === 2) return { x, y, angle, speed: speed * -0.3, side: 0 };
 
-  return { x, y, angle, speed };
+  // Back into the car's own frame (new heading).
+  return {
+    x,
+    y,
+    angle,
+    speed: Math.sin(angle) * vx - Math.cos(angle) * vy,
+    side: Math.cos(angle) * vx + Math.sin(angle) * vy,
+  };
 }

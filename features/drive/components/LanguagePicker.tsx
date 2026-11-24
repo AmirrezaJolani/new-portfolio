@@ -6,10 +6,10 @@ import { useTransition } from "react";
 import { type Locale, localeOptions } from "@/i18n/config";
 import { setUserLocale } from "@/i18n/locale";
 
-// Same cookie switch as the desktop menu bar: set NEXT_LOCALE, then refresh
+// Locale lives in the NEXT_LOCALE cookie: set it, then refresh
 // the server tree. The game keeps running; only its copy changes.
 export function LanguagePicker() {
-  const t = useTranslations("menu");
+  const t = useTranslations("languages");
   const locale = useLocale();
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -18,7 +18,7 @@ export function LanguagePicker() {
     <select
       value={locale}
       disabled={pending}
-      aria-label={t("language")}
+      aria-label={t("label")}
       onChange={(e) =>
         startTransition(async () => {
           await setUserLocale(e.target.value as Locale);

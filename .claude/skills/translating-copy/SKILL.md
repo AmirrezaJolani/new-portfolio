@@ -26,11 +26,11 @@ from `messages/<locale>.json`; all catalogs must have identical keys, and
 | Add id to `locales`; add to `rtlLocales` if right-to-left | `i18n/config.ts` |
 | Add `{ id, labelKey }` to `localeOptions` | `i18n/config.ts` |
 | Create catalog, **same key order as en** | `messages/<id>.json` |
-| Add `menu.<labelKey>` (the language's own name, e.g. "Italiano") to **every** catalog | `messages/*.json` |
+| Add `languages.<labelKey>` (the language's own name, e.g. "Italiano") to **every** catalog | `messages/*.json` |
 | Update the language lists in docs | `README.md`, `AGENTS.md`, `.claude/README.md`, `.claude/agents/i18n-translator.md`, `.agent/README.md` |
 
-Nothing else: the game picker (`features/drive/components/LanguagePicker.tsx`), desktop menu
-bar and Settings pane all map over `localeOptions`; `app/layout.tsx` derives `dir` from
+Nothing else: the picker (`features/drive/components/LanguagePicker.tsx`) maps over
+`localeOptions`; `app/layout.tsx` derives `dir` from
 `rtlLocales`; `next.config.ts` traces `./messages/*.json` into the standalone build.
 
 Fast parity check while translating (last arg = locale):
