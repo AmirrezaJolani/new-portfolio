@@ -1,0 +1,29 @@
+README.md
+  s_c17b2e84ffe0df::t_a48874e3608ada 3
+features/drive/lib/content.ts
+  s_c17b2e84ffe0df::t_99641c02333f23 159
+messages/de.json
+  s_c17b2e84ffe0df::t_a48874e3608ada 184,203
+messages/en.json
+  s_c17b2e84ffe0df::t_a48874e3608ada 184,203
+messages/fa.json
+  s_c17b2e84ffe0df::t_a48874e3608ada 184,203
+messages/it.json
+  s_c17b2e84ffe0df::t_a48874e3608ada 184,203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f5b5aab8393f6d64c9af41bd0a1249b0a6eba9cb",
+  "prompts": {},
+  "sessions": {
+    "s_c17b2e84ffe0df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "69766f04-6e41-44cf-a61b-88828853cbae",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
