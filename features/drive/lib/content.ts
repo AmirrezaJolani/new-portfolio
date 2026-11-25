@@ -156,14 +156,7 @@ export const skills = [
   {
     id: "devops",
     level: 75,
-    items: [
-      "Docker",
-      "GitHub Actions",
-      "AWS",
-      "Vercel",
-      "pnpm monorepos",
-      "Biome",
-    ],
+    items: ["Docker", "GitHub Actions", "Vercel", "pnpm monorepos", "Biome"],
   },
   {
     id: "ai",

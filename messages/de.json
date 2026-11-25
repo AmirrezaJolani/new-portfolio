@@ -181,7 +181,7 @@
       "location": "Mailand, Italien",
       "years": "5+ Jahre",
       "focus": "React, Next.js & Node.js",
-      "bio": "Fullstack Engineer mit über 5 Jahren Erfahrung im End-to-End-Bau produktiver Web-Apps mit TypeScript: Experte für React und Next.js im Frontend, Node.js, Deno und Python/Django mit PostgreSQL im Backend. Ich baue produktive LLM-Agenten mit Mastra und LangChain/LangGraph, evaluiere sie mit Braintrust, betreibe sie auf AWS und arbeite täglich mit Claude Code, Agent Skills und MCP. Bei Pillar habe ich geholfen, das Produkt von 1 Mio. € auf rund 5 Mio. € ARR zu skalieren, und Features von der Analyse bis zur Auslieferung gemeinsam mit Product und Design verantwortet.",
+      "bio": "Fullstack Engineer mit über 5 Jahren Erfahrung im End-to-End-Bau produktiver Web-Apps mit TypeScript: Experte für React und Next.js im Frontend, Node.js, Deno und Python/Django mit PostgreSQL im Backend. Ich baue produktive LLM-Agenten mit Mastra und LangChain/LangGraph, evaluiere sie mit Braintrust und arbeite täglich mit Claude Code, Agent Skills und MCP. Bei Pillar habe ich geholfen, das Produkt von 1 Mio. € auf rund 5 Mio. € ARR zu skalieren, und Features von der Analyse bis zur Auslieferung gemeinsam mit Product und Design verantwortet.",
       "funFact": "Ich spreche Persisch, Englisch, etwas Italienisch und etwas Deutsch. Meine Masterforschung in Padua befasste sich mit KI-gestützter Personalisierung und adaptiver UX.",
       "cv": "↓ Lebenslauf herunterladen",
       "stats": {
@@ -200,7 +200,7 @@
         },
         "ai": {
           "title": "KI-nativ",
-          "text": "Mastra- und LangGraph-Agenten mit Braintrust-Evals auf AWS; Claude Code, Agent Skills und MCP"
+          "text": "Mastra- und LangGraph-Agenten mit Braintrust-Evals; Claude Code, Agent Skills und MCP"
         }
       }
     },
