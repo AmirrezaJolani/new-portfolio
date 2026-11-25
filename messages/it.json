@@ -181,7 +181,7 @@
       "location": "Milano, Italia",
       "years": "5+ anni",
       "focus": "React, Next.js e Node.js",
-      "bio": "Fullstack Engineer con oltre 5 anni di esperienza nello sviluppo end-to-end di web app in produzione con TypeScript: esperto di React e Next.js sul frontend, Node.js, Deno e Python/Django con PostgreSQL sul backend. Costruisco agenti LLM in produzione con Mastra e LangChain/LangGraph, li valuto con Braintrust, li distribuisco su AWS e lavoro ogni giorno con Claude Code, agent skill e MCP. In Pillar ho aiutato a portare il prodotto da 1 a circa 5 milioni di euro di ARR, seguendo le funzionalità dall'analisi al rilascio insieme a Product e Design.",
+      "bio": "Fullstack Engineer con oltre 5 anni di esperienza nello sviluppo end-to-end di web app in produzione con TypeScript: esperto di React e Next.js sul frontend, Node.js, Deno e Python/Django con PostgreSQL sul backend. Costruisco agenti LLM in produzione con Mastra e LangChain/LangGraph, li valuto con Braintrust e lavoro ogni giorno con Claude Code, agent skill e MCP. In Pillar ho aiutato a portare il prodotto da 1 a circa 5 milioni di euro di ARR, seguendo le funzionalità dall'analisi al rilascio insieme a Product e Design.",
       "funFact": "Parlo persiano, inglese, un po' di italiano e un po' di tedesco. La mia ricerca magistrale a Padova riguardava la personalizzazione basata sull'IA e la UX adattiva.",
       "cv": "↓ Scarica il CV",
       "stats": {
@@ -200,7 +200,7 @@
         },
         "ai": {
           "title": "AI-native",
-          "text": "Agenti Mastra e LangGraph con eval Braintrust su AWS; Claude Code, agent skill e MCP"
+          "text": "Agenti Mastra e LangGraph con eval Braintrust; Claude Code, agent skill e MCP"
         }
       }
     },

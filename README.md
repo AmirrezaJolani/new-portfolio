@@ -1,6 +1,6 @@
 # Pixel Drive — a portfolio you drive through
 
-**Live:** [amirrezajm.vercel.app](https://amirrezajm.vercel.app)
+**Live:** [amirrezajolani.app](https://www.amirrezajolani.app)
 
 A personal portfolio built as a pixel-art driving game. Visitors drive a car around a small
 island; each building is a chapter of the portfolio (about, experience, projects, skills,

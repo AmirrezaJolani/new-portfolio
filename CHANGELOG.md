@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-25
+
+### Added
+- Pixel-art favicon of the game's car (SVG, ICO and Apple touch icon), replacing the
+  Create Next App default.
+
+### Changed
+- CV and content: AWS removed from the bio, AI text and skills in all four languages; new CV PDF.
+- README live link now points to amirrezajolani.app.
+
 ## [1.0.0] - 2026-11-24
 
 ### ⚠ Breaking Changes
@@ -33,5 +43,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enter no longer gets swallowed by a HUD button focused by a mouse click (#12).
 - `npm ci` on npm 10 (restored a missing lockfile entry) (#12).
 
-[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/AmirrezaJolani/new-portfolio/releases/tag/v1.0.0

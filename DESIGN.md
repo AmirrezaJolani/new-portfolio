@@ -29,6 +29,8 @@ not by hardcoding it in a component.
 - **Icons:** pixel SVGs in `public/icons/` (16×16 grid, `crispEdges`, literal colours with an
   ink outline), rendered with `<Icon name="…" />` at 16, 32 or 48px. Names are listed in
   `features/drive/lib/icons.ts`. No emoji; `icons.test.ts` fails on them.
+- **Favicon:** the coral car, same 16×16 grid: `app/icon.svg`, `app/favicon.ico` (16/32/48) and
+  `app/apple-icon.png` (180). Next adds the `<link>` tags; redraw all three together.
 
 ## Colour tokens (`.drive-root`)
 

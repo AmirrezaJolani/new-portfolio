@@ -1,7 +1,7 @@
 {
   "version": {
     "major": 1,
-    "minor": 0,
+    "minor": 1,
     "patch": 0
   },
   "status": {
@@ -13,7 +13,7 @@
     "number": 0,
     "total": 0
   },
-  "commit": "a0dd678",
+  "commit": "97eed0a",
   "config": {
     "appversion": "1.0.0",
     "markdown": [],
