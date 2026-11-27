@@ -191,15 +191,27 @@ export const companies = [
   "Pody",
 ];
 
-/** Label: drive.contact.<id>. `value` null = translated drive.contact.<id>Value. */
+/**
+ * Label: drive.contact.<id>. `value` null = translated drive.contact.<id>Value.
+ * `encoded`: value/href are base64 and decoded in the browser after hydration
+ * (Panel's ContactLink), so the email and phone number are not plain text in
+ * the HTML or the JS bundle.
+ * ponytail: stops regex scrapers, not ones that run JS; a contact form if spam persists.
+ */
 export const contact = [
   {
     id: "email",
-    value: "amirreza.jolani1998@gmail.com",
-    href: "mailto:amirreza.jolani1998@gmail.com",
+    value: "YW1pcnJlemEuam9sYW5pMTk5OEBnbWFpbC5jb20=",
+    href: "bWFpbHRvOmFtaXJyZXphLmpvbGFuaTE5OThAZ21haWwuY29t",
+    encoded: true,
   },
   { id: "telegram", value: "@JooliAR", href: "https://t.me/JooliAR" },
-  { id: "whatsapp", value: null, href: "https://wa.me/393716769094" },
+  {
+    id: "whatsapp",
+    value: null,
+    href: "aHR0cHM6Ly93YS5tZS8zOTM3MTY3NjkwOTQ=",
+    encoded: true,
+  },
   { id: "linkedin", value: "in/amirjm", href: profile.linkedin },
   { id: "github", value: "AmirrezaJolani", href: profile.github },
   { id: "github2", value: "AmirrezaJM", href: "https://github.com/AmirrezaJM" },

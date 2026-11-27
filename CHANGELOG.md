@@ -16,6 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   language picker and a "Play the game" link back to `/`.
 - "No time to drive? Quick view →" link in the game's intro panel, in all four languages.
 
+### Changed
+- Music is now off by default. Returning visitors start with it off too, unless they turn it on;
+  achievements, theme and car are still remembered.
+- The email address and WhatsApp number are no longer plain text in the page HTML or the JS
+  bundle; they are decoded in the browser, which keeps them away from simple spam scrapers.
+
+### Fixed
+- Pressing Esc on the intro panel started the music even when it was switched off.
+
 ## [1.1.0] - 2026-11-25
 
 ### Added
