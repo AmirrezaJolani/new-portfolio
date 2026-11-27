@@ -1,0 +1,39 @@
+app/opengraph-image.tsx
+  s_d1b526b6d64b59::t_ef07e2073e98b2 1-44,47-52,55-68
+  s_d1b526b6d64b59::t_dfcc562cca7b3f 45-46
+  s_d1b526b6d64b59::t_e4d676d3af8597 53-54
+features/drive/assets/PressStart2P-OFL.txt
+  s_d1b526b6d64b59::t_d6e45b9e9cf25d 1-93
+app/layout.tsx
+  s_d1b526b6d64b59::t_5ffd13abf73844 1,3-4,8-10,17,20-38,42-48
+app/sitemap.ts
+  s_d1b526b6d64b59::t_4bd2978240ae85 1-10
+app/robots.ts
+  s_d1b526b6d64b59::t_e2ba09db4e5675 1-9
+features/drive/lib/content.ts
+  s_d1b526b6d64b59::t_847000519cb93f 7-8
+app/cv/page.tsx
+  s_d1b526b6d64b59::t_b64b19ffad11b9 7-15
+app/cv/opengraph-image.tsx
+  s_d1b526b6d64b59::t_2be4ba1732877d 1-2
+app/page.tsx
+  s_d1b526b6d64b59::t_2d149c4bc6f1d8 7-16
+DESIGN.md
+  s_d1b526b6d64b59::t_d54b83f5904c0a 54-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "401a9878526f5ab9141af7bb57af0300222fc1e6",
+  "prompts": {},
+  "sessions": {
+    "s_d1b526b6d64b59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "93033efb-c7f6-451c-9f90-99704694edfe",
+        "model": "unknown"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
