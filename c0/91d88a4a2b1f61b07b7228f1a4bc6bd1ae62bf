@@ -1,0 +1,37 @@
+messages/de.json
+  s_d1b526b6d64b59::t_4dbc3c930685f8 14-17,70-71
+features/drive/components/Panel.tsx
+  s_d1b526b6d64b59::t_35fbeaa7c25a09 3
+  s_d1b526b6d64b59::t_7c9b8d3e4dae0c 75-76
+  s_d1b526b6d64b59::t_1d7917f501cb56 472-477
+features/drive/index.ts
+  s_d1b526b6d64b59::t_e5b91f48322034 1
+messages/en.json
+  s_d1b526b6d64b59::t_4dbc3c930685f8 14-17,70-71
+messages/fa.json
+  s_d1b526b6d64b59::t_4dbc3c930685f8 14-17,70-71
+messages/it.json
+  s_d1b526b6d64b59::t_4dbc3c930685f8 14-17,70-71
+features/drive/components/CvPage.tsx
+  s_d1b526b6d64b59::t_7d171c7c3227f8 1-52
+app/cv/page.tsx
+  s_d1b526b6d64b59::t_30bb47e92519f9 1-12
+features/drive/components/DrivePage.tsx
+  s_d1b526b6d64b59::t_02d32513429ecd 4,15,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c091d88a4a2b1f61b07b7228f1a4bc6bd1ae62bf",
+  "prompts": {},
+  "sessions": {
+    "s_d1b526b6d64b59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "93033efb-c7f6-451c-9f90-99704694edfe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
