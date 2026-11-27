@@ -1,7 +1,7 @@
 import { Press_Start_2P, VT323 } from "next/font/google";
 import { Game } from "./Game";
 
-// Pixel fonts are scoped to the game, so the desktop route keeps Geist.
+// Pixel fonts, scoped to whichever element carries `fontVars`.
 const pixel = Press_Start_2P({
   weight: "400",
   subsets: ["latin"],
@@ -12,10 +12,11 @@ const body = VT323({
   subsets: ["latin"],
   variable: "--font-body",
 });
+export const fontVars = `${pixel.variable} ${body.variable}`;
 
 export function DrivePage() {
   return (
-    <div className={`${pixel.variable} ${body.variable}`}>
+    <div className={fontVars}>
       <Game />
     </div>
   );

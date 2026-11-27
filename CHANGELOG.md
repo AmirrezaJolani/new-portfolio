@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.5] - 2026-11-27
+
+### Added
+- **Quick view at `/cv`**: the whole portfolio (about, experience, projects, skills,
+  testimonials, contact) as one plain, server-rendered page, so recruiters can read it without
+  playing the game and search engines can index it. Reuses the game's panel content, with a
+  language picker and a "Play the game" link back to `/`.
+- "No time to drive? Quick view →" link in the game's intro panel, in all four languages.
+
+### Changed
+- Music is now off by default. Returning visitors start with it off too, unless they turn it on;
+  achievements, theme and car are still remembered.
+- The email address and WhatsApp number are no longer plain text in the page HTML or the JS
+  bundle; they are decoded in the browser, which keeps them away from simple spam scrapers.
+
+### Fixed
+- Pressing Esc on the intro panel started the music even when it was switched off.
+
 ## [1.1.0] - 2026-11-25
 
 ### Added
@@ -43,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enter no longer gets swallowed by a HUD button focused by a mouse click (#12).
 - `npm ci` on npm 10 (restored a missing lockfile entry) (#12).
 
-[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.5...HEAD
+[1.1.5]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.0...v1.1.5
 [1.1.0]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/AmirrezaJolani/new-portfolio/releases/tag/v1.0.0

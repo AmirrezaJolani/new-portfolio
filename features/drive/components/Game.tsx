@@ -57,7 +57,9 @@ const STORE = "sunset-island:v1";
 type Saved = {
   achievements: AchievementId[];
   theme: Theme;
-  music: boolean;
+  // Was `music`, saved as true for everyone while music defaulted on; the new
+  // key means only an explicit choice is remembered.
+  musicOn: boolean;
   car: CarModel["id"];
 };
 
@@ -97,7 +99,7 @@ export function Game() {
   const [panel, setPanel] = useState<PanelKind | null>("intro");
   const [visited, setVisited] = useState<Set<SectionId>>(new Set());
   const [theme, setTheme] = useState<Theme>("sunset");
-  const [music, setMusicOn] = useState(true);
+  const [music, setMusicOn] = useState(false); // opt-in: no surprise sound at work
   const [unlocked, setUnlocked] = useState<Set<AchievementId>>(new Set());
   const [model, setModel] = useState<CarModel["id"]>("coupe");
   const [toasts, setToasts] = useState<{ key: number; id: AchievementId }[]>(
@@ -110,11 +112,13 @@ export function Game() {
   const visitedRef = useRef(visited);
   const unlockedRef = useRef(unlocked);
   const modelRef = useRef(model);
+  const musicRef = useRef(music);
   useEffect(() => {
     panelRef.current = panel;
     themeRef.current = theme;
     modelRef.current = model;
-  }, [panel, theme, model]);
+    musicRef.current = music;
+  }, [panel, theme, model, music]);
 
   // Restore progress + preferences once on mount (localStorage is client-only).
   useEffect(() => {
@@ -122,7 +126,7 @@ export function Game() {
     unlockedRef.current = new Set(s.achievements ?? []);
     setUnlocked(unlockedRef.current);
     if (s.theme && THEMES.includes(s.theme)) setTheme(s.theme);
-    if (s.music === false) setMusicOn(false);
+    if (s.musicOn) setMusicOn(true);
     if (CARS.some((c) => c.id === s.car)) setModel(s.car!);
   }, []);
 
@@ -133,7 +137,7 @@ export function Game() {
         JSON.stringify({
           achievements: [...unlocked],
           theme,
-          music,
+          musicOn: music,
           car: model,
         } satisfies Saved),
       );
@@ -347,7 +351,7 @@ export function Game() {
       }
       if (e.type !== "keydown") return;
       if (e.code === "Escape") {
-        if (panelRef.current === "intro") setMusic(true);
+        if (panelRef.current === "intro" && musicRef.current) setMusic(true);
         setPanel(null);
       }
       if (e.code === "KeyM") setPanel((p) => (p === "menu" ? null : "menu"));

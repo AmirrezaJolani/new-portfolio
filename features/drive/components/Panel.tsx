@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   BUILDINGS,
   CARS,
@@ -71,7 +72,33 @@ const Meter = ({
   </div>
 );
 
-function Section({ id }: { id: SectionId }) {
+// `encoded` contacts stay base64 until after hydration, so the server HTML
+// (/cv) never holds the plain email or phone number. Until then: "…", no href.
+function ContactLink({ c }: { c: (typeof contact)[number] }) {
+  const t = useTranslations("drive");
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const open = (s: string) =>
+    "encoded" in c ? (mounted ? atob(s) : undefined) : s;
+  return (
+    <a
+      href={open(c.href)}
+      target="_blank"
+      rel="noreferrer"
+      className="block border-2 border-current/30 p-2 hover:border-(--px-accent) hover:text-(--px-accent)"
+    >
+      <span className="font-pixel text-(--px-accent) text-[10px]">
+        {t(`contact.${c.id}`).toUpperCase()}
+      </span>
+      <span className="block break-all text-xl" dir="auto">
+        {c.value === null ? t(`contact.${c.id}Value`) : (open(c.value) ?? "…")}
+      </span>
+    </a>
+  );
+}
+
+// Also rendered on /cv (CvPage), the no-game page for recruiters and crawlers.
+export function Section({ id }: { id: SectionId }) {
   const t = useTranslations("drive");
   switch (id) {
     case "about":
@@ -244,19 +271,7 @@ function Section({ id }: { id: SectionId }) {
           <ul className="grid gap-3 sm:grid-cols-2">
             {contact.map((c) => (
               <li key={c.id}>
-                <a
-                  href={c.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block border-2 border-current/30 p-2 hover:border-(--px-accent) hover:text-(--px-accent)"
-                >
-                  <span className="font-pixel text-(--px-accent) text-[10px]">
-                    {t(`contact.${c.id}`).toUpperCase()}
-                  </span>
-                  <span className="block break-all text-xl" dir="auto">
-                    {c.value ?? t(`contact.${c.id}Value`)}
-                  </span>
-                </a>
+                <ContactLink c={c} />
               </li>
             ))}
           </ul>
@@ -467,6 +482,12 @@ export function Panel({
               >
                 {t("intro.skip")}
               </button>
+              <Link
+                href="/cv"
+                className="inline-flex min-h-11 items-center text-(--px-accent) underline underline-offset-4"
+              >
+                {t("intro.quickView")}
+              </Link>
             </div>
           </div>
         )}

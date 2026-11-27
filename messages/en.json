@@ -11,6 +11,10 @@
       "title": "Amirreza Jolani — Sunset Island",
       "description": "Drive around a pixel-art island to explore the work of Amirreza Jolani Mameghani, Fullstack Engineer in Milan who helped scale Pillar from 1M€ to 5M€ ARR."
     },
+    "cv": {
+      "title": "Amirreza Jolani — CV",
+      "play": "PLAY THE GAME ▶"
+    },
     "status": {
       "visited": "Visited",
       "notVisited": "Not visited yet",
@@ -63,7 +67,8 @@
       "wave": "Find me waving outside HOME",
       "milan": "Drive south to Milan: the Duomo, the Galleria and the skyline",
       "start": "START DRIVING ▶",
-      "skip": "SKIP TO ABOUT ME"
+      "skip": "SKIP TO ABOUT ME",
+      "quickView": "No time to drive? Quick view →"
     },
     "menu": {
       "about": "About me",
