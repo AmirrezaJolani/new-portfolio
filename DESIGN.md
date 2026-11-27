@@ -51,6 +51,8 @@ Section accents live with the buildings in `workflows/driveWorld.ts`: about `#ff
 experience `#7fb3ff`, projects `#5ee0c4`, skills `#ffcf5c`, testimonials `#ff7eb6`, contact
 `#9cd7ff`. Canvas art (`features/drive/lib/render.ts`, `PixelMe.tsx`) keeps literal colours on
 purpose, because the canvas can't read CSS variables cheaply each frame.
+`app/opengraph-image.tsx` (the link-preview card) also repeats the token values as literals: its
+renderer (Satori) can't read CSS variables. Its pixel font is the TTF in `features/drive/assets/`.
 
 **Themes** (day / sunset / night) are a colour grade over the canvas (`.grade-*`, `soft-light`
 blend) plus canvas lighting. They are not token swaps.

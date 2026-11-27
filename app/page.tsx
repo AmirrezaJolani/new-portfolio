@@ -4,7 +4,16 @@ import { DrivePage } from "@/features/drive";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("drive.meta");
-  return { title: t("title"), description: t("description") };
+  const title = t("title");
+  const description = t("description");
+  // The image comes from app/opengraph-image.tsx.
+  return {
+    title,
+    description,
+    alternates: { canonical: "/" },
+    openGraph: { title, description, url: "/", type: "website" },
+    twitter: { card: "summary_large_image" },
+  };
 }
 
 // The game owns the whole screen: no pinch-zoom fighting the joystick.
