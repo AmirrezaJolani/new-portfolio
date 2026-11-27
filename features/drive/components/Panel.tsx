@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { type ReactNode, useEffect, useRef } from "react";
 import {
@@ -71,7 +72,8 @@ const Meter = ({
   </div>
 );
 
-function Section({ id }: { id: SectionId }) {
+// Also rendered on /cv (CvPage), the no-game page for recruiters and crawlers.
+export function Section({ id }: { id: SectionId }) {
   const t = useTranslations("drive");
   switch (id) {
     case "about":
@@ -467,6 +469,12 @@ export function Panel({
               >
                 {t("intro.skip")}
               </button>
+              <Link
+                href="/cv"
+                className="inline-flex min-h-11 items-center text-(--px-accent) underline underline-offset-4"
+              >
+                {t("intro.quickView")}
+              </Link>
             </div>
           </div>
         )}
