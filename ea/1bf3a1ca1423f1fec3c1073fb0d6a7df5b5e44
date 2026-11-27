@@ -1,0 +1,40 @@
+instrumentation-client.ts
+  s_d1b526b6d64b59::t_4bd2bce527843e 1-15
+features/drive/components/Panel.tsx
+  s_d1b526b6d64b59::t_1d74519540cd3f 170-172
+  s_d1b526b6d64b59::t_a61975984aa065 13
+  s_d1b526b6d64b59::t_3ebeb8e81ac478 98
+  s_d1b526b6d64b59::t_8126305447f40e 33-41,46
+features/drive/lib/analytics.ts
+  s_d1b526b6d64b59::t_b9212a0f0cc781 1-22
+README.md
+  s_d1b526b6d64b59::t_bb050a865a3dba 114-118
+features/drive/components/Game.tsx
+  s_d1b526b6d64b59::t_83d9fdaa2a7515 606-609
+  s_d1b526b6d64b59::t_3567601e8acd73 159-164
+  s_d1b526b6d64b59::t_adfabe237f305d 361
+  s_d1b526b6d64b59::t_bfc700a431b1bf 179,184
+  s_d1b526b6d64b59::t_8409f3fc6c589b 207
+  s_d1b526b6d64b59::t_53646d1eb3ecf8 30
+  s_d1b526b6d64b59::t_c897d44c908063 362,610
+package-lock.json
+  s_d1b526b6d64b59::t_1be4d491d17d1c 13,1331-1357,2231,2247-2253,2432-2445,2450,2462-2470,2530-2535,3162-3215,3669-3681
+package.json
+  s_d1b526b6d64b59::t_38a2091bc1291f 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ea1bf3a1ca1423f1fec3c1073fb0d6a7df5b5e44",
+  "prompts": {},
+  "sessions": {
+    "s_d1b526b6d64b59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "93033efb-c7f6-451c-9f90-99704694edfe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
