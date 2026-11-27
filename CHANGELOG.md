@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.7] - 2026-11-27
+
+### Added
+- **Link previews**: sharing the site on LinkedIn, Telegram, Slack or X now shows a 1200×630 card,
+  a screenshot of the pixel-art island with the name, job title and domain in the game's pixel
+  font. Both `/` and `/cv` have it.
+- `robots.txt` and `sitemap.xml` (`/` and `/cv`), so search engines can find both pages.
+- schema.org `Person` structured data (name, job title, Milan, GitHub and LinkedIn), so search
+  engines and AI tools know whose site this is.
+- Canonical URLs on `www.amirrezajolani.app`, so preview deployments and the bare domain don't
+  compete with the real site in search results.
+
 ## [1.1.5] - 2026-11-27
 
 ### Added
@@ -61,7 +73,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enter no longer gets swallowed by a HUD button focused by a mouse click (#12).
 - `npm ci` on npm 10 (restored a missing lockfile entry) (#12).
 
-[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.7...HEAD
+[1.1.7]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.5...v1.1.7
 [1.1.5]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.0...v1.1.5
 [1.1.0]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/AmirrezaJolani/new-portfolio/releases/tag/v1.0.0

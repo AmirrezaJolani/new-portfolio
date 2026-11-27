@@ -4,6 +4,8 @@
 
 export const profile = {
   name: "Amirreza Jolani Mameghani",
+  /** Canonical origin (the apex domain 308s here): metadataBase, sitemap, robots, JSON-LD. */
+  site: "https://www.amirrezajolani.app",
   cv: "/Amirreza_Jolani_CV.pdf",
   github: "https://github.com/AmirrezaJolani",
   linkedin: "https://www.linkedin.com/in/amirjm/",

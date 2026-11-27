@@ -36,7 +36,7 @@ on a phone) to open it.
 | Lint/format | Biome |
 | Container | Docker (multi-stage, standalone), GitHub Actions → GHCR |
 | Hosting | Vercel (production from `main`, a preview per pull request) |
-| Versioning | SemVer in `appversion.json` + `package.json`, [`CHANGELOG.md`](CHANGELOG.md), `v*` tags |
+| Versioning | SemVer in `package.json`, [`CHANGELOG.md`](CHANGELOG.md), `v*` tags |
 
 ## How to run
 
@@ -113,7 +113,7 @@ test fails on them.
 - **Vercel** builds every pull request as a preview and deploys `main` to production. No
   environment variables are needed.
 - **Docker** — see below; the same app runs anywhere as a standalone Node server.
-- **Releases** — the version lives in `appversion.json` (kept in sync with `package.json`).
+- **Releases** — the version lives in `package.json`.
   Each release adds a section to [`CHANGELOG.md`](CHANGELOG.md), a `vX.Y.Z` tag and a GitHub
   Release.
 
