@@ -27,6 +27,7 @@ import {
   type AchievementId,
   METERS_PER_PX,
 } from "../lib/achievements";
+import { track } from "../lib/analytics";
 import { setMusic, sfx } from "../lib/audio";
 import {
   createAssets,
@@ -155,7 +156,12 @@ export function Game() {
   }, []);
 
   const open = useCallback(
-    (id: SectionId) => {
+    (id: SectionId, via: "pad" | "map" | "intro" = "pad") => {
+      track("stop_opened", {
+        id,
+        via,
+        first_visit: !visitedRef.current.has(id),
+      });
       setPanel(id);
       sfx("arrive");
       if (!visitedRef.current.has(id)) {
@@ -170,12 +176,12 @@ export function Game() {
 
   // Fast travel: drop the car on the pad, facing the building, and open it.
   const go = useCallback(
-    (id: SectionId) => {
+    (id: SectionId, via: "map" | "intro") => {
       const b = BUILDINGS.find((x) => x.id === id)!;
       car.current = { ...padCenter(b), angle: 0, speed: 0 };
       lastPad.current = id;
       setZone(id);
-      open(id);
+      open(id, via);
     },
     [open],
   );
@@ -198,6 +204,7 @@ export function Game() {
   };
 
   const closePanel = () => {
+    if (panel === "intro") track("start_driving", { via: "close" });
     if (panel === "intro" && music) setMusic(true); // first user gesture → audio may start
     setPanel(null);
   };
@@ -351,6 +358,8 @@ export function Game() {
       }
       if (e.type !== "keydown") return;
       if (e.code === "Escape") {
+        if (panelRef.current === "intro")
+          track("start_driving", { via: "esc" });
         if (panelRef.current === "intro" && musicRef.current) setMusic(true);
         setPanel(null);
       }
@@ -594,8 +603,11 @@ export function Game() {
           onClose={closePanel}
           onGo={(id) => {
             if (panel === "menu") unlock("teleport");
-            if (panel === "intro" && music) setMusic(true);
-            go(id);
+            if (panel === "intro") {
+              track("start_driving", { via: "skip_to_about" });
+              if (music) setMusic(true);
+            }
+            go(id, panel === "intro" ? "intro" : "map");
           }}
           onContact={() => unlock("hello")}
         />

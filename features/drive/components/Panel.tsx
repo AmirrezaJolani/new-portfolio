@@ -10,6 +10,7 @@ import {
   type SectionId,
 } from "@/workflows/driveWorld";
 import { ACHIEVEMENTS, type AchievementId } from "../lib/achievements";
+import { track } from "../lib/analytics";
 import {
   companies,
   contact,
@@ -29,11 +30,20 @@ const Tag = ({ children }: { children: ReactNode }) => (
   </span>
 );
 
-const Out = ({ href, children }: { href: string; children: ReactNode }) => (
+const Out = ({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: ReactNode;
+  onClick?: () => void;
+}) => (
   <a
     href={href}
     target="_blank"
     rel="noreferrer"
+    onClick={onClick}
     className="pixel-btn inline-block"
   >
     {children}
@@ -85,6 +95,7 @@ function ContactLink({ c }: { c: (typeof contact)[number] }) {
       href={open(c.href)}
       target="_blank"
       rel="noreferrer"
+      onClick={() => track("contact_click", { id: c.id })}
       className="block border-2 border-current/30 p-2 hover:border-(--px-accent) hover:text-(--px-accent)"
     >
       <span className="font-pixel text-(--px-accent) text-[10px]">
@@ -156,7 +167,9 @@ export function Section({ id }: { id: SectionId }) {
             <Icon name="sparkle" /> {t("profile.funFact")}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Out href={profile.cv}>{t("profile.cv")}</Out>
+            <Out href={profile.cv} onClick={() => track("cv_download", {})}>
+              {t("profile.cv")}
+            </Out>
             <Out href={profile.github}>GitHub</Out>
             <Out href={profile.linkedin}>LinkedIn</Out>
           </div>

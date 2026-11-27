@@ -111,7 +111,11 @@ test fails on them.
 ## Deployment
 
 - **Vercel** builds every pull request as a preview and deploys `main` to production. No
-  environment variables are needed.
+  environment variables are required.
+- **Analytics (optional)** — set `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` and `NEXT_PUBLIC_POSTHOG_HOST`
+  (e.g. `https://eu.i.posthog.com`) on Vercel, or in `.env.local`, to send the visitor funnel to
+  PostHog: `start_driving` → `stop_opened` → `cv_download` / `contact_click`. They are read at build
+  time; without them nothing loads. Cookieless (`persistence: "memory"`), so no consent banner.
 - **Docker** — see below; the same app runs anywhere as a standalone Node server.
 - **Releases** — the version lives in `package.json`.
   Each release adds a section to [`CHANGELOG.md`](CHANGELOG.md), a `vX.Y.Z` tag and a GitHub
