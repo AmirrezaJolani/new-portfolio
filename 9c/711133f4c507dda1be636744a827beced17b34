@@ -1,0 +1,27 @@
+messages/fa.json
+  s_d1b526b6d64b59::t_7898315fc53a97 217
+messages/it.json
+  s_d1b526b6d64b59::t_7898315fc53a97 217
+CHANGELOG.md
+  s_d1b526b6d64b59::t_7898315fc53a97 17-18
+messages/en.json
+  s_d1b526b6d64b59::t_7898315fc53a97 217
+messages/de.json
+  s_d1b526b6d64b59::t_7898315fc53a97 217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9c711133f4c507dda1be636744a827beced17b34",
+  "prompts": {},
+  "sessions": {
+    "s_d1b526b6d64b59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "93033efb-c7f6-451c-9f90-99704694edfe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
