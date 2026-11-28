@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.8] - 2026-11-28
+
+### Changed
+- **Skills show proof, not percentages**: each skill group lists the companies where it was used
+  in production, replacing the 95% / 85% / 75% bars.
+- The third headline stat is now **−40% production incidents at OFoundation**, replacing −45%
+  Vercel build time.
+- Pillar's 1M€→5M€ ARR is presented as company growth during my time there, with the credit on
+  the Stripe upsell checkout I shipped (job entry, bio, stat label and link-preview description).
+- Testimonials link to the LinkedIn recommendations page, so readers can check them.
+
+### Removed
+- The "LangChain + RAG extension in progress" line and tags from the ElevenLabs project.
+
 ## [1.1.7] - 2026-11-27
 
 ### Added
@@ -73,7 +87,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enter no longer gets swallowed by a HUD button focused by a mouse click (#12).
 - `npm ci` on npm 10 (restored a missing lockfile entry) (#12).
 
-[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.7...HEAD
+[Unreleased]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.8...HEAD
+[1.1.8]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.7...v1.1.8
 [1.1.7]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.5...v1.1.7
 [1.1.5]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.1.0...v1.1.5
 [1.1.0]: https://github.com/AmirrezaJolani/new-portfolio/compare/v1.0.0...v1.1.0

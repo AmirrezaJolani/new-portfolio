@@ -9,7 +9,7 @@
   "drive": {
     "meta": {
       "title": "Amirreza Jolani — Sunset Island",
-      "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha aiutato Pillar a crescere da 1 a 5 milioni di euro di ARR."
+      "description": "Guida su un'isola in pixel art per scoprire il lavoro di Amirreza Jolani Mameghani, Fullstack Engineer a Milano che ha rilasciato il checkout di upsell con Stripe di Pillar durante la sua crescita da 1 a 5 milioni di euro di ARR."
     },
     "cv": {
       "title": "Amirreza Jolani — CV",
@@ -186,13 +186,13 @@
       "location": "Milano, Italia",
       "years": "5+ anni",
       "focus": "React, Next.js e Node.js",
-      "bio": "Fullstack Engineer con oltre 5 anni di esperienza nello sviluppo end-to-end di web app in produzione con TypeScript: esperto di React e Next.js sul frontend, Node.js, Deno e Python/Django con PostgreSQL sul backend. Costruisco agenti LLM in produzione con Mastra e LangChain/LangGraph, li valuto con Braintrust e lavoro ogni giorno con Claude Code, agent skill e MCP. In Pillar ho aiutato a portare il prodotto da 1 a circa 5 milioni di euro di ARR, seguendo le funzionalità dall'analisi al rilascio insieme a Product e Design.",
+      "bio": "Fullstack Engineer con oltre 5 anni di esperienza nello sviluppo end-to-end di web app in produzione con TypeScript: esperto di React e Next.js sul frontend, Node.js, Deno e Python/Django con PostgreSQL sul backend. Costruisco agenti LLM in produzione con Mastra e LangChain/LangGraph, li valuto con Braintrust e lavoro ogni giorno con Claude Code, agent skill e MCP. In Pillar, durante la crescita dell'azienda da 1 a circa 5 milioni di euro di ARR, seguo le funzionalità dall'analisi al rilascio insieme a Product e Design, tra cui il checkout di upsell con Stripe.",
       "funFact": "Parlo persiano, inglese, un po' di italiano e un po' di tedesco. La mia ricerca magistrale a Padova riguardava la personalizzazione basata sull'IA e la UX adattiva.",
       "cv": "↓ Scarica il CV",
       "stats": {
-        "arr": "Crescita ARR in Pillar",
+        "arr": "ARR di Pillar dal mio ingresso",
         "years": "Anni di esperienza",
-        "build": "Tempo di build Vercel"
+        "incidents": "Incidenti in produzione in OFoundation"
       },
       "pillars": {
         "product": {
@@ -214,7 +214,7 @@
         "role": "Fullstack Engineer",
         "years": "Mag 2026–oggi",
         "kind": "Attuale · Milano",
-        "text": "Ho aiutato la startup di software per l'edilizia Pillar a crescere da 1 a 5 milioni di euro di ARR. Ho rilasciato un modulo per i documenti di conformità, un modulo per i contatti di cantiere e un checkout di upsell con Stripe basato sui posti, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
+        "text": "Sono entrato in Pillar, startup di software per l'edilizia, durante la sua crescita da 1 a 5 milioni di euro di ARR. Ho rilasciato il checkout di upsell con Stripe basato sui posti, un modulo per i documenti di conformità e un modulo per i contatti di cantiere, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",
@@ -273,7 +273,7 @@
       },
       "elevenlabs": {
         "badge": "Progetto IA",
-        "text": "Usa l'API di ElevenLabs per la sintesi vocale con l'IA. È in sviluppo un'estensione LangChain + RAG per risposte vocali basate sui documenti."
+        "text": "App React per la sintesi vocale con l'IA tramite l'API di ElevenLabs."
       }
     },
     "skills": {
@@ -281,7 +281,8 @@
       "backend": "Backend e dati",
       "testing": "Test e affidabilità",
       "devops": "DevOps e cloud",
-      "ai": "AI-native"
+      "ai": "AI-native",
+      "usedAt": "In produzione presso"
     },
     "testimonials": {
       "companies": "AZIENDE CON CUI HO LAVORATO",
@@ -296,7 +297,8 @@
       "mohammad": {
         "quote": "Disponibile, affidabile e orientato alle soluzioni. Rafforza qualsiasi team di cui fa parte. La sua capacità di tradurre requisiti complessi in un'interfaccia pulita è eccezionale.",
         "role": "CEO · Zharfa Academy"
-      }
+      },
+      "verify": "Leggile su LinkedIn →"
     },
     "contact": {
       "intro": "Base a {location} · sempre aperto al lavoro asincrono. Ti rispondo entro 24 ore.",
