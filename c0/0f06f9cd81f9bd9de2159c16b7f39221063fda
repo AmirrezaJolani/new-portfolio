@@ -1,0 +1,35 @@
+messages/fa.json
+  s_d1b526b6d64b59::t_9f6e9b3218c962 193,195,217,276,284-285,300-301
+  s_d1b526b6d64b59::t_1a457dae7eeb48 12,189
+messages/de.json
+  s_d1b526b6d64b59::t_1a457dae7eeb48 12,189
+  s_d1b526b6d64b59::t_9f6e9b3218c962 193,195,217,276,284-285,300-301
+features/drive/components/Panel.tsx
+  s_d1b526b6d64b59::t_316ac0918799da 219-227
+  s_d1b526b6d64b59::t_dbcbc7812c6ca7 253
+features/drive/lib/content.ts
+  s_d1b526b6d64b59::t_a599744d20a982 13-14
+  s_d1b526b6d64b59::t_42078596912970 12,19,109,114,118,132,149,163,168
+messages/en.json
+  s_d1b526b6d64b59::t_9f6e9b3218c962 193,195,217,276,284-285,300-301
+  s_d1b526b6d64b59::t_1a457dae7eeb48 12,189
+messages/it.json
+  s_d1b526b6d64b59::t_9f6e9b3218c962 193,195,217,276,284-285,300-301
+  s_d1b526b6d64b59::t_1a457dae7eeb48 12,189
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c00f06f9cd81f9bd9de2159c16b7f39221063fda",
+  "prompts": {},
+  "sessions": {
+    "s_d1b526b6d64b59": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "93033efb-c7f6-451c-9f90-99704694edfe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "AmirrezaJolani <amirreza.mameghani@pillar.it>"
+    }
+  }
+}
