@@ -9,7 +9,7 @@
   "drive": {
     "meta": {
       "title": "Amirreza Jolani — Sunset Island",
-      "description": "Drive around a pixel-art island to explore the work of Amirreza Jolani Mameghani, Fullstack Engineer in Milan who helped scale Pillar from 1M€ to 5M€ ARR."
+      "description": "Drive around a pixel-art island to explore the work of Amirreza Jolani Mameghani, Fullstack Engineer in Milan who shipped Pillar's Stripe upsell checkout during its growth from 1M€ to 5M€ ARR."
     },
     "cv": {
       "title": "Amirreza Jolani — CV",
@@ -186,13 +186,13 @@
       "location": "Milan, Italy",
       "years": "5+ years",
       "focus": "React, Next.js & Node.js",
-      "bio": "Fullstack Engineer with 5+ years of experience building production web apps end to end in TypeScript: expert-level React and Next.js on the frontend, Node.js, Deno and Python/Django with PostgreSQL on the backend. I build production LLM agents with Mastra and LangChain/LangGraph, evaluated with Braintrust, and work daily with Claude Code, agent skills and MCP. At Pillar I helped scale the product from 1M€ to around 5M€ ARR, owning features from analysis to delivery with Product and Design.",
+      "bio": "Fullstack Engineer with 5+ years of experience building production web apps end to end in TypeScript: expert-level React and Next.js on the frontend, Node.js, Deno and Python/Django with PostgreSQL on the backend. I build production LLM agents with Mastra and LangChain/LangGraph, evaluated with Braintrust, and work daily with Claude Code, agent skills and MCP. At Pillar, during the company's growth from 1M€ to around 5M€ ARR, I own features from analysis to delivery with Product and Design, including the Stripe upsell checkout.",
       "funFact": "I speak Persian, English, some Italian and some German. My MSc research at Padua was on AI-driven personalisation and adaptive UX.",
       "cv": "↓ Download CV",
       "stats": {
-        "arr": "ARR scaled at Pillar",
+        "arr": "Pillar ARR since I joined",
         "years": "Years shipping",
-        "build": "Vercel build time"
+        "incidents": "Prod incidents at OFoundation"
       },
       "pillars": {
         "product": {
@@ -214,7 +214,7 @@
         "role": "Fullstack Engineer",
         "years": "May 2026–Now",
         "kind": "Current · Milan",
-        "text": "Helped scale Pillar's construction-software startup from 1M€ to 5M€ ARR. Shipped a compliance-document module, a site-contact module and a seat-based Stripe upsell checkout, instrumented PostHog, and closed i18n gaps for Spain, Colombia, Mexico and Brazil. Cut monorepo lint passes from ~71s to ~9s and Vercel builds by ~45%."
+        "text": "Joined Pillar, a construction-software startup, during its growth from 1M€ to 5M€ ARR. Shipped the seat-based Stripe upsell checkout, a compliance-document module and a site-contact module, instrumented PostHog, and closed i18n gaps for Spain, Colombia, Mexico and Brazil. Cut monorepo lint passes from ~71s to ~9s and Vercel builds by ~45%."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",
@@ -273,7 +273,7 @@
       },
       "elevenlabs": {
         "badge": "AI Project",
-        "text": "Uses the ElevenLabs API for AI text-to-speech. A LangChain + RAG extension for document-grounded voice answers is in progress."
+        "text": "React app for AI text-to-speech with the ElevenLabs API."
       }
     },
     "skills": {
@@ -281,7 +281,8 @@
       "backend": "Backend & Data",
       "testing": "Testing & Reliability",
       "devops": "DevOps & Cloud",
-      "ai": "AI-Native"
+      "ai": "AI-Native",
+      "usedAt": "In production at"
     },
     "testimonials": {
       "companies": "COMPANIES I’VE WORKED WITH",
@@ -296,7 +297,8 @@
       "mohammad": {
         "quote": "Supportive, reliable, and solution-oriented. He strengthens any team he’s part of. His ability to translate complex requirements into clean UI is exceptional.",
         "role": "CEO · Zharfa Academy"
-      }
+      },
+      "verify": "Read them on LinkedIn →"
     },
     "contact": {
       "intro": "Based in {location} · always async-friendly. I’ll get back to you within 24 hours.",

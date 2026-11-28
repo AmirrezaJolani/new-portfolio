@@ -9,11 +9,14 @@ export const profile = {
   cv: "/Amirreza_Jolani_CV.pdf",
   github: "https://github.com/AmirrezaJolani",
   linkedin: "https://www.linkedin.com/in/amirjm/",
+  /** The testimonials, as LinkedIn recommendations readers can check. */
+  recommendations:
+    "https://www.linkedin.com/in/amirjm/details/recommendations/",
   /** drive.profile.stats.<id> */
   stats: [
     { id: "arr", value: "1M€→5M€" },
     { id: "years", value: "5+" },
-    { id: "build", value: "−45%" },
+    { id: "incidents", value: "−40%" },
   ],
   /** drive.profile.pillars.<id> */
   pillars: ["product", "fullstack", "ai"],
@@ -103,16 +106,16 @@ export const projects = [
   {
     id: "elevenlabs",
     name: "ElevenLabs TTS App",
-    tags: ["React", "ElevenLabs API", "LangChain", "RAG"],
+    tags: ["React", "ElevenLabs API"],
     url: "https://github.com/AmirrezaJolani/elevenlabs",
   },
 ] as const;
 
-/** drive.skills.<id> */
+/** drive.skills.<id>. `usedAt`: experience ids where the group shipped to production. */
 export const skills = [
   {
     id: "frontend",
-    level: 95,
+    usedAt: ["pillar", "ofoundation", "karhuno", "pap", "almas"],
     items: [
       "React",
       "Next.js",
@@ -126,7 +129,7 @@ export const skills = [
   },
   {
     id: "backend",
-    level: 85,
+    usedAt: ["pillar", "pap", "zharfa"],
     items: [
       "Node.js",
       "Deno",
@@ -143,7 +146,7 @@ export const skills = [
   },
   {
     id: "testing",
-    level: 85,
+    usedAt: ["pillar", "ofoundation", "karhuno"],
     items: [
       "Playwright",
       "Cypress",
@@ -157,12 +160,12 @@ export const skills = [
   },
   {
     id: "devops",
-    level: 75,
+    usedAt: ["pillar", "ofoundation"],
     items: ["Docker", "GitHub Actions", "Vercel", "pnpm monorepos", "Biome"],
   },
   {
     id: "ai",
-    level: 80,
+    usedAt: ["pillar"],
     items: [
       "Mastra",
       "Braintrust",

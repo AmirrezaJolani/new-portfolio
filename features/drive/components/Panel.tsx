@@ -216,19 +216,15 @@ export function Section({ id }: { id: SectionId }) {
         <div className="space-y-4">
           {skills.map((s) => (
             <div key={s.id}>
-              <div className="flex justify-between font-pixel text-[10px]">
-                <span>{t(`skills.${s.id}`)}</span>
-                <span className="text-(--px-accent)">{s.level}%</span>
-              </div>
-              <div className="mt-1 flex">
-                <Meter
-                  label={t(`skills.${s.id}`)}
-                  value={s.level}
-                  max={100}
-                  segments={20}
-                  className="h-3"
-                />
-              </div>
+              <p className="font-pixel text-[10px]">{t(`skills.${s.id}`)}</p>
+              <p className="mt-1 leading-tight opacity-80">
+                {t("skills.usedAt")}:{" "}
+                <span className="text-(--px-accent)">
+                  {s.usedAt
+                    .map((id) => experience.find((e) => e.id === id)?.company)
+                    .join(" · ")}
+                </span>
+              </p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {s.items.map((tag) => (
                   <Tag key={tag}>{tag}</Tag>
@@ -254,6 +250,7 @@ export function Section({ id }: { id: SectionId }) {
               </figcaption>
             </figure>
           ))}
+          <Out href={profile.recommendations}>{t("testimonials.verify")}</Out>
           <p className="font-pixel text-[10px] opacity-80">
             {t("testimonials.companies")}
           </p>

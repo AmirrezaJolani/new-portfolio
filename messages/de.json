@@ -9,7 +9,7 @@
   "drive": {
     "meta": {
       "title": "Amirreza Jolani — Sunset Island",
-      "description": "Fahr über eine Pixel-Art-Insel und entdecke die Arbeit von Amirreza Jolani Mameghani, Fullstack Engineer in Mailand, der Pillar beim Wachstum von 1 Mio. € auf 5 Mio. € ARR geholfen hat."
+      "description": "Fahr über eine Pixel-Art-Insel und entdecke die Arbeit von Amirreza Jolani Mameghani, Fullstack Engineer in Mailand, der Pillars Stripe-Upsell-Checkout während des Wachstums von 1 Mio. € auf 5 Mio. € ARR ausgeliefert hat."
     },
     "cv": {
       "title": "Amirreza Jolani — Lebenslauf",
@@ -186,13 +186,13 @@
       "location": "Mailand, Italien",
       "years": "5+ Jahre",
       "focus": "React, Next.js & Node.js",
-      "bio": "Fullstack Engineer mit über 5 Jahren Erfahrung im End-to-End-Bau produktiver Web-Apps mit TypeScript: Experte für React und Next.js im Frontend, Node.js, Deno und Python/Django mit PostgreSQL im Backend. Ich baue produktive LLM-Agenten mit Mastra und LangChain/LangGraph, evaluiere sie mit Braintrust und arbeite täglich mit Claude Code, Agent Skills und MCP. Bei Pillar habe ich geholfen, das Produkt von 1 Mio. € auf rund 5 Mio. € ARR zu skalieren, und Features von der Analyse bis zur Auslieferung gemeinsam mit Product und Design verantwortet.",
+      "bio": "Fullstack Engineer mit über 5 Jahren Erfahrung im End-to-End-Bau produktiver Web-Apps mit TypeScript: Experte für React und Next.js im Frontend, Node.js, Deno und Python/Django mit PostgreSQL im Backend. Ich baue produktive LLM-Agenten mit Mastra und LangChain/LangGraph, evaluiere sie mit Braintrust und arbeite täglich mit Claude Code, Agent Skills und MCP. Bei Pillar verantworte ich während des Wachstums von 1 Mio. € auf rund 5 Mio. € ARR Features von der Analyse bis zur Auslieferung gemeinsam mit Product und Design, darunter den Stripe-Upsell-Checkout.",
       "funFact": "Ich spreche Persisch, Englisch, etwas Italienisch und etwas Deutsch. Meine Masterforschung in Padua befasste sich mit KI-gestützter Personalisierung und adaptiver UX.",
       "cv": "↓ Lebenslauf herunterladen",
       "stats": {
-        "arr": "ARR-Wachstum bei Pillar",
+        "arr": "Pillar-ARR seit meinem Einstieg",
         "years": "Jahre Erfahrung",
-        "build": "Vercel-Buildzeit"
+        "incidents": "Produktionsvorfälle bei OFoundation"
       },
       "pillars": {
         "product": {
@@ -214,7 +214,7 @@
         "role": "Fullstack Engineer",
         "years": "Mai 2026–heute",
         "kind": "Aktuell · Mailand",
-        "text": "Habe Pillars Bausoftware-Startup beim Wachstum von 1 Mio. € auf 5 Mio. € ARR unterstützt. Ein Modul für Compliance-Dokumente, ein Modul für Baustellenkontakte und einen platzbasierten Stripe-Upsell-Checkout ausgeliefert, PostHog eingebunden und i18n-Lücken für Spanien, Kolumbien, Mexiko und Brasilien geschlossen. Monorepo-Lint-Läufe von ~71 s auf ~9 s und Vercel-Builds um ~45 % verkürzt."
+        "text": "Während des Wachstums von 1 Mio. € auf 5 Mio. € ARR zu Pillars Bausoftware-Startup gestoßen. Den platzbasierten Stripe-Upsell-Checkout, ein Modul für Compliance-Dokumente und ein Modul für Baustellenkontakte ausgeliefert, PostHog eingebunden und i18n-Lücken für Spanien, Kolumbien, Mexiko und Brasilien geschlossen. Monorepo-Lint-Läufe von ~71 s auf ~9 s und Vercel-Builds um ~45 % verkürzt."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",
@@ -273,7 +273,7 @@
       },
       "elevenlabs": {
         "badge": "KI-Projekt",
-        "text": "Nutzt die ElevenLabs-API für KI-Sprachausgabe. Eine LangChain- + RAG-Erweiterung für dokumentgestützte Sprachantworten ist in Arbeit."
+        "text": "React-App für KI-Sprachausgabe mit der ElevenLabs-API."
       }
     },
     "skills": {
@@ -281,7 +281,8 @@
       "backend": "Backend & Daten",
       "testing": "Tests & Zuverlässigkeit",
       "devops": "DevOps & Cloud",
-      "ai": "KI-nativ"
+      "ai": "KI-nativ",
+      "usedAt": "Produktiv eingesetzt bei"
     },
     "testimonials": {
       "companies": "UNTERNEHMEN, MIT DENEN ICH GEARBEITET HABE",
@@ -296,7 +297,8 @@
       "mohammad": {
         "quote": "Hilfsbereit, zuverlässig und lösungsorientiert. Er stärkt jedes Team, in dem er ist. Seine Fähigkeit, komplexe Anforderungen in eine klare Oberfläche zu übersetzen, ist außergewöhnlich.",
         "role": "CEO · Zharfa Academy"
-      }
+      },
+      "verify": "Auf LinkedIn lesen →"
     },
     "contact": {
       "intro": "Ansässig in {location} · immer offen für asynchrone Zusammenarbeit. Ich melde mich innerhalb von 24 Stunden.",
