@@ -214,7 +214,7 @@
         "role": "Fullstack Engineer",
         "years": "Mag 2026–oggi",
         "kind": "Attuale · Milano",
-        "text": "Sono entrato in Pillar, startup di software per l'edilizia, durante la sua crescita da 1 a 5 milioni di euro di ARR. Ho rilasciato il checkout di upsell con Stripe basato sui posti, un modulo per i documenti di conformità e un modulo per i contatti di cantiere, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
+        "text": "Faccio parte del team che ha portato Pillar, startup di software per l'edilizia, da 1 a 5 milioni di euro di ARR. Ho rilasciato il checkout di upsell con Stripe basato sui posti, un modulo per i documenti di conformità e un modulo per i contatti di cantiere, integrato PostHog e colmato le lacune di i18n per Spagna, Colombia, Messico e Brasile. Ho ridotto il lint del monorepo da ~71 s a ~9 s e le build su Vercel del ~45%."
       },
       "ofoundation": {
         "role": "Fullstack Engineer",

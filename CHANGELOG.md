@@ -14,8 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   in production, replacing the 95% / 85% / 75% bars.
 - The third headline stat is now **−40% production incidents at OFoundation**, replacing −45%
   Vercel build time.
-- Pillar's 1M€→5M€ ARR is presented as company growth during my time there, with the credit on
-  the Stripe upsell checkout I shipped (job entry, bio, stat label and link-preview description).
+- Pillar's 1M€→5M€ ARR now reads as a team achievement I was part of, alongside the Stripe
+  upsell checkout I shipped (job entry, bio, stat label and link-preview description).
 - Testimonials link to the LinkedIn recommendations page, so readers can check them.
 
 ### Removed
